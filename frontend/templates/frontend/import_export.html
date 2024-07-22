@@ -1,0 +1,110 @@
+{% extends 'frontend/base.html' %}
+
+{% block title %}Import/Export{% endblock %}
+
+{% block content %}
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <div class="flex flex-col md:flex-row items-center justify-center md:space-x-8 space-y-8 md:space-y-0">
+    
+    {% if status_default.is_user_primary %}
+    <div class="bg-white dark:bg-white rounded-lg shadow-md p-4 w-full md:w-1/2 border border-red-500">
+    {% else %}
+    <div class="bg-white dark:bg-white rounded-lg shadow-md p-4 w-full md:w-1/2">
+    {% endif %}
+
+        {% if status_default.is_user_primary %}
+          {% if status_default.is_admin_primary %}
+          <h2 class="text-lg font-semibold text-zinc-800 dark:text-zinc-200">Livedatenbank und Admindatenbank</h2>
+          {% else %}
+          <h2 class="text-lg font-semibold text-zinc-800 dark:text-zinc-200">Livedatenbank</h2>
+          {% endif %}
+        {% else %}
+        <h2 class="text-lg font-semibold text-zinc-800 dark:text-zinc-200">Testdatenbank</h2>
+        {% endif %}
+        
+        <!-- <input type="text" class="border border-zinc-200 dark:border-zinc-700 rounded-md px-2 py-1 mt-2 w-full" placeholder="Name"> -->
+        <p class="text-sm text-zinc-500 dark:text-zinc-400">Importdateiname: {{ status_default.import_file_name }}</p>
+        <p class="text-sm text-zinc-500 dark:text-zinc-400">letzter Importzeitpunkt: {{ status_default.import_date }}</p>
+        <p class="text-sm text-zinc-500 dark:text-zinc-400">Anzahl importierter Datensätze: {{ status_default.import_row_count }}</p>
+
+        <form method="post" action="{% url 'export_file_default' %}" style="display: inline;">
+          {% csrf_token %}
+          <button class="bg-green-500 text-white px-4 py-2 rounded-md ml-2 mt-4">Export</button>
+        </form>
+
+        {% if not status_default.is_user_primary %}
+        <form method="post" action="{% url 'import_file' %}" style="display: inline;">
+          {% csrf_token %}
+          <button class="bg-green-500 text-white px-4 py-2 rounded-md ml-2 mt-4">Import</button>
+        </form>
+
+        <form method="post" action="{% url 'activate_user_primary' %}" style="display: inline;">
+          {% csrf_token %}
+          <button class="bg-green-500 text-white px-4 py-2 rounded-md ml-2 mt-4">Live schalten</button>
+        </form>
+        {% endif %}
+        
+        {% if not status_default.is_admin_primary %}
+        <form method="post" action="{% url 'activate_admin_primary' %}" style="display: inline;">
+          {% csrf_token %}
+          <button class="bg-green-500 text-white px-4 py-2 rounded-md ml-2 mt-4">Admin Db aktivieren</button>
+        </form>
+        {% endif %}
+    </div>
+    
+    {% if status_only_datamodel.is_user_primary %}
+    <div class="bg-white dark:bg-white rounded-lg shadow-md p-4 w-full md:w-1/2 border border-red-500">
+    {% else %}
+    <div class="bg-white dark:bg-white rounded-lg shadow-md p-4 w-full md:w-1/2">
+    {% endif %}
+
+        {% if status_only_datamodel.is_user_primary %}
+          {% if status_only_datamodel.is_admin_primary %}
+          <h2 class="text-lg font-semibold text-zinc-800 dark:text-zinc-200">Livedatenbank und Admindatenbank</h2>
+          {% else %}
+          <h2 class="text-lg font-semibold text-zinc-800 dark:text-zinc-200">Livedatenbank</h2>
+          {% endif %}
+        {% else %}
+        <h2 class="text-lg font-semibold text-zinc-800 dark:text-zinc-200">Testdatenbank</h2>
+        {% endif %}
+
+        <!-- <input type="text" class="border border-zinc-200 dark:border-zinc-700 rounded-md px-2 py-1 mt-2 w-full" placeholder="Name"> -->
+        <p class="text-sm text-zinc-500 dark:text-zinc-400">Importdateiname: {{ status_only_datamodel.import_file_name }}</p>
+        <p class="text-sm text-zinc-500 dark:text-zinc-400">letzter Importzeitpunkt: {{ status_only_datamodel.import_date }}</p>
+        <p class="text-sm text-zinc-500 dark:text-zinc-400">Anzahl importierter Datensätze: {{ status_only_datamodel.import_row_count }}</p>
+
+        <form method="post" action="{% url 'export_file_only_datamodel' %}" style="display: inline;">
+          {% csrf_token %}
+          <button class="bg-green-500 text-white px-4 py-2 rounded-md ml-2 mt-4">Export</button>
+        </form>
+
+        {% if not status_only_datamodel.is_user_primary %}
+        <form method="post" action="{% url 'import_file' %}" style="display: inline;">
+          {% csrf_token %}
+        <button class="bg-green-500 text-white px-4 py-2 rounded-md ml-2 mt-4">Import</button>
+        </form>
+
+        <form method="post" action="{% url 'activate_user_primary' %}" style="display: inline;">
+          {% csrf_token %}
+          <button class="bg-green-500 text-white px-4 py-2 rounded-md ml-2 mt-4">Live schalten</button>
+        </form>
+        {% endif %}
+        
+        {% if not status_only_datamodel.is_admin_primary %}
+        <form method="post" action="{% url 'activate_admin_primary' %}" style="display: inline;">
+          {% csrf_token %}
+          <button class="bg-green-500 text-white px-4 py-2 rounded-md ml-2 mt-4">Admin Db aktivieren</button>
+        </form>
+        {% endif %}
+    </div>
+</div>
+  </body>
+</html>
+
+{% endblock %}

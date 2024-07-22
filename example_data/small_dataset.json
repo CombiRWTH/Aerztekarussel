@@ -1,0 +1,3322 @@
+{
+    "algorithmData": {
+        "organisationsGruppen": [
+            {
+                "name": "Krankenhaus 1",
+                "ausbildungsstaetten": [
+                    {
+                        "name": "Station 1",
+                        "dienstposten": [
+                            {
+                                "startDate": "2024-01-01",
+                                "endDate": null,
+                                "hours": 40.0,
+                                "occupationalGroups": [
+                                    12
+                                ],
+                                "associatedAusbildungsBloecke": [
+                                    4
+                                ],
+                                "id": 11
+                            },
+                            {
+                                "startDate": "2024-01-01",
+                                "endDate": null,
+                                "hours": 40.0,
+                                "occupationalGroups": [
+                                    12
+                                ],
+                                "associatedAusbildungsBloecke": [
+                                    4
+                                ],
+                                "id": 12
+                            },
+                            {
+                                "startDate": "2024-01-01",
+                                "endDate": null,
+                                "hours": 40.0,
+                                "occupationalGroups": [
+                                    12
+                                ],
+                                "associatedAusbildungsBloecke": [
+                                    4
+                                ],
+                                "id": 13
+                            }
+                            
+                        ],
+                        "tags": [
+                            10, 153
+                        ],
+                        "planbareAusbildungsbloecke":[
+                            {
+                                "startDate": "2024-01-01",
+                                "ausbildungsStellen": [
+                                    {
+                                        "id": 17,
+                                        "startDate": "2016-01-01",
+                                        "durationInMonths": 18.0
+                                    },
+                                    {
+                                        "id": 18,
+                                        "startDate": "2016-03-01",
+                                        "durationInMonths": 18.0
+                                    }
+                                    
+                                ],
+                                "genehmigteFachgebiete": [
+                                    {
+                                        "fachgebietId": 339,
+                                        "durationInMonths": 18.0
+                                    },
+                                    {
+                                        "fachgebietId": 170,
+                                        "durationInMonths": 18.0
+                                    },
+                                    {
+                                        "fachgebietId": 773,
+                                        "durationInMonths": 18.0
+                                    },
+                                    {
+                                        "fachgebietId": 781,
+                                        "durationInMonths": 18.0
+                                    },
+                                    {
+                                        "fachgebietId": 587,
+                                        "durationInMonths": 18.0
+                                    },
+                                    {
+                                        "fachgebietId": 285,
+                                        "durationInMonths": 18.0
+                                    },
+                                    {
+                                        "fachgebietId": 740,
+                                        "durationInMonths": 18.0
+                                    },
+                                    {
+                                        "fachgebietId": 796,
+                                        "durationInMonths": 18.0
+                                    },
+                                    {
+                                        "fachgebietId": 626,
+                                        "durationInMonths": 18.0
+                                    },
+                                    {
+                                        "fachgebietId": 670,
+                                        "durationInMonths": 18.0
+                                    }
+                                ],
+                                "ausbildungsBlockId": 4
+                                
+                            }
+                        ],
+                        "id":1,
+                        "organisationsgruppenId": 1
+                    }
+                    
+                ],
+                "isKooperationspartner": true,
+                "dienstposten": [
+                    {
+                        "startDate": "2024-01-01",
+                        "endDate": null,
+                        "hours": 40.0,
+                        "occupationalGroups": [
+                            12
+                        ],
+                        "associatedAusbildungsBloecke": [
+                            4
+                        ],
+                        "id": 101
+                    },
+                    {
+                        "startDate": "2024-01-01",
+                        "endDate": null,
+                        "hours": 40.0,
+                        "occupationalGroups": [
+                            12
+                        ],
+                        "associatedAusbildungsBloecke": [],
+                        "id": 102
+                    }
+                ],
+                "id":1
+            },
+            {
+                "name": "Krankenhaus 2",
+                "ausbildungsstaetten": [
+                    {
+                        "name": "Station 1",
+                        "dienstposten": [
+                            {
+                                "startDate": "2024-01-01",
+                                "endDate": null,
+                                "hours": 40.0,
+                                "occupationalGroups": [
+                                    12
+                                ],
+                                "associatedAusbildungsBloecke": [
+                                    4
+                                ],
+                                "id": 11
+                            },
+                            {
+                                "startDate": "2024-01-01",
+                                "endDate": null,
+                                "hours": 40.0,
+                                "occupationalGroups": [
+                                    12
+                                ],
+                                "associatedAusbildungsBloecke": [
+                                    4
+                                ],
+                                "id": 12
+                            }
+                            
+                        ],
+                        "tags": [
+                            10, 153
+                        ],
+                        "planbareAusbildungsbloecke":[
+                            {
+                                "startDate": "2024-01-01",
+                                "ausbildungsStellen": [
+                                    {
+                                        "id": 17,
+                                        "startDate": "2016-01-01",
+                                        "durationInMonths": 18.0
+                                    },
+                                    {
+                                        "id": 18,
+                                        "startDate": "2016-01-01",
+                                        "durationInMonths": 18.0
+                                    }
+                                    
+                                ],
+                                "genehmigteFachgebiete": [
+                                    {
+                                        "fachgebietId": 23,
+                                        "durationInMonths": 18.0
+                                    }
+                                    
+                                ],
+                                "ausbildungsBlockId": 4
+                                
+                            }
+                        ],
+                        "id":1,
+                        "organisationsgruppenId": 1
+                    },
+                    {
+                        "name": "Station 2",
+                        "dienstposten": [
+                            {
+                                "startDate": "2024-01-01",
+                                "endDate": null,
+                                "hours": 40.0,
+                                "occupationalGroups": [
+                                    12
+                                ],
+                                "associatedAusbildungsBloecke": [
+                                    13
+                                ],
+                                "id": 21
+                            },
+                            {
+                                "startDate": "2024-01-01",
+                                "endDate": null,
+                                "hours": 40.0,
+                                "occupationalGroups": [
+                                    12
+                                ],
+                                "associatedAusbildungsBloecke": [
+                                    13
+                                ],
+                                "id": 22
+                            },
+                            {
+                                "startDate": "2024-01-01",
+                                "endDate": null,
+                                "hours": 40.0,
+                                "occupationalGroups": [
+                                    12
+                                ],
+                                "associatedAusbildungsBloecke": [
+                                    13
+                                ],
+                                "id": 23
+                            }
+                            
+                        ],
+                        "tags": [
+                            10
+                        ],
+                        "planbareAusbildungsbloecke":[
+                            {
+                                "startDate": "2024-01-01",
+                                "ausbildungsStellen": [
+                                    {
+                                        "id": 17,
+                                        "startDate": "2024-01-01",
+                                        "durationInMonths": 18.0
+                                    },
+                                    {
+                                        "id": 18,
+                                        "startDate": "2023-01-01",
+                                        "durationInMonths": 18.0
+                                    }
+                                    
+                                ],
+                                "genehmigteFachgebiete": [
+                                    {
+                                        "fachgebietId": 339,
+                                        "durationInMonths": 18.0
+                                    },
+                                    {
+                                        "fachgebietId": 170,
+                                        "durationInMonths": 18.0
+                                    },
+                                    {
+                                        "fachgebietId": 773,
+                                        "durationInMonths": 18.0
+                                    },
+                                    {
+                                        "fachgebietId": 781,
+                                        "durationInMonths": 18.0
+                                    },
+                                    {
+                                        "fachgebietId": 587,
+                                        "durationInMonths": 18.0
+                                    },
+                                    {
+                                        "fachgebietId": 285,
+                                        "durationInMonths": 18.0
+                                    },
+                                    {
+                                        "fachgebietId": 740,
+                                        "durationInMonths": 18.0
+                                    },
+                                    {
+                                        "fachgebietId": 796,
+                                        "durationInMonths": 18.0
+                                    },
+                                    {
+                                        "fachgebietId": 626,
+                                        "durationInMonths": 18.0
+                                    },
+                                    {
+                                        "fachgebietId": 670,
+                                        "durationInMonths": 18.0
+                                    }
+                                ],
+                                "ausbildungsBlockId": 13
+                                
+                            }
+                        ],
+                        "id":2,
+                        "organisationsgruppenId": 2
+                    }
+                ],
+                "isKooperationspartner": true,
+                "dienstposten": [
+                    {
+                        "startDate": "2024-01-01",
+                        "endDate": null,
+                        "hours": 40.0,
+                        "occupationalGroups": [
+                            12
+                        ],
+                        "associatedAusbildungsBloecke": [ 4,13
+                        ],
+                        "id": 101
+                    }
+                ],
+                "id":2
+            },
+            {
+                "name": "Krankenhaus 3",
+                "ausbildungsstaetten": [
+                    {
+                        "name": "Station 1",
+                        "dienstposten": [
+                            {
+                                "startDate": "2024-01-01",
+                                "endDate": null,
+                                "hours": 40.0,
+                                "occupationalGroups": [
+                                    12
+                                ],
+                                "associatedAusbildungsBloecke": [
+                                    13
+                                ],
+                                "id": 11
+                            },
+                            {
+                                "startDate": "2024-01-01",
+                                "endDate": null,
+                                "hours": 40.0,
+                                "occupationalGroups": [
+                                    12
+                                ],
+                                "associatedAusbildungsBloecke": [
+                                    13
+                                ],
+                                "id": 12
+                            },
+                            {
+                                "startDate": "2024-01-01",
+                                "endDate": null,
+                                "hours": 40.0,
+                                "occupationalGroups": [
+                                    12
+                                ],
+                                "associatedAusbildungsBloecke": [
+                                    13
+                                ],
+                                "id": 13
+                            },
+                            {
+                                "startDate": "2024-01-01",
+                                "endDate": null,
+                                "hours": 40.0,
+                                "occupationalGroups": [
+                                    12
+                                ],
+                                "associatedAusbildungsBloecke": [
+                                    13
+                                ],
+                                "id": 14
+                            }
+                            
+                        ],
+                        "tags": [
+                            10
+                        ],
+                        "planbareAusbildungsbloecke":[
+                            {
+                                "startDate": "2024-01-01",
+                                "ausbildungsStellen": [
+                                    {
+                                        "id": 17,
+                                        "startDate": "2024-01-01",
+                                        "durationInMonths": 18.0
+                                    },
+                                    {
+                                        "id": 18,
+                                        "startDate": "2024-01-01",
+                                        "durationInMonths": 18.0
+                                    },
+                                    {
+                                        "id": 19,
+                                        "startDate": "2024-01-01",
+                                        "durationInMonths": 18.0
+                                    },
+                                    {
+                                        "id": 20,
+                                        "startDate": "2024-01-01",
+                                        "durationInMonths": 18.0
+                                    }
+                                    
+                                    
+                                ],
+                                "genehmigteFachgebiete": [
+                                    {
+                                        "fachgebietId": 339,
+                                        "durationInMonths": 18.0
+                                    },
+                                    {
+                                        "fachgebietId": 170,
+                                        "durationInMonths": 18.0
+                                    },
+                                    {
+                                        "fachgebietId": 773,
+                                        "durationInMonths": 18.0
+                                    },
+                                    {
+                                        "fachgebietId": 781,
+                                        "durationInMonths": 18.0
+                                    },
+                                    {
+                                        "fachgebietId": 587,
+                                        "durationInMonths": 18.0
+                                    },
+                                    {
+                                        "fachgebietId": 285,
+                                        "durationInMonths": 18.0
+                                    },
+                                    {
+                                        "fachgebietId": 740,
+                                        "durationInMonths": 18.0
+                                    },
+                                    {
+                                        "fachgebietId": 796,
+                                        "durationInMonths": 18.0
+                                    },
+                                    {
+                                        "fachgebietId": 626,
+                                        "durationInMonths": 18.0
+                                    },
+                                    {
+                                        "fachgebietId": 670,
+                                        "durationInMonths": 18.0
+                                    }
+                                ],
+                                "ausbildungsBlockId": 13
+                                
+                            }
+                        ],
+                        "id":3,
+                        "organisationsgruppenId": 3
+                    }
+                    
+                ],
+                "isKooperationspartner": false,
+                "dienstposten": [
+                ],
+                "id":3
+            }
+           
+        ],
+        "persons": [
+            {
+                "id": 1,
+                "name": null,
+                "planungsParameter": [
+                    {
+                        "occupationalGroupId": 12,
+                        "hoursPerWeek": 40.0,
+                        "allowedOrgUnits": [
+                            1,2
+                        ],
+                        "startDate": "2024-01-01",
+                        "endDate": "2024-12-28",
+                        "status": "ACTIVE"
+                    },
+                    {
+                        "occupationalGroupId": 12,
+                        "hoursPerWeek": 40.0,
+                        "allowedOrgUnits": [
+                            2,3
+                        ],
+                        "startDate": "2025-01-01",
+                        "endDate": "2027-12-28",
+                        "status": "ACTIVE"
+                    }
+                    
+                ],
+                "unterbrechungszeiten": [],
+                "ausbildungsPfade": [
+                    {
+                        "id": 842,
+                        "startDate": "2024-01-01",
+                        "personId": 1,
+                        "ausbildungsBloecke": [
+                            {
+                                "personalBlockId": 841,
+                                "name": "Basisausbildung",
+                                "erfordernisse": [
+                                    {
+                                        "personalErfordernisId": 838,
+                                        "name": null,
+                                        "duration": 9.0,
+                                        "monthsCompleted": 0.0,
+                                        "minimalNumberOfPicks": 2,
+                                        "maximumNumberOfPicks": 2,
+                                        "inhalte": [
+                                            {
+                                                "personalInhaltId": 839,
+                                                "ausbildungsInhaltId": 815,
+                                                "name": "Chirurgische Fachgebiete",
+                                                "minDuration": 1.0,
+                                                "maxDuration": 8.0,
+                                                "monthsCompleted": 0.0,
+                                                "requiredTags": [
+                                                    10
+                                                ],
+                                                "preferred": false,
+                                                "ausbildungsStellenAnforderungen": []
+                                            },
+                                            {
+                                                "personalInhaltId": 840,
+                                                "ausbildungsInhaltId": 817,
+                                                "name": "Konservative Fachgebiete",
+                                                "minDuration": 1.0,
+                                                "maxDuration": 8.0,
+                                                "monthsCompleted": 0.0,
+                                                "requiredTags": [
+                                                    153
+                                                ],
+                                                "preferred": false,
+                                                "ausbildungsStellenAnforderungen": []
+                                            }
+                                        ],
+                                        "ausbildungsErfordernisId": 812
+                                    }
+                                ],
+                                "ausbildungsBlockId": 4,
+                                "ausbildungsTyp": "BASISAUSBILDUNG"
+                            },
+                            {
+                                "personalBlockId": 906,
+                                "name": "Spitalsturnus",
+                                "erfordernisse": [
+                                    {
+                                        "personalErfordernisId": 873,
+                                        "name": "Wahlfächer",
+                                        "duration": 6.0,
+                                        "monthsCompleted": 0,
+                                        "minimalNumberOfPicks": 2,
+                                        "maximumNumberOfPicks": 2,
+                                        "inhalte": [
+                                            {
+                                                "personalInhaltId": 874,
+                                                "ausbildungsInhaltId": 875,
+                                                "name": "Neurologie",
+                                                "minDuration": 3.0,
+                                                "maxDuration": 3.0,
+                                                "monthsCompleted": 0,
+                                                "requiredTags": [],
+                                                "preferred": false,
+                                                "ausbildungsStellenAnforderungen": [
+                                                    {
+                                                        "anrechenbareFachgebiete": [
+                                                            670
+                                                        ],
+                                                        "anrechenbareDauerInMonths": 3.0
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "personalInhaltId": 876,
+                                                "ausbildungsInhaltId": 877,
+                                                "name": "Urologie",
+                                                "minDuration": 3.0,
+                                                "maxDuration": 3.0,
+                                                "monthsCompleted": 0.0,
+                                                "requiredTags": [],
+                                                "preferred": false,
+                                                "ausbildungsStellenAnforderungen": [
+                                                    {
+                                                        "anrechenbareFachgebiete": [
+                                                            626
+                                                        ],
+                                                        "anrechenbareDauerInMonths": 3.0
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "personalInhaltId": 878,
+                                                "ausbildungsInhaltId": 879,
+                                                "name": "Hals-, Nasen- und Ohrenheilkunde",
+                                                "minDuration": 3.0,
+                                                "maxDuration": 3.0,
+                                                "monthsCompleted": 0.0,
+                                                "requiredTags": [],
+                                                "preferred": false,
+                                                "ausbildungsStellenAnforderungen": [
+                                                    {
+                                                        "anrechenbareFachgebiete": [
+                                                            740
+                                                        ],
+                                                        "anrechenbareDauerInMonths": 3.0
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "personalInhaltId": 881,
+                                                "ausbildungsInhaltId": 882,
+                                                "name": "Anästhesiologie und Intensivmedizin",
+                                                "minDuration": 3.0,
+                                                "maxDuration": 3.0,
+                                                "monthsCompleted": 0.0,
+                                                "requiredTags": [],
+                                                "preferred": false,
+                                                "ausbildungsStellenAnforderungen": [
+                                                    {
+                                                        "anrechenbareFachgebiete": [
+                                                            285
+                                                        ],
+                                                        "anrechenbareDauerInMonths": 3.0
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "personalInhaltId": 883,
+                                                "ausbildungsInhaltId": 884,
+                                                "name": "Haut- und Geschlechtskrankheiten",
+                                                "minDuration": 3.0,
+                                                "maxDuration": 3.0,
+                                                "monthsCompleted": 0,
+                                                "requiredTags": [],
+                                                "preferred": false,
+                                                "ausbildungsStellenAnforderungen": [
+                                                    {
+                                                        "anrechenbareFachgebiete": [
+                                                            796
+                                                        ],
+                                                        "anrechenbareDauerInMonths": 3.0
+                                                    }
+                                                ]
+                                            }
+                                        ],
+                                        "ausbildungsErfordernisId": 872
+                                    },
+                                    {
+                                        "personalErfordernisId": 887,
+                                        "name": null,
+                                        "duration": 3.0,
+                                        "monthsCompleted": 0,
+                                        "minimalNumberOfPicks": 1,
+                                        "maximumNumberOfPicks": 1,
+                                        "inhalte": [
+                                            {
+                                                "personalInhaltId": 888,
+                                                "ausbildungsInhaltId": 889,
+                                                "name": "Orthopädie und Traumatologie",
+                                                "minDuration": 3.0,
+                                                "maxDuration": 3.0,
+                                                "monthsCompleted": 0,
+                                                "requiredTags": [],
+                                                "preferred": false,
+                                                "ausbildungsStellenAnforderungen": [
+                                                    {
+                                                        "anrechenbareFachgebiete": [
+                                                            587
+                                                        ],
+                                                        "anrechenbareDauerInMonths": 3.0
+                                                    }
+                                                ]
+                                            }
+                                        ],
+                                        "ausbildungsErfordernisId": 886
+                                    },
+                                    {
+                                        "personalErfordernisId": 891,
+                                        "name": null,
+                                        "duration": 3.0,
+                                        "monthsCompleted": 0,
+                                        "minimalNumberOfPicks": 1,
+                                        "maximumNumberOfPicks": 1,
+                                        "inhalte": [
+                                            {
+                                                "personalInhaltId": 892,
+                                                "ausbildungsInhaltId": 893,
+                                                "name": "Kinder- und Jugendheilkunde",
+                                                "minDuration": 3.0,
+                                                "maxDuration": 3.0,
+                                                "monthsCompleted": 0,
+                                                "requiredTags": [],
+                                                "preferred": false,
+                                                "ausbildungsStellenAnforderungen": [
+                                                    {
+                                                        "anrechenbareFachgebiete": [
+                                                            781
+                                                        ],
+                                                        "anrechenbareDauerInMonths": 3.0
+                                                    }
+                                                ]
+                                            }
+                                        ],
+                                        "ausbildungsErfordernisId": 890
+                                    },
+                                    {
+                                        "personalErfordernisId": 895,
+                                        "name": null,
+                                        "duration": 3.0,
+                                        "monthsCompleted": 0,
+                                        "minimalNumberOfPicks": 1,
+                                        "maximumNumberOfPicks": 1,
+                                        "inhalte": [
+                                            {
+                                                "personalInhaltId": 896,
+                                                "ausbildungsInhaltId": 897,
+                                                "name": "Psychiatrie und Psychotherapeutische Medizin",
+                                                "minDuration": 3.0,
+                                                "maxDuration": 3.0,
+                                                "monthsCompleted": 0,
+                                                "requiredTags": [],
+                                                "preferred": false,
+                                                "ausbildungsStellenAnforderungen": [
+                                                    {
+                                                        "anrechenbareFachgebiete": [
+                                                            773
+                                                        ],
+                                                        "anrechenbareDauerInMonths": 3.0
+                                                    }
+                                                ]
+                                            }
+                                        ],
+                                        "ausbildungsErfordernisId": 894
+                                    },
+                                    {
+                                        "personalErfordernisId": 899,
+                                        "name": null,
+                                        "duration": 9.0,
+                                        "monthsCompleted": 0,
+                                        "minimalNumberOfPicks": 1,
+                                        "maximumNumberOfPicks": 1,
+                                        "inhalte": [
+                                            {
+                                                "personalInhaltId": 900,
+                                                "ausbildungsInhaltId": 901,
+                                                "name": "Innere Medizin",
+                                                "minDuration": 9.0,
+                                                "maxDuration": 9.0,
+                                                "monthsCompleted": 0,
+                                                "requiredTags": [],
+                                                "preferred": false,
+                                                "ausbildungsStellenAnforderungen": [
+                                                    {
+                                                        "anrechenbareFachgebiete": [
+                                                            170
+                                                        ],
+                                                        "anrechenbareDauerInMonths": 9.0
+                                                    }
+                                                ]
+                                            }
+                                        ],
+                                        "ausbildungsErfordernisId": 898
+                                    },
+                                    {
+                                        "personalErfordernisId": 903,
+                                        "name": null,
+                                        "duration": 3.0,
+                                        "monthsCompleted": 0,
+                                        "minimalNumberOfPicks": 1,
+                                        "maximumNumberOfPicks": 1,
+                                        "inhalte": [
+                                            {
+                                                "personalInhaltId": 904,
+                                                "ausbildungsInhaltId": 905,
+                                                "name": "Frauenheilkunde und Geburtshilfe",
+                                                "minDuration": 3.0,
+                                                "maxDuration": 3.0,
+                                                "monthsCompleted": 0,
+                                                "requiredTags": [],
+                                                "preferred": false,
+                                                "ausbildungsStellenAnforderungen": [
+                                                    {
+                                                        "anrechenbareFachgebiete": [
+                                                            339
+                                                        ],
+                                                        "anrechenbareDauerInMonths": 3.0
+                                                    }
+                                                ]
+                                            }
+                                        ],
+                                        "ausbildungsErfordernisId": 902
+                                    }
+                                ],
+                                "ausbildungsBlockId": 132,
+                                "ausbildungsTyp": "SPITALSTURNUS"
+                            }
+                            
+                        ]
+                    }
+                ],
+                "organisationsGruppenPriorities": {
+                    "1": 3,
+                    "2": 2,
+                    "3": 2
+                    
+                },
+                "plannedAusbildungsstelleByFachgebieteMonths": {}
+            },
+            {
+                "id": 2,
+                "name": null,
+                "planungsParameter": [
+                    {
+                        "occupationalGroupId": 12,
+                        "hoursPerWeek": 40.0,
+                        "allowedOrgUnits": [
+                            1,2
+                        ],
+                        "startDate": "2024-01-01",
+                        "endDate": "2024-12-28",
+                        "status": "ACTIVE"
+                    },
+                    {
+                        "occupationalGroupId": 12,
+                        "hoursPerWeek": 40.0,
+                        "allowedOrgUnits": [
+                            2,3
+                        ],
+                        "startDate": "2025-01-01",
+                        "endDate": "2027-12-28",
+                        "status": "ACTIVE"
+                    }
+                    
+                ],
+                "unterbrechungszeiten": [],
+                "ausbildungsPfade": [
+                    {
+                        "id": 842,
+                        "startDate": "2024-01-01",
+                        "personId": 2,
+                        "ausbildungsBloecke": [
+                            {
+                                "personalBlockId": 841,
+                                "name": "Basisausbildung",
+                                "erfordernisse": [
+                                    {
+                                        "personalErfordernisId": 838,
+                                        "name": null,
+                                        "duration": 9.0,
+                                        "monthsCompleted": 0.0,
+                                        "minimalNumberOfPicks": 2,
+                                        "maximumNumberOfPicks": 2,
+                                        "inhalte": [
+                                            {
+                                                "personalInhaltId": 839,
+                                                "ausbildungsInhaltId": 815,
+                                                "name": "Chirurgische Fachgebiete",
+                                                "minDuration": 1.0,
+                                                "maxDuration": 8.0,
+                                                "monthsCompleted": 0.0,
+                                                "requiredTags": [
+                                                    10
+                                                ],
+                                                "preferred": false,
+                                                "ausbildungsStellenAnforderungen": []
+                                            },
+                                            {
+                                                "personalInhaltId": 840,
+                                                "ausbildungsInhaltId": 817,
+                                                "name": "Konservative Fachgebiete",
+                                                "minDuration": 1.0,
+                                                "maxDuration": 8.0,
+                                                "monthsCompleted": 0.0,
+                                                "requiredTags": [
+                                                    153
+                                                ],
+                                                "preferred": false,
+                                                "ausbildungsStellenAnforderungen": []
+                                            }
+                                        ],
+                                        "ausbildungsErfordernisId": 812
+                                    }
+                                ],
+                                "ausbildungsBlockId": 4,
+                                "ausbildungsTyp": "BASISAUSBILDUNG"
+                            },
+                            {
+                                "personalBlockId": 906,
+                                "name": "Spitalsturnus",
+                                "erfordernisse": [
+                                    {
+                                        "personalErfordernisId": 873,
+                                        "name": "Wahlfächer",
+                                        "duration": 6.0,
+                                        "monthsCompleted": 0,
+                                        "minimalNumberOfPicks": 2,
+                                        "maximumNumberOfPicks": 2,
+                                        "inhalte": [
+                                            {
+                                                "personalInhaltId": 874,
+                                                "ausbildungsInhaltId": 875,
+                                                "name": "Neurologie",
+                                                "minDuration": 3.0,
+                                                "maxDuration": 3.0,
+                                                "monthsCompleted": 0,
+                                                "requiredTags": [],
+                                                "preferred": false,
+                                                "ausbildungsStellenAnforderungen": [
+                                                    {
+                                                        "anrechenbareFachgebiete": [
+                                                            670
+                                                        ],
+                                                        "anrechenbareDauerInMonths": 3.0
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "personalInhaltId": 876,
+                                                "ausbildungsInhaltId": 877,
+                                                "name": "Urologie",
+                                                "minDuration": 3.0,
+                                                "maxDuration": 3.0,
+                                                "monthsCompleted": 0.0,
+                                                "requiredTags": [],
+                                                "preferred": false,
+                                                "ausbildungsStellenAnforderungen": [
+                                                    {
+                                                        "anrechenbareFachgebiete": [
+                                                            626
+                                                        ],
+                                                        "anrechenbareDauerInMonths": 3.0
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "personalInhaltId": 878,
+                                                "ausbildungsInhaltId": 879,
+                                                "name": "Hals-, Nasen- und Ohrenheilkunde",
+                                                "minDuration": 3.0,
+                                                "maxDuration": 3.0,
+                                                "monthsCompleted": 0.0,
+                                                "requiredTags": [],
+                                                "preferred": false,
+                                                "ausbildungsStellenAnforderungen": [
+                                                    {
+                                                        "anrechenbareFachgebiete": [
+                                                            740
+                                                        ],
+                                                        "anrechenbareDauerInMonths": 3.0
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "personalInhaltId": 881,
+                                                "ausbildungsInhaltId": 882,
+                                                "name": "Anästhesiologie und Intensivmedizin",
+                                                "minDuration": 3.0,
+                                                "maxDuration": 3.0,
+                                                "monthsCompleted": 0.0,
+                                                "requiredTags": [],
+                                                "preferred": false,
+                                                "ausbildungsStellenAnforderungen": [
+                                                    {
+                                                        "anrechenbareFachgebiete": [
+                                                            285
+                                                        ],
+                                                        "anrechenbareDauerInMonths": 3.0
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "personalInhaltId": 883,
+                                                "ausbildungsInhaltId": 884,
+                                                "name": "Haut- und Geschlechtskrankheiten",
+                                                "minDuration": 3.0,
+                                                "maxDuration": 3.0,
+                                                "monthsCompleted": 0,
+                                                "requiredTags": [],
+                                                "preferred": false,
+                                                "ausbildungsStellenAnforderungen": [
+                                                    {
+                                                        "anrechenbareFachgebiete": [
+                                                            796
+                                                        ],
+                                                        "anrechenbareDauerInMonths": 3.0
+                                                    }
+                                                ]
+                                            }
+                                        ],
+                                        "ausbildungsErfordernisId": 872
+                                    },
+                                    {
+                                        "personalErfordernisId": 887,
+                                        "name": null,
+                                        "duration": 3.0,
+                                        "monthsCompleted": 0,
+                                        "minimalNumberOfPicks": 1,
+                                        "maximumNumberOfPicks": 1,
+                                        "inhalte": [
+                                            {
+                                                "personalInhaltId": 888,
+                                                "ausbildungsInhaltId": 889,
+                                                "name": "Orthopädie und Traumatologie",
+                                                "minDuration": 3.0,
+                                                "maxDuration": 3.0,
+                                                "monthsCompleted": 0,
+                                                "requiredTags": [],
+                                                "preferred": false,
+                                                "ausbildungsStellenAnforderungen": [
+                                                    {
+                                                        "anrechenbareFachgebiete": [
+                                                            587
+                                                        ],
+                                                        "anrechenbareDauerInMonths": 3.0
+                                                    }
+                                                ]
+                                            }
+                                        ],
+                                        "ausbildungsErfordernisId": 886
+                                    },
+                                    {
+                                        "personalErfordernisId": 891,
+                                        "name": null,
+                                        "duration": 3.0,
+                                        "monthsCompleted": 0,
+                                        "minimalNumberOfPicks": 1,
+                                        "maximumNumberOfPicks": 1,
+                                        "inhalte": [
+                                            {
+                                                "personalInhaltId": 892,
+                                                "ausbildungsInhaltId": 893,
+                                                "name": "Kinder- und Jugendheilkunde",
+                                                "minDuration": 3.0,
+                                                "maxDuration": 3.0,
+                                                "monthsCompleted": 0,
+                                                "requiredTags": [],
+                                                "preferred": false,
+                                                "ausbildungsStellenAnforderungen": [
+                                                    {
+                                                        "anrechenbareFachgebiete": [
+                                                            781
+                                                        ],
+                                                        "anrechenbareDauerInMonths": 3.0
+                                                    }
+                                                ]
+                                            }
+                                        ],
+                                        "ausbildungsErfordernisId": 890
+                                    },
+                                    {
+                                        "personalErfordernisId": 895,
+                                        "name": null,
+                                        "duration": 3.0,
+                                        "monthsCompleted": 0,
+                                        "minimalNumberOfPicks": 1,
+                                        "maximumNumberOfPicks": 1,
+                                        "inhalte": [
+                                            {
+                                                "personalInhaltId": 896,
+                                                "ausbildungsInhaltId": 897,
+                                                "name": "Psychiatrie und Psychotherapeutische Medizin",
+                                                "minDuration": 3.0,
+                                                "maxDuration": 3.0,
+                                                "monthsCompleted": 0,
+                                                "requiredTags": [],
+                                                "preferred": false,
+                                                "ausbildungsStellenAnforderungen": [
+                                                    {
+                                                        "anrechenbareFachgebiete": [
+                                                            773
+                                                        ],
+                                                        "anrechenbareDauerInMonths": 3.0
+                                                    }
+                                                ]
+                                            }
+                                        ],
+                                        "ausbildungsErfordernisId": 894
+                                    },
+                                    {
+                                        "personalErfordernisId": 899,
+                                        "name": null,
+                                        "duration": 9.0,
+                                        "monthsCompleted": 0,
+                                        "minimalNumberOfPicks": 1,
+                                        "maximumNumberOfPicks": 1,
+                                        "inhalte": [
+                                            {
+                                                "personalInhaltId": 900,
+                                                "ausbildungsInhaltId": 901,
+                                                "name": "Innere Medizin",
+                                                "minDuration": 9.0,
+                                                "maxDuration": 9.0,
+                                                "monthsCompleted": 0,
+                                                "requiredTags": [],
+                                                "preferred": false,
+                                                "ausbildungsStellenAnforderungen": [
+                                                    {
+                                                        "anrechenbareFachgebiete": [
+                                                            170
+                                                        ],
+                                                        "anrechenbareDauerInMonths": 9.0
+                                                    }
+                                                ]
+                                            }
+                                        ],
+                                        "ausbildungsErfordernisId": 898
+                                    },
+                                    {
+                                        "personalErfordernisId": 903,
+                                        "name": null,
+                                        "duration": 3.0,
+                                        "monthsCompleted": 0,
+                                        "minimalNumberOfPicks": 1,
+                                        "maximumNumberOfPicks": 1,
+                                        "inhalte": [
+                                            {
+                                                "personalInhaltId": 904,
+                                                "ausbildungsInhaltId": 905,
+                                                "name": "Frauenheilkunde und Geburtshilfe",
+                                                "minDuration": 3.0,
+                                                "maxDuration": 3.0,
+                                                "monthsCompleted": 0,
+                                                "requiredTags": [],
+                                                "preferred": false,
+                                                "ausbildungsStellenAnforderungen": [
+                                                    {
+                                                        "anrechenbareFachgebiete": [
+                                                            339
+                                                        ],
+                                                        "anrechenbareDauerInMonths": 3.0
+                                                    }
+                                                ]
+                                            }
+                                        ],
+                                        "ausbildungsErfordernisId": 902
+                                    }
+                                ],
+                                "ausbildungsBlockId": 132,
+                                "ausbildungsTyp": "SPITALSTURNUS"
+                            }
+                            
+                        ]
+                    }
+                ],
+                "organisationsGruppenPriorities": {
+                    "1": 2,
+                    "2": 3,
+                    "3": 3
+                    
+                },
+                "plannedAusbildungsstelleByFachgebieteMonths": {}
+            },
+            {
+                "id": 3,
+                "name": null,
+                "planungsParameter": [
+                    {
+                        "occupationalGroupId": 12,
+                        "hoursPerWeek": 40.0,
+                        "allowedOrgUnits": [
+                            1,2
+                        ],
+                        "startDate": "2024-06-01",
+                        "endDate": "2025-03-28",
+                        "status": "ACTIVE"
+                    },
+                    {
+                        "occupationalGroupId": 12,
+                        "hoursPerWeek": 40.0,
+                        "allowedOrgUnits": [
+                            2,3
+                        ],
+                        "startDate": "2025-03-01",
+                        "endDate": "2028-02-28",
+                        "status": "ACTIVE"
+                    }
+                    
+                ],
+                "unterbrechungszeiten": [],
+                "ausbildungsPfade": [
+                    {
+                        "id": 842,
+                        "startDate": "2024-01-01",
+                        "personId": 3,
+                        "ausbildungsBloecke": [
+                            {
+                                "personalBlockId": 841,
+                                "name": "Basisausbildung",
+                                "erfordernisse": [
+                                    {
+                                        "personalErfordernisId": 838,
+                                        "name": null,
+                                        "duration": 9.0,
+                                        "monthsCompleted": 2.0,
+                                        "minimalNumberOfPicks": 2,
+                                        "maximumNumberOfPicks": 2,
+                                        "inhalte": [
+                                            {
+                                                "personalInhaltId": 839,
+                                                "ausbildungsInhaltId": 815,
+                                                "name": "Chirurgische Fachgebiete",
+                                                "minDuration": 1.0,
+                                                "maxDuration": 8.0,
+                                                "monthsCompleted": 1.0,
+                                                "requiredTags": [
+                                                    10
+                                                ],
+                                                "preferred": false,
+                                                "ausbildungsStellenAnforderungen": []
+                                            },
+                                            {
+                                                "personalInhaltId": 840,
+                                                "ausbildungsInhaltId": 817,
+                                                "name": "Konservative Fachgebiete",
+                                                "minDuration": 1.0,
+                                                "maxDuration": 8.0,
+                                                "monthsCompleted": 1.0,
+                                                "requiredTags": [
+                                                    153
+                                                ],
+                                                "preferred": false,
+                                                "ausbildungsStellenAnforderungen": []
+                                            }
+                                        ],
+                                        "ausbildungsErfordernisId": 812
+                                    }
+                                ],
+                                "ausbildungsBlockId": 4,
+                                "ausbildungsTyp": "BASISAUSBILDUNG"
+                            },
+                            {
+                                "personalBlockId": 906,
+                                "name": "Spitalsturnus",
+                                "erfordernisse": [
+                                    {
+                                        "personalErfordernisId": 873,
+                                        "name": "Wahlfächer",
+                                        "duration": 6.0,
+                                        "monthsCompleted": 0,
+                                        "minimalNumberOfPicks": 2,
+                                        "maximumNumberOfPicks": 2,
+                                        "inhalte": [
+                                            {
+                                                "personalInhaltId": 874,
+                                                "ausbildungsInhaltId": 875,
+                                                "name": "Neurologie",
+                                                "minDuration": 3.0,
+                                                "maxDuration": 3.0,
+                                                "monthsCompleted": 0,
+                                                "requiredTags": [],
+                                                "preferred": false,
+                                                "ausbildungsStellenAnforderungen": [
+                                                    {
+                                                        "anrechenbareFachgebiete": [
+                                                            670
+                                                        ],
+                                                        "anrechenbareDauerInMonths": 3.0
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "personalInhaltId": 876,
+                                                "ausbildungsInhaltId": 877,
+                                                "name": "Urologie",
+                                                "minDuration": 3.0,
+                                                "maxDuration": 3.0,
+                                                "monthsCompleted": 0.0,
+                                                "requiredTags": [],
+                                                "preferred": false,
+                                                "ausbildungsStellenAnforderungen": [
+                                                    {
+                                                        "anrechenbareFachgebiete": [
+                                                            626
+                                                        ],
+                                                        "anrechenbareDauerInMonths": 3.0
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "personalInhaltId": 878,
+                                                "ausbildungsInhaltId": 879,
+                                                "name": "Hals-, Nasen- und Ohrenheilkunde",
+                                                "minDuration": 3.0,
+                                                "maxDuration": 3.0,
+                                                "monthsCompleted": 0.0,
+                                                "requiredTags": [],
+                                                "preferred": false,
+                                                "ausbildungsStellenAnforderungen": [
+                                                    {
+                                                        "anrechenbareFachgebiete": [
+                                                            740
+                                                        ],
+                                                        "anrechenbareDauerInMonths": 3.0
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "personalInhaltId": 881,
+                                                "ausbildungsInhaltId": 882,
+                                                "name": "Anästhesiologie und Intensivmedizin",
+                                                "minDuration": 3.0,
+                                                "maxDuration": 3.0,
+                                                "monthsCompleted": 0.0,
+                                                "requiredTags": [],
+                                                "preferred": false,
+                                                "ausbildungsStellenAnforderungen": [
+                                                    {
+                                                        "anrechenbareFachgebiete": [
+                                                            285
+                                                        ],
+                                                        "anrechenbareDauerInMonths": 3.0
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "personalInhaltId": 883,
+                                                "ausbildungsInhaltId": 884,
+                                                "name": "Haut- und Geschlechtskrankheiten",
+                                                "minDuration": 3.0,
+                                                "maxDuration": 3.0,
+                                                "monthsCompleted": 0,
+                                                "requiredTags": [],
+                                                "preferred": false,
+                                                "ausbildungsStellenAnforderungen": [
+                                                    {
+                                                        "anrechenbareFachgebiete": [
+                                                            796
+                                                        ],
+                                                        "anrechenbareDauerInMonths": 3.0
+                                                    }
+                                                ]
+                                            }
+                                        ],
+                                        "ausbildungsErfordernisId": 872
+                                    },
+                                    {
+                                        "personalErfordernisId": 887,
+                                        "name": null,
+                                        "duration": 3.0,
+                                        "monthsCompleted": 0,
+                                        "minimalNumberOfPicks": 1,
+                                        "maximumNumberOfPicks": 1,
+                                        "inhalte": [
+                                            {
+                                                "personalInhaltId": 888,
+                                                "ausbildungsInhaltId": 889,
+                                                "name": "Orthopädie und Traumatologie",
+                                                "minDuration": 3.0,
+                                                "maxDuration": 3.0,
+                                                "monthsCompleted": 0,
+                                                "requiredTags": [],
+                                                "preferred": false,
+                                                "ausbildungsStellenAnforderungen": [
+                                                    {
+                                                        "anrechenbareFachgebiete": [
+                                                            587
+                                                        ],
+                                                        "anrechenbareDauerInMonths": 3.0
+                                                    }
+                                                ]
+                                            }
+                                        ],
+                                        "ausbildungsErfordernisId": 886
+                                    },
+                                    {
+                                        "personalErfordernisId": 891,
+                                        "name": null,
+                                        "duration": 3.0,
+                                        "monthsCompleted": 0,
+                                        "minimalNumberOfPicks": 1,
+                                        "maximumNumberOfPicks": 1,
+                                        "inhalte": [
+                                            {
+                                                "personalInhaltId": 892,
+                                                "ausbildungsInhaltId": 893,
+                                                "name": "Kinder- und Jugendheilkunde",
+                                                "minDuration": 3.0,
+                                                "maxDuration": 3.0,
+                                                "monthsCompleted": 0,
+                                                "requiredTags": [],
+                                                "preferred": false,
+                                                "ausbildungsStellenAnforderungen": [
+                                                    {
+                                                        "anrechenbareFachgebiete": [
+                                                            781
+                                                        ],
+                                                        "anrechenbareDauerInMonths": 3.0
+                                                    }
+                                                ]
+                                            }
+                                        ],
+                                        "ausbildungsErfordernisId": 890
+                                    },
+                                    {
+                                        "personalErfordernisId": 895,
+                                        "name": null,
+                                        "duration": 3.0,
+                                        "monthsCompleted": 0,
+                                        "minimalNumberOfPicks": 1,
+                                        "maximumNumberOfPicks": 1,
+                                        "inhalte": [
+                                            {
+                                                "personalInhaltId": 896,
+                                                "ausbildungsInhaltId": 897,
+                                                "name": "Psychiatrie und Psychotherapeutische Medizin",
+                                                "minDuration": 3.0,
+                                                "maxDuration": 3.0,
+                                                "monthsCompleted": 0,
+                                                "requiredTags": [],
+                                                "preferred": false,
+                                                "ausbildungsStellenAnforderungen": [
+                                                    {
+                                                        "anrechenbareFachgebiete": [
+                                                            773
+                                                        ],
+                                                        "anrechenbareDauerInMonths": 3.0
+                                                    }
+                                                ]
+                                            }
+                                        ],
+                                        "ausbildungsErfordernisId": 894
+                                    },
+                                    {
+                                        "personalErfordernisId": 899,
+                                        "name": null,
+                                        "duration": 9.0,
+                                        "monthsCompleted": 0,
+                                        "minimalNumberOfPicks": 1,
+                                        "maximumNumberOfPicks": 1,
+                                        "inhalte": [
+                                            {
+                                                "personalInhaltId": 900,
+                                                "ausbildungsInhaltId": 901,
+                                                "name": "Innere Medizin",
+                                                "minDuration": 9.0,
+                                                "maxDuration": 9.0,
+                                                "monthsCompleted": 0,
+                                                "requiredTags": [],
+                                                "preferred": false,
+                                                "ausbildungsStellenAnforderungen": [
+                                                    {
+                                                        "anrechenbareFachgebiete": [
+                                                            170
+                                                        ],
+                                                        "anrechenbareDauerInMonths": 9.0
+                                                    }
+                                                ]
+                                            }
+                                        ],
+                                        "ausbildungsErfordernisId": 898
+                                    },
+                                    {
+                                        "personalErfordernisId": 903,
+                                        "name": null,
+                                        "duration": 3.0,
+                                        "monthsCompleted": 0,
+                                        "minimalNumberOfPicks": 1,
+                                        "maximumNumberOfPicks": 1,
+                                        "inhalte": [
+                                            {
+                                                "personalInhaltId": 904,
+                                                "ausbildungsInhaltId": 905,
+                                                "name": "Frauenheilkunde und Geburtshilfe",
+                                                "minDuration": 3.0,
+                                                "maxDuration": 3.0,
+                                                "monthsCompleted": 0,
+                                                "requiredTags": [],
+                                                "preferred": false,
+                                                "ausbildungsStellenAnforderungen": [
+                                                    {
+                                                        "anrechenbareFachgebiete": [
+                                                            339
+                                                        ],
+                                                        "anrechenbareDauerInMonths": 3.0
+                                                    }
+                                                ]
+                                            }
+                                        ],
+                                        "ausbildungsErfordernisId": 902
+                                    }
+                                ],
+                                "ausbildungsBlockId": 132,
+                                "ausbildungsTyp": "SPITALSTURNUS"
+                            }
+                            
+                        ]
+                    }
+                ],
+                "organisationsGruppenPriorities": {
+                    "1": 1,
+                    "2": 2,
+                    "3": 2
+                    
+                },
+                "plannedAusbildungsstelleByFachgebieteMonths": {}
+            },
+            {
+                "id": 4,
+                "name": null,
+                "planungsParameter": [
+                    {
+                        "occupationalGroupId": 12,
+                        "hoursPerWeek": 40.0,
+                        "allowedOrgUnits": [
+                            1,2
+                        ],
+                        "startDate": "2025-01-01",
+                        "endDate": "2026-12-28",
+                        "status": "ACTIVE"
+                    },
+                    {
+                        "occupationalGroupId": 12,
+                        "hoursPerWeek": 40.0,
+                        "allowedOrgUnits": [
+                            2,3
+                        ],
+                        "startDate": "2027-01-01",
+                        "endDate": "2028-12-28",
+                        "status": "ACTIVE"
+                    }
+                    
+                ],
+                "unterbrechungszeiten": [],
+                "ausbildungsPfade": [
+                    {
+                        "id": 842,
+                        "startDate": "2024-01-01",
+                        "personId": 4,
+                        "ausbildungsBloecke": [
+                            {
+                                "personalBlockId": 841,
+                                "name": "Basisausbildung",
+                                "erfordernisse": [
+                                    {
+                                        "personalErfordernisId": 838,
+                                        "name": null,
+                                        "duration": 9.0,
+                                        "monthsCompleted": 2.0,
+                                        "minimalNumberOfPicks": 2,
+                                        "maximumNumberOfPicks": 2,
+                                        "inhalte": [
+                                            {
+                                                "personalInhaltId": 839,
+                                                "ausbildungsInhaltId": 815,
+                                                "name": "Chirurgische Fachgebiete",
+                                                "minDuration": 1.0,
+                                                "maxDuration": 8.0,
+                                                "monthsCompleted": 0.0,
+                                                "requiredTags": [
+                                                    10
+                                                ],
+                                                "preferred": false,
+                                                "ausbildungsStellenAnforderungen": []
+                                            },
+                                            {
+                                                "personalInhaltId": 840,
+                                                "ausbildungsInhaltId": 817,
+                                                "name": "Konservative Fachgebiete",
+                                                "minDuration": 1.0,
+                                                "maxDuration": 8.0,
+                                                "monthsCompleted": 4.0,
+                                                "requiredTags": [
+                                                    153
+                                                ],
+                                                "preferred": false,
+                                                "ausbildungsStellenAnforderungen": []
+                                            }
+                                        ],
+                                        "ausbildungsErfordernisId": 812
+                                    }
+                                ],
+                                "ausbildungsBlockId": 4,
+                                "ausbildungsTyp": "BASISAUSBILDUNG"
+                            },
+                            {
+                                "personalBlockId": 906,
+                                "name": "Spitalsturnus",
+                                "erfordernisse": [
+                                    {
+                                        "personalErfordernisId": 873,
+                                        "name": "Wahlfächer",
+                                        "duration": 6.0,
+                                        "monthsCompleted": 2.0,
+                                        "minimalNumberOfPicks": 2,
+                                        "maximumNumberOfPicks": 2,
+                                        "inhalte": [
+                                            {
+                                                "personalInhaltId": 874,
+                                                "ausbildungsInhaltId": 875,
+                                                "name": "Neurologie",
+                                                "minDuration": 3.0,
+                                                "maxDuration": 3.0,
+                                                "monthsCompleted": 0,
+                                                "requiredTags": [],
+                                                "preferred": false,
+                                                "ausbildungsStellenAnforderungen": [
+                                                    {
+                                                        "anrechenbareFachgebiete": [
+                                                            670
+                                                        ],
+                                                        "anrechenbareDauerInMonths": 3.0
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "personalInhaltId": 876,
+                                                "ausbildungsInhaltId": 877,
+                                                "name": "Urologie",
+                                                "minDuration": 3.0,
+                                                "maxDuration": 3.0,
+                                                "monthsCompleted": 2.0,
+                                                "requiredTags": [],
+                                                "preferred": false,
+                                                "ausbildungsStellenAnforderungen": [
+                                                    {
+                                                        "anrechenbareFachgebiete": [
+                                                            626
+                                                        ],
+                                                        "anrechenbareDauerInMonths": 3.0
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "personalInhaltId": 878,
+                                                "ausbildungsInhaltId": 879,
+                                                "name": "Hals-, Nasen- und Ohrenheilkunde",
+                                                "minDuration": 3.0,
+                                                "maxDuration": 3.0,
+                                                "monthsCompleted": 0.0,
+                                                "requiredTags": [],
+                                                "preferred": false,
+                                                "ausbildungsStellenAnforderungen": [
+                                                    {
+                                                        "anrechenbareFachgebiete": [
+                                                            740
+                                                        ],
+                                                        "anrechenbareDauerInMonths": 3.0
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "personalInhaltId": 881,
+                                                "ausbildungsInhaltId": 882,
+                                                "name": "Anästhesiologie und Intensivmedizin",
+                                                "minDuration": 3.0,
+                                                "maxDuration": 3.0,
+                                                "monthsCompleted": 0.0,
+                                                "requiredTags": [],
+                                                "preferred": false,
+                                                "ausbildungsStellenAnforderungen": [
+                                                    {
+                                                        "anrechenbareFachgebiete": [
+                                                            285
+                                                        ],
+                                                        "anrechenbareDauerInMonths": 3.0
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "personalInhaltId": 883,
+                                                "ausbildungsInhaltId": 884,
+                                                "name": "Haut- und Geschlechtskrankheiten",
+                                                "minDuration": 3.0,
+                                                "maxDuration": 3.0,
+                                                "monthsCompleted": 0,
+                                                "requiredTags": [],
+                                                "preferred": false,
+                                                "ausbildungsStellenAnforderungen": [
+                                                    {
+                                                        "anrechenbareFachgebiete": [
+                                                            796
+                                                        ],
+                                                        "anrechenbareDauerInMonths": 3.0
+                                                    }
+                                                ]
+                                            }
+                                        ],
+                                        "ausbildungsErfordernisId": 872
+                                    },
+                                    {
+                                        "personalErfordernisId": 887,
+                                        "name": null,
+                                        "duration": 3.0,
+                                        "monthsCompleted": 3.0,
+                                        "minimalNumberOfPicks": 1,
+                                        "maximumNumberOfPicks": 1,
+                                        "inhalte": [
+                                            {
+                                                "personalInhaltId": 888,
+                                                "ausbildungsInhaltId": 889,
+                                                "name": "Orthopädie und Traumatologie",
+                                                "minDuration": 3.0,
+                                                "maxDuration": 3.0,
+                                                "monthsCompleted": 3.0,
+                                                "requiredTags": [],
+                                                "preferred": false,
+                                                "ausbildungsStellenAnforderungen": [
+                                                    {
+                                                        "anrechenbareFachgebiete": [
+                                                            587
+                                                        ],
+                                                        "anrechenbareDauerInMonths": 3.0
+                                                    }
+                                                ]
+                                            }
+                                        ],
+                                        "ausbildungsErfordernisId": 886
+                                    },
+                                    {
+                                        "personalErfordernisId": 891,
+                                        "name": null,
+                                        "duration": 3.0,
+                                        "monthsCompleted": 0,
+                                        "minimalNumberOfPicks": 1,
+                                        "maximumNumberOfPicks": 1,
+                                        "inhalte": [
+                                            {
+                                                "personalInhaltId": 892,
+                                                "ausbildungsInhaltId": 893,
+                                                "name": "Kinder- und Jugendheilkunde",
+                                                "minDuration": 3.0,
+                                                "maxDuration": 3.0,
+                                                "monthsCompleted": 0,
+                                                "requiredTags": [],
+                                                "preferred": false,
+                                                "ausbildungsStellenAnforderungen": [
+                                                    {
+                                                        "anrechenbareFachgebiete": [
+                                                            781
+                                                        ],
+                                                        "anrechenbareDauerInMonths": 3.0
+                                                    }
+                                                ]
+                                            }
+                                        ],
+                                        "ausbildungsErfordernisId": 890
+                                    },
+                                    {
+                                        "personalErfordernisId": 895,
+                                        "name": null,
+                                        "duration": 3.0,
+                                        "monthsCompleted": 0,
+                                        "minimalNumberOfPicks": 1,
+                                        "maximumNumberOfPicks": 1,
+                                        "inhalte": [
+                                            {
+                                                "personalInhaltId": 896,
+                                                "ausbildungsInhaltId": 897,
+                                                "name": "Psychiatrie und Psychotherapeutische Medizin",
+                                                "minDuration": 3.0,
+                                                "maxDuration": 3.0,
+                                                "monthsCompleted": 0,
+                                                "requiredTags": [],
+                                                "preferred": false,
+                                                "ausbildungsStellenAnforderungen": [
+                                                    {
+                                                        "anrechenbareFachgebiete": [
+                                                            773
+                                                        ],
+                                                        "anrechenbareDauerInMonths": 3.0
+                                                    }
+                                                ]
+                                            }
+                                        ],
+                                        "ausbildungsErfordernisId": 894
+                                    },
+                                    {
+                                        "personalErfordernisId": 899,
+                                        "name": null,
+                                        "duration": 9.0,
+                                        "monthsCompleted": 0,
+                                        "minimalNumberOfPicks": 1,
+                                        "maximumNumberOfPicks": 1,
+                                        "inhalte": [
+                                            {
+                                                "personalInhaltId": 900,
+                                                "ausbildungsInhaltId": 901,
+                                                "name": "Innere Medizin",
+                                                "minDuration": 9.0,
+                                                "maxDuration": 9.0,
+                                                "monthsCompleted": 0,
+                                                "requiredTags": [],
+                                                "preferred": false,
+                                                "ausbildungsStellenAnforderungen": [
+                                                    {
+                                                        "anrechenbareFachgebiete": [
+                                                            170
+                                                        ],
+                                                        "anrechenbareDauerInMonths": 9.0
+                                                    }
+                                                ]
+                                            }
+                                        ],
+                                        "ausbildungsErfordernisId": 898
+                                    },
+                                    {
+                                        "personalErfordernisId": 903,
+                                        "name": null,
+                                        "duration": 3.0,
+                                        "monthsCompleted": 0,
+                                        "minimalNumberOfPicks": 1,
+                                        "maximumNumberOfPicks": 1,
+                                        "inhalte": [
+                                            {
+                                                "personalInhaltId": 904,
+                                                "ausbildungsInhaltId": 905,
+                                                "name": "Frauenheilkunde und Geburtshilfe",
+                                                "minDuration": 3.0,
+                                                "maxDuration": 3.0,
+                                                "monthsCompleted": 0,
+                                                "requiredTags": [],
+                                                "preferred": false,
+                                                "ausbildungsStellenAnforderungen": [
+                                                    {
+                                                        "anrechenbareFachgebiete": [
+                                                            339
+                                                        ],
+                                                        "anrechenbareDauerInMonths": 3.0
+                                                    }
+                                                ]
+                                            }
+                                        ],
+                                        "ausbildungsErfordernisId": 902
+                                    }
+                                ],
+                                "ausbildungsBlockId": 132,
+                                "ausbildungsTyp": "SPITALSTURNUS"
+                            }
+                            
+                        ]
+                    }
+                ],
+                "organisationsGruppenPriorities": {
+                    "1": 3,
+                    "2": 1,
+                    "3": 3
+                    
+                },
+                "plannedAusbildungsstelleByFachgebieteMonths": {}
+            },
+            {
+                "id": 5,
+                "name": null,
+                "planungsParameter": [
+                    {
+                        "occupationalGroupId": 12,
+                        "hoursPerWeek": 40.0,
+                        "allowedOrgUnits": [
+                            1,2
+                        ],
+                        "startDate": "2024-01-01",
+                        "endDate": "2024-05-28",
+                        "status": "ACTIVE"
+                    },
+                    {
+                        "occupationalGroupId": 12,
+                        "hoursPerWeek": 40.0,
+                        "allowedOrgUnits": [
+                            2,3
+                        ],
+                        "startDate": "2024-06-01",
+                        "endDate": "2027-12-28",
+                        "status": "ACTIVE"
+                    }
+                    
+                ],
+                "unterbrechungszeiten": [],
+                "ausbildungsPfade": [
+                    {
+                        "id": 842,
+                        "startDate": "2024-01-01",
+                        "personId": 5,
+                        "ausbildungsBloecke": [
+                            {
+                                "personalBlockId": 841,
+                                "name": "Basisausbildung",
+                                "erfordernisse": [
+                                    {
+                                        "personalErfordernisId": 838,
+                                        "name": null,
+                                        "duration": 9.0,
+                                        "monthsCompleted": 7.0,
+                                        "minimalNumberOfPicks": 2,
+                                        "maximumNumberOfPicks": 2,
+                                        "inhalte": [
+                                            {
+                                                "personalInhaltId": 839,
+                                                "ausbildungsInhaltId": 815,
+                                                "name": "Chirurgische Fachgebiete",
+                                                "minDuration": 1.0,
+                                                "maxDuration": 8.0,
+                                                "monthsCompleted": 3.0,
+                                                "requiredTags": [
+                                                    10
+                                                ],
+                                                "preferred": false,
+                                                "ausbildungsStellenAnforderungen": []
+                                            },
+                                            {
+                                                "personalInhaltId": 840,
+                                                "ausbildungsInhaltId": 817,
+                                                "name": "Konservative Fachgebiete",
+                                                "minDuration": 1.0,
+                                                "maxDuration": 8.0,
+                                                "monthsCompleted": 4.0,
+                                                "requiredTags": [
+                                                    153
+                                                ],
+                                                "preferred": false,
+                                                "ausbildungsStellenAnforderungen": []
+                                            }
+                                        ],
+                                        "ausbildungsErfordernisId": 812
+                                    }
+                                ],
+                                "ausbildungsBlockId": 4,
+                                "ausbildungsTyp": "BASISAUSBILDUNG"
+                            },
+                            {
+                                "personalBlockId": 906,
+                                "name": "Spitalsturnus",
+                                "erfordernisse": [
+                                    {
+                                        "personalErfordernisId": 873,
+                                        "name": "Wahlfächer",
+                                        "duration": 6.0,
+                                        "monthsCompleted": 0,
+                                        "minimalNumberOfPicks": 2,
+                                        "maximumNumberOfPicks": 2,
+                                        "inhalte": [
+                                            {
+                                                "personalInhaltId": 874,
+                                                "ausbildungsInhaltId": 875,
+                                                "name": "Neurologie",
+                                                "minDuration": 3.0,
+                                                "maxDuration": 3.0,
+                                                "monthsCompleted": 0,
+                                                "requiredTags": [],
+                                                "preferred": false,
+                                                "ausbildungsStellenAnforderungen": [
+                                                    {
+                                                        "anrechenbareFachgebiete": [
+                                                            670
+                                                        ],
+                                                        "anrechenbareDauerInMonths": 3.0
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "personalInhaltId": 876,
+                                                "ausbildungsInhaltId": 877,
+                                                "name": "Urologie",
+                                                "minDuration": 3.0,
+                                                "maxDuration": 3.0,
+                                                "monthsCompleted": 0.0,
+                                                "requiredTags": [],
+                                                "preferred": false,
+                                                "ausbildungsStellenAnforderungen": [
+                                                    {
+                                                        "anrechenbareFachgebiete": [
+                                                            626
+                                                        ],
+                                                        "anrechenbareDauerInMonths": 3.0
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "personalInhaltId": 878,
+                                                "ausbildungsInhaltId": 879,
+                                                "name": "Hals-, Nasen- und Ohrenheilkunde",
+                                                "minDuration": 3.0,
+                                                "maxDuration": 3.0,
+                                                "monthsCompleted": 0.0,
+                                                "requiredTags": [],
+                                                "preferred": false,
+                                                "ausbildungsStellenAnforderungen": [
+                                                    {
+                                                        "anrechenbareFachgebiete": [
+                                                            740
+                                                        ],
+                                                        "anrechenbareDauerInMonths": 3.0
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "personalInhaltId": 881,
+                                                "ausbildungsInhaltId": 882,
+                                                "name": "Anästhesiologie und Intensivmedizin",
+                                                "minDuration": 3.0,
+                                                "maxDuration": 3.0,
+                                                "monthsCompleted": 0.0,
+                                                "requiredTags": [],
+                                                "preferred": false,
+                                                "ausbildungsStellenAnforderungen": [
+                                                    {
+                                                        "anrechenbareFachgebiete": [
+                                                            285
+                                                        ],
+                                                        "anrechenbareDauerInMonths": 3.0
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "personalInhaltId": 883,
+                                                "ausbildungsInhaltId": 884,
+                                                "name": "Haut- und Geschlechtskrankheiten",
+                                                "minDuration": 3.0,
+                                                "maxDuration": 3.0,
+                                                "monthsCompleted": 0,
+                                                "requiredTags": [],
+                                                "preferred": false,
+                                                "ausbildungsStellenAnforderungen": [
+                                                    {
+                                                        "anrechenbareFachgebiete": [
+                                                            796
+                                                        ],
+                                                        "anrechenbareDauerInMonths": 3.0
+                                                    }
+                                                ]
+                                            }
+                                        ],
+                                        "ausbildungsErfordernisId": 872
+                                    },
+                                    {
+                                        "personalErfordernisId": 887,
+                                        "name": null,
+                                        "duration": 3.0,
+                                        "monthsCompleted": 0,
+                                        "minimalNumberOfPicks": 1,
+                                        "maximumNumberOfPicks": 1,
+                                        "inhalte": [
+                                            {
+                                                "personalInhaltId": 888,
+                                                "ausbildungsInhaltId": 889,
+                                                "name": "Orthopädie und Traumatologie",
+                                                "minDuration": 3.0,
+                                                "maxDuration": 3.0,
+                                                "monthsCompleted": 0,
+                                                "requiredTags": [],
+                                                "preferred": false,
+                                                "ausbildungsStellenAnforderungen": [
+                                                    {
+                                                        "anrechenbareFachgebiete": [
+                                                            587
+                                                        ],
+                                                        "anrechenbareDauerInMonths": 3.0
+                                                    }
+                                                ]
+                                            }
+                                        ],
+                                        "ausbildungsErfordernisId": 886
+                                    },
+                                    {
+                                        "personalErfordernisId": 891,
+                                        "name": null,
+                                        "duration": 3.0,
+                                        "monthsCompleted": 0,
+                                        "minimalNumberOfPicks": 1,
+                                        "maximumNumberOfPicks": 1,
+                                        "inhalte": [
+                                            {
+                                                "personalInhaltId": 892,
+                                                "ausbildungsInhaltId": 893,
+                                                "name": "Kinder- und Jugendheilkunde",
+                                                "minDuration": 3.0,
+                                                "maxDuration": 3.0,
+                                                "monthsCompleted": 0,
+                                                "requiredTags": [],
+                                                "preferred": false,
+                                                "ausbildungsStellenAnforderungen": [
+                                                    {
+                                                        "anrechenbareFachgebiete": [
+                                                            781
+                                                        ],
+                                                        "anrechenbareDauerInMonths": 3.0
+                                                    }
+                                                ]
+                                            }
+                                        ],
+                                        "ausbildungsErfordernisId": 890
+                                    },
+                                    {
+                                        "personalErfordernisId": 895,
+                                        "name": null,
+                                        "duration": 3.0,
+                                        "monthsCompleted": 0,
+                                        "minimalNumberOfPicks": 1,
+                                        "maximumNumberOfPicks": 1,
+                                        "inhalte": [
+                                            {
+                                                "personalInhaltId": 896,
+                                                "ausbildungsInhaltId": 897,
+                                                "name": "Psychiatrie und Psychotherapeutische Medizin",
+                                                "minDuration": 3.0,
+                                                "maxDuration": 3.0,
+                                                "monthsCompleted": 0,
+                                                "requiredTags": [],
+                                                "preferred": false,
+                                                "ausbildungsStellenAnforderungen": [
+                                                    {
+                                                        "anrechenbareFachgebiete": [
+                                                            773
+                                                        ],
+                                                        "anrechenbareDauerInMonths": 3.0
+                                                    }
+                                                ]
+                                            }
+                                        ],
+                                        "ausbildungsErfordernisId": 894
+                                    },
+                                    {
+                                        "personalErfordernisId": 899,
+                                        "name": null,
+                                        "duration": 9.0,
+                                        "monthsCompleted": 0,
+                                        "minimalNumberOfPicks": 1,
+                                        "maximumNumberOfPicks": 1,
+                                        "inhalte": [
+                                            {
+                                                "personalInhaltId": 900,
+                                                "ausbildungsInhaltId": 901,
+                                                "name": "Innere Medizin",
+                                                "minDuration": 9.0,
+                                                "maxDuration": 9.0,
+                                                "monthsCompleted": 0,
+                                                "requiredTags": [],
+                                                "preferred": false,
+                                                "ausbildungsStellenAnforderungen": [
+                                                    {
+                                                        "anrechenbareFachgebiete": [
+                                                            170
+                                                        ],
+                                                        "anrechenbareDauerInMonths": 9.0
+                                                    }
+                                                ]
+                                            }
+                                        ],
+                                        "ausbildungsErfordernisId": 898
+                                    },
+                                    {
+                                        "personalErfordernisId": 903,
+                                        "name": null,
+                                        "duration": 3.0,
+                                        "monthsCompleted": 0,
+                                        "minimalNumberOfPicks": 1,
+                                        "maximumNumberOfPicks": 1,
+                                        "inhalte": [
+                                            {
+                                                "personalInhaltId": 904,
+                                                "ausbildungsInhaltId": 905,
+                                                "name": "Frauenheilkunde und Geburtshilfe",
+                                                "minDuration": 3.0,
+                                                "maxDuration": 3.0,
+                                                "monthsCompleted": 0,
+                                                "requiredTags": [],
+                                                "preferred": false,
+                                                "ausbildungsStellenAnforderungen": [
+                                                    {
+                                                        "anrechenbareFachgebiete": [
+                                                            339
+                                                        ],
+                                                        "anrechenbareDauerInMonths": 3.0
+                                                    }
+                                                ]
+                                            }
+                                        ],
+                                        "ausbildungsErfordernisId": 902
+                                    }
+                                ],
+                                "ausbildungsBlockId": 132,
+                                "ausbildungsTyp": "SPITALSTURNUS"
+                            }
+                            
+                        ]
+                    }
+                ],
+                "organisationsGruppenPriorities": {
+                    "1": 3,
+                    "2": 3,
+                    "3": 3
+                    
+                },
+                "plannedAusbildungsstelleByFachgebieteMonths": {}
+            },
+            {
+                "id": 6,
+                "name": null,
+                "planungsParameter": [
+                    {
+                        "occupationalGroupId": 12,
+                        "hoursPerWeek": 40.0,
+                        "allowedOrgUnits": [
+                            1,2
+                        ],
+                        "startDate": "2024-01-01",
+                        "endDate": "2024-10-28",
+                        "status": "ACTIVE"
+                    },
+                    {
+                        "occupationalGroupId": 12,
+                        "hoursPerWeek": 40.0,
+                        "allowedOrgUnits": [
+                            2,3
+                        ],
+                        "startDate": "2024-11-01",
+                        "endDate": "2027-12-28",
+                        "status": "ACTIVE"
+                    }
+                    
+                ],
+                "unterbrechungszeiten": [],
+                "ausbildungsPfade": [
+                    {
+                        "id": 842,
+                        "startDate": "2024-01-01",
+                        "personId": 6,
+                        "ausbildungsBloecke": [
+                            {
+                                "personalBlockId": 841,
+                                "name": "Basisausbildung",
+                                "erfordernisse": [
+                                    {
+                                        "personalErfordernisId": 838,
+                                        "name": null,
+                                        "duration": 9.0,
+                                        "monthsCompleted": 3.0,
+                                        "minimalNumberOfPicks": 2,
+                                        "maximumNumberOfPicks": 2,
+                                        "inhalte": [
+                                            {
+                                                "personalInhaltId": 839,
+                                                "ausbildungsInhaltId": 815,
+                                                "name": "Chirurgische Fachgebiete",
+                                                "minDuration": 3.0,
+                                                "maxDuration": 8.0,
+                                                "monthsCompleted": 3.0,
+                                                "requiredTags": [
+                                                    10
+                                                ],
+                                                "preferred": false,
+                                                "ausbildungsStellenAnforderungen": []
+                                            },
+                                            {
+                                                "personalInhaltId": 840,
+                                                "ausbildungsInhaltId": 817,
+                                                "name": "Konservative Fachgebiete",
+                                                "minDuration": 1.0,
+                                                "maxDuration": 8.0,
+                                                "monthsCompleted": 0.0,
+                                                "requiredTags": [
+                                                    153
+                                                ],
+                                                "preferred": false,
+                                                "ausbildungsStellenAnforderungen": []
+                                            }
+                                        ],
+                                        "ausbildungsErfordernisId": 812
+                                    }
+                                ],
+                                "ausbildungsBlockId": 4,
+                                "ausbildungsTyp": "BASISAUSBILDUNG"
+                            },
+                            {
+                                "personalBlockId": 906,
+                                "name": "Spitalsturnus",
+                                "erfordernisse": [
+                                    {
+                                        "personalErfordernisId": 873,
+                                        "name": "Wahlfächer",
+                                        "duration": 6.0,
+                                        "monthsCompleted": 1.0,
+                                        "minimalNumberOfPicks": 2,
+                                        "maximumNumberOfPicks": 2,
+                                        "inhalte": [
+                                            {
+                                                "personalInhaltId": 874,
+                                                "ausbildungsInhaltId": 875,
+                                                "name": "Neurologie",
+                                                "minDuration": 3.0,
+                                                "maxDuration": 3.0,
+                                                "monthsCompleted": 0,
+                                                "requiredTags": [],
+                                                "preferred": false,
+                                                "ausbildungsStellenAnforderungen": [
+                                                    {
+                                                        "anrechenbareFachgebiete": [
+                                                            670
+                                                        ],
+                                                        "anrechenbareDauerInMonths": 3.0
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "personalInhaltId": 876,
+                                                "ausbildungsInhaltId": 877,
+                                                "name": "Urologie",
+                                                "minDuration": 3.0,
+                                                "maxDuration": 3.0,
+                                                "monthsCompleted": 0.0,
+                                                "requiredTags": [],
+                                                "preferred": false,
+                                                "ausbildungsStellenAnforderungen": [
+                                                    {
+                                                        "anrechenbareFachgebiete": [
+                                                            626
+                                                        ],
+                                                        "anrechenbareDauerInMonths": 3.0
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "personalInhaltId": 878,
+                                                "ausbildungsInhaltId": 879,
+                                                "name": "Hals-, Nasen- und Ohrenheilkunde",
+                                                "minDuration": 3.0,
+                                                "maxDuration": 3.0,
+                                                "monthsCompleted": 1.0,
+                                                "requiredTags": [],
+                                                "preferred": false,
+                                                "ausbildungsStellenAnforderungen": [
+                                                    {
+                                                        "anrechenbareFachgebiete": [
+                                                            740
+                                                        ],
+                                                        "anrechenbareDauerInMonths": 3.0
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "personalInhaltId": 881,
+                                                "ausbildungsInhaltId": 882,
+                                                "name": "Anästhesiologie und Intensivmedizin",
+                                                "minDuration": 3.0,
+                                                "maxDuration": 3.0,
+                                                "monthsCompleted": 0.0,
+                                                "requiredTags": [],
+                                                "preferred": false,
+                                                "ausbildungsStellenAnforderungen": [
+                                                    {
+                                                        "anrechenbareFachgebiete": [
+                                                            285
+                                                        ],
+                                                        "anrechenbareDauerInMonths": 3.0
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "personalInhaltId": 883,
+                                                "ausbildungsInhaltId": 884,
+                                                "name": "Haut- und Geschlechtskrankheiten",
+                                                "minDuration": 3.0,
+                                                "maxDuration": 3.0,
+                                                "monthsCompleted": 0,
+                                                "requiredTags": [],
+                                                "preferred": false,
+                                                "ausbildungsStellenAnforderungen": [
+                                                    {
+                                                        "anrechenbareFachgebiete": [
+                                                            796
+                                                        ],
+                                                        "anrechenbareDauerInMonths": 3.0
+                                                    }
+                                                ]
+                                            }
+                                        ],
+                                        "ausbildungsErfordernisId": 872
+                                    },
+                                    {
+                                        "personalErfordernisId": 887,
+                                        "name": null,
+                                        "duration": 3.0,
+                                        "monthsCompleted": 0,
+                                        "minimalNumberOfPicks": 1,
+                                        "maximumNumberOfPicks": 1,
+                                        "inhalte": [
+                                            {
+                                                "personalInhaltId": 888,
+                                                "ausbildungsInhaltId": 889,
+                                                "name": "Orthopädie und Traumatologie",
+                                                "minDuration": 3.0,
+                                                "maxDuration": 3.0,
+                                                "monthsCompleted": 0,
+                                                "requiredTags": [],
+                                                "preferred": false,
+                                                "ausbildungsStellenAnforderungen": [
+                                                    {
+                                                        "anrechenbareFachgebiete": [
+                                                            587
+                                                        ],
+                                                        "anrechenbareDauerInMonths": 3.0
+                                                    }
+                                                ]
+                                            }
+                                        ],
+                                        "ausbildungsErfordernisId": 886
+                                    },
+                                    {
+                                        "personalErfordernisId": 891,
+                                        "name": null,
+                                        "duration": 3.0,
+                                        "monthsCompleted": 0,
+                                        "minimalNumberOfPicks": 1,
+                                        "maximumNumberOfPicks": 1,
+                                        "inhalte": [
+                                            {
+                                                "personalInhaltId": 892,
+                                                "ausbildungsInhaltId": 893,
+                                                "name": "Kinder- und Jugendheilkunde",
+                                                "minDuration": 3.0,
+                                                "maxDuration": 3.0,
+                                                "monthsCompleted": 0,
+                                                "requiredTags": [],
+                                                "preferred": false,
+                                                "ausbildungsStellenAnforderungen": [
+                                                    {
+                                                        "anrechenbareFachgebiete": [
+                                                            781
+                                                        ],
+                                                        "anrechenbareDauerInMonths": 3.0
+                                                    }
+                                                ]
+                                            }
+                                        ],
+                                        "ausbildungsErfordernisId": 890
+                                    },
+                                    {
+                                        "personalErfordernisId": 895,
+                                        "name": null,
+                                        "duration": 3.0,
+                                        "monthsCompleted": 0,
+                                        "minimalNumberOfPicks": 1,
+                                        "maximumNumberOfPicks": 1,
+                                        "inhalte": [
+                                            {
+                                                "personalInhaltId": 896,
+                                                "ausbildungsInhaltId": 897,
+                                                "name": "Psychiatrie und Psychotherapeutische Medizin",
+                                                "minDuration": 3.0,
+                                                "maxDuration": 3.0,
+                                                "monthsCompleted": 0,
+                                                "requiredTags": [],
+                                                "preferred": false,
+                                                "ausbildungsStellenAnforderungen": [
+                                                    {
+                                                        "anrechenbareFachgebiete": [
+                                                            773
+                                                        ],
+                                                        "anrechenbareDauerInMonths": 3.0
+                                                    }
+                                                ]
+                                            }
+                                        ],
+                                        "ausbildungsErfordernisId": 894
+                                    },
+                                    {
+                                        "personalErfordernisId": 899,
+                                        "name": null,
+                                        "duration": 9.0,
+                                        "monthsCompleted": 0,
+                                        "minimalNumberOfPicks": 1,
+                                        "maximumNumberOfPicks": 1,
+                                        "inhalte": [
+                                            {
+                                                "personalInhaltId": 900,
+                                                "ausbildungsInhaltId": 901,
+                                                "name": "Innere Medizin",
+                                                "minDuration": 9.0,
+                                                "maxDuration": 9.0,
+                                                "monthsCompleted": 0,
+                                                "requiredTags": [],
+                                                "preferred": false,
+                                                "ausbildungsStellenAnforderungen": [
+                                                    {
+                                                        "anrechenbareFachgebiete": [
+                                                            170
+                                                        ],
+                                                        "anrechenbareDauerInMonths": 9.0
+                                                    }
+                                                ]
+                                            }
+                                        ],
+                                        "ausbildungsErfordernisId": 898
+                                    },
+                                    {
+                                        "personalErfordernisId": 903,
+                                        "name": null,
+                                        "duration": 3.0,
+                                        "monthsCompleted": 0,
+                                        "minimalNumberOfPicks": 1,
+                                        "maximumNumberOfPicks": 1,
+                                        "inhalte": [
+                                            {
+                                                "personalInhaltId": 904,
+                                                "ausbildungsInhaltId": 905,
+                                                "name": "Frauenheilkunde und Geburtshilfe",
+                                                "minDuration": 3.0,
+                                                "maxDuration": 3.0,
+                                                "monthsCompleted": 0,
+                                                "requiredTags": [],
+                                                "preferred": false,
+                                                "ausbildungsStellenAnforderungen": [
+                                                    {
+                                                        "anrechenbareFachgebiete": [
+                                                            339
+                                                        ],
+                                                        "anrechenbareDauerInMonths": 3.0
+                                                    }
+                                                ]
+                                            }
+                                        ],
+                                        "ausbildungsErfordernisId": 902
+                                    }
+                                ],
+                                "ausbildungsBlockId": 132,
+                                "ausbildungsTyp": "SPITALSTURNUS"
+                            }
+                            
+                        ]
+                    }
+                ],
+                "organisationsGruppenPriorities": {
+                    "1": 3,
+                    "2": 1,
+                    "3": 1
+                    
+                },
+                "plannedAusbildungsstelleByFachgebieteMonths": {}
+            },
+            {
+                "id": 7,
+                "name": null,
+                "planungsParameter": [
+                    {
+                        "occupationalGroupId": 12,
+                        "hoursPerWeek": 40.0,
+                        "allowedOrgUnits": [
+                            1,2
+                        ],
+                        "startDate": "2025-01-01",
+                        "endDate": "2025-05-28",
+                        "status": "ACTIVE"
+                    }
+                    
+                ],
+                "unterbrechungszeiten": [],
+                "ausbildungsPfade": [
+                    {
+                        "id": 842,
+                        "startDate": "2024-01-01",
+                        "personId": 7,
+                        "ausbildungsBloecke": [
+                            {
+                                "personalBlockId": 841,
+                                "name": "Basisausbildung",
+                                "erfordernisse": [
+                                    {
+                                        "personalErfordernisId": 838,
+                                        "name": null,
+                                        "duration": 9.0,
+                                        "monthsCompleted": 4.0,
+                                        "minimalNumberOfPicks": 2,
+                                        "maximumNumberOfPicks": 2,
+                                        "inhalte": [
+                                            {
+                                                "personalInhaltId": 839,
+                                                "ausbildungsInhaltId": 815,
+                                                "name": "Chirurgische Fachgebiete",
+                                                "minDuration": 1.0,
+                                                "maxDuration": 8.0,
+                                                "monthsCompleted": 3.0,
+                                                "requiredTags": [
+                                                    10
+                                                ],
+                                                "preferred": false,
+                                                "ausbildungsStellenAnforderungen": []
+                                            },
+                                            {
+                                                "personalInhaltId": 840,
+                                                "ausbildungsInhaltId": 817,
+                                                "name": "Konservative Fachgebiete",
+                                                "minDuration": 1.0,
+                                                "maxDuration": 8.0,
+                                                "monthsCompleted": 1.0,
+                                                "requiredTags": [
+                                                    153
+                                                ],
+                                                "preferred": false,
+                                                "ausbildungsStellenAnforderungen": []
+                                            }
+                                        ],
+                                        "ausbildungsErfordernisId": 812
+                                    }
+                                ],
+                                "ausbildungsBlockId": 4,
+                                "ausbildungsTyp": "BASISAUSBILDUNG"
+                            }
+   
+                        ]
+                    }
+                ],
+                "organisationsGruppenPriorities": {
+                    "1": 2,
+                    "2": 3,
+                    "3": 2
+                    
+                },
+                "plannedAusbildungsstelleByFachgebieteMonths": {}
+            },
+            {
+                "id": 8,
+                "name": null,
+                "planungsParameter": [
+                    {
+                        "occupationalGroupId": 12,
+                        "hoursPerWeek": 40.0,
+                        "allowedOrgUnits": [
+                            1,2
+                        ],
+                        "startDate": "2024-03-01",
+                        "endDate": "2025-04-01",
+                        "status": "ACTIVE"
+                    }
+                    
+                ],
+                "unterbrechungszeiten": [],
+                "ausbildungsPfade": [
+                    {
+                        "id": 842,
+                        "startDate": "2024-01-01",
+                        "personId": 8,
+                        "ausbildungsBloecke": [
+                            {
+                                "personalBlockId": 841,
+                                "name": "Basisausbildung",
+                                "erfordernisse": [
+                                    {
+                                        "personalErfordernisId": 838,
+                                        "name": null,
+                                        "duration": 9.0,
+                                        "monthsCompleted": 10.0,
+                                        "minimalNumberOfPicks": 2,
+                                        "maximumNumberOfPicks": 2,
+                                        "inhalte": [
+                                            {
+                                                "personalInhaltId": 839,
+                                                "ausbildungsInhaltId": 815,
+                                                "name": "Chirurgische Fachgebiete",
+                                                "minDuration": 1.0,
+                                                "maxDuration": 8.0,
+                                                "monthsCompleted": 1.0,
+                                                "requiredTags": [
+                                                    10
+                                                ],
+                                                "preferred": false,
+                                                "ausbildungsStellenAnforderungen": []
+                                            },
+                                            {
+                                                "personalInhaltId": 840,
+                                                "ausbildungsInhaltId": 817,
+                                                "name": "Konservative Fachgebiete",
+                                                "minDuration": 1.0,
+                                                "maxDuration": 8.0,
+                                                "monthsCompleted": 9.0,
+                                                "requiredTags": [
+                                                    153
+                                                ],
+                                                "preferred": false,
+                                                "ausbildungsStellenAnforderungen": []
+                                            }
+                                        ],
+                                        "ausbildungsErfordernisId": 812
+                                    }
+                                ],
+                                "ausbildungsBlockId": 4,
+                                "ausbildungsTyp": "BASISAUSBILDUNG"
+                            }
+   
+                        ]
+                    }
+                ],
+                "organisationsGruppenPriorities": {
+                    "1": 3,
+                    "2": 1,
+                    "3": 1
+                    
+                },
+                "plannedAusbildungsstelleByFachgebieteMonths": {}
+            },
+            {
+                "id": 9,
+                "name": null,
+                "planungsParameter": [
+                    {
+                        "occupationalGroupId": 12,
+                        "hoursPerWeek": 40.0,
+                        "allowedOrgUnits": [
+                            2,3
+                        ],
+                        "startDate": "2024-01-01",
+                        "endDate": "2027-12-28",
+                        "status": "ACTIVE"
+                    }
+                    
+                ],
+                "unterbrechungszeiten": [],
+                "ausbildungsPfade": [
+                    {
+                        "id": 842,
+                        "startDate": "2024-01-01",
+                        "personId": 9,
+                        "ausbildungsBloecke": [
+                            {
+                                "personalBlockId": 906,
+                                "name": "Spitalsturnus",
+                                "erfordernisse": [
+                                    {
+                                        "personalErfordernisId": 873,
+                                        "name": "Wahlfächer",
+                                        "duration": 6.0,
+                                        "monthsCompleted": 0,
+                                        "minimalNumberOfPicks": 2,
+                                        "maximumNumberOfPicks": 2,
+                                        "inhalte": [
+                                            {
+                                                "personalInhaltId": 874,
+                                                "ausbildungsInhaltId": 875,
+                                                "name": "Neurologie",
+                                                "minDuration": 3.0,
+                                                "maxDuration": 3.0,
+                                                "monthsCompleted": 0,
+                                                "requiredTags": [],
+                                                "preferred": false,
+                                                "ausbildungsStellenAnforderungen": [
+                                                    {
+                                                        "anrechenbareFachgebiete": [
+                                                            670
+                                                        ],
+                                                        "anrechenbareDauerInMonths": 3.0
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "personalInhaltId": 876,
+                                                "ausbildungsInhaltId": 877,
+                                                "name": "Urologie",
+                                                "minDuration": 3.0,
+                                                "maxDuration": 3.0,
+                                                "monthsCompleted": 0.0,
+                                                "requiredTags": [],
+                                                "preferred": false,
+                                                "ausbildungsStellenAnforderungen": [
+                                                    {
+                                                        "anrechenbareFachgebiete": [
+                                                            626
+                                                        ],
+                                                        "anrechenbareDauerInMonths": 3.0
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "personalInhaltId": 878,
+                                                "ausbildungsInhaltId": 879,
+                                                "name": "Hals-, Nasen- und Ohrenheilkunde",
+                                                "minDuration": 3.0,
+                                                "maxDuration": 3.0,
+                                                "monthsCompleted": 0.0,
+                                                "requiredTags": [],
+                                                "preferred": false,
+                                                "ausbildungsStellenAnforderungen": [
+                                                    {
+                                                        "anrechenbareFachgebiete": [
+                                                            740
+                                                        ],
+                                                        "anrechenbareDauerInMonths": 3.0
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "personalInhaltId": 881,
+                                                "ausbildungsInhaltId": 882,
+                                                "name": "Anästhesiologie und Intensivmedizin",
+                                                "minDuration": 3.0,
+                                                "maxDuration": 3.0,
+                                                "monthsCompleted": 0.0,
+                                                "requiredTags": [],
+                                                "preferred": false,
+                                                "ausbildungsStellenAnforderungen": [
+                                                    {
+                                                        "anrechenbareFachgebiete": [
+                                                            285
+                                                        ],
+                                                        "anrechenbareDauerInMonths": 3.0
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "personalInhaltId": 883,
+                                                "ausbildungsInhaltId": 884,
+                                                "name": "Haut- und Geschlechtskrankheiten",
+                                                "minDuration": 3.0,
+                                                "maxDuration": 3.0,
+                                                "monthsCompleted": 0,
+                                                "requiredTags": [],
+                                                "preferred": false,
+                                                "ausbildungsStellenAnforderungen": [
+                                                    {
+                                                        "anrechenbareFachgebiete": [
+                                                            796
+                                                        ],
+                                                        "anrechenbareDauerInMonths": 3.0
+                                                    }
+                                                ]
+                                            }
+                                        ],
+                                        "ausbildungsErfordernisId": 872
+                                    },
+                                    {
+                                        "personalErfordernisId": 887,
+                                        "name": null,
+                                        "duration": 3.0,
+                                        "monthsCompleted": 0,
+                                        "minimalNumberOfPicks": 1,
+                                        "maximumNumberOfPicks": 1,
+                                        "inhalte": [
+                                            {
+                                                "personalInhaltId": 888,
+                                                "ausbildungsInhaltId": 889,
+                                                "name": "Orthopädie und Traumatologie",
+                                                "minDuration": 3.0,
+                                                "maxDuration": 3.0,
+                                                "monthsCompleted": 0,
+                                                "requiredTags": [],
+                                                "preferred": false,
+                                                "ausbildungsStellenAnforderungen": [
+                                                    {
+                                                        "anrechenbareFachgebiete": [
+                                                            587
+                                                        ],
+                                                        "anrechenbareDauerInMonths": 3.0
+                                                    }
+                                                ]
+                                            }
+                                        ],
+                                        "ausbildungsErfordernisId": 886
+                                    },
+                                    {
+                                        "personalErfordernisId": 891,
+                                        "name": null,
+                                        "duration": 3.0,
+                                        "monthsCompleted": 0,
+                                        "minimalNumberOfPicks": 1,
+                                        "maximumNumberOfPicks": 1,
+                                        "inhalte": [
+                                            {
+                                                "personalInhaltId": 892,
+                                                "ausbildungsInhaltId": 893,
+                                                "name": "Kinder- und Jugendheilkunde",
+                                                "minDuration": 3.0,
+                                                "maxDuration": 3.0,
+                                                "monthsCompleted": 0,
+                                                "requiredTags": [],
+                                                "preferred": false,
+                                                "ausbildungsStellenAnforderungen": [
+                                                    {
+                                                        "anrechenbareFachgebiete": [
+                                                            781
+                                                        ],
+                                                        "anrechenbareDauerInMonths": 3.0
+                                                    }
+                                                ]
+                                            }
+                                        ],
+                                        "ausbildungsErfordernisId": 890
+                                    },
+                                    {
+                                        "personalErfordernisId": 895,
+                                        "name": null,
+                                        "duration": 3.0,
+                                        "monthsCompleted": 0,
+                                        "minimalNumberOfPicks": 1,
+                                        "maximumNumberOfPicks": 1,
+                                        "inhalte": [
+                                            {
+                                                "personalInhaltId": 896,
+                                                "ausbildungsInhaltId": 897,
+                                                "name": "Psychiatrie und Psychotherapeutische Medizin",
+                                                "minDuration": 3.0,
+                                                "maxDuration": 3.0,
+                                                "monthsCompleted": 0,
+                                                "requiredTags": [],
+                                                "preferred": false,
+                                                "ausbildungsStellenAnforderungen": [
+                                                    {
+                                                        "anrechenbareFachgebiete": [
+                                                            773
+                                                        ],
+                                                        "anrechenbareDauerInMonths": 3.0
+                                                    }
+                                                ]
+                                            }
+                                        ],
+                                        "ausbildungsErfordernisId": 894
+                                    },
+                                    {
+                                        "personalErfordernisId": 899,
+                                        "name": null,
+                                        "duration": 9.0,
+                                        "monthsCompleted": 0,
+                                        "minimalNumberOfPicks": 1,
+                                        "maximumNumberOfPicks": 1,
+                                        "inhalte": [
+                                            {
+                                                "personalInhaltId": 900,
+                                                "ausbildungsInhaltId": 901,
+                                                "name": "Innere Medizin",
+                                                "minDuration": 9.0,
+                                                "maxDuration": 9.0,
+                                                "monthsCompleted": 0,
+                                                "requiredTags": [],
+                                                "preferred": false,
+                                                "ausbildungsStellenAnforderungen": [
+                                                    {
+                                                        "anrechenbareFachgebiete": [
+                                                            170
+                                                        ],
+                                                        "anrechenbareDauerInMonths": 9.0
+                                                    }
+                                                ]
+                                            }
+                                        ],
+                                        "ausbildungsErfordernisId": 898
+                                    },
+                                    {
+                                        "personalErfordernisId": 903,
+                                        "name": null,
+                                        "duration": 3.0,
+                                        "monthsCompleted": 0,
+                                        "minimalNumberOfPicks": 1,
+                                        "maximumNumberOfPicks": 1,
+                                        "inhalte": [
+                                            {
+                                                "personalInhaltId": 904,
+                                                "ausbildungsInhaltId": 905,
+                                                "name": "Frauenheilkunde und Geburtshilfe",
+                                                "minDuration": 3.0,
+                                                "maxDuration": 3.0,
+                                                "monthsCompleted": 0,
+                                                "requiredTags": [],
+                                                "preferred": false,
+                                                "ausbildungsStellenAnforderungen": [
+                                                    {
+                                                        "anrechenbareFachgebiete": [
+                                                            339
+                                                        ],
+                                                        "anrechenbareDauerInMonths": 3.0
+                                                    }
+                                                ]
+                                            }
+                                        ],
+                                        "ausbildungsErfordernisId": 902
+                                    }
+                                ],
+                                "ausbildungsBlockId": 132,
+                                "ausbildungsTyp": "SPITALSTURNUS"
+                            }
+   
+                        ]
+                    }
+                ],
+                "organisationsGruppenPriorities": {
+                    "1": 2,
+                    "2": 2,
+                    "3": 2
+                    
+                },
+                "plannedAusbildungsstelleByFachgebieteMonths": {}
+            },
+            {
+                "id": 10,
+                "name": null,
+                "planungsParameter": [
+                    {
+                        "occupationalGroupId": 12,
+                        "hoursPerWeek": 40.0,
+                        "allowedOrgUnits": [
+                            2,3
+                        ],
+                        "startDate": "2024-01-01",
+                        "endDate": "2024-10-28",
+                        "status": "ACTIVE"
+                    }
+                    
+                ],
+                "unterbrechungszeiten": [],
+                "ausbildungsPfade": [
+                    {
+                        "id": 842,
+                        "startDate": "2024-01-01",
+                        "personId": 10,
+                        "ausbildungsBloecke": [
+                            {
+                                "personalBlockId": 906,
+                                "name": "Spitalsturnus",
+                                "erfordernisse": [
+                                    {
+                                        "personalErfordernisId": 873,
+                                        "name": "Wahlfächer",
+                                        "duration": 6.0,
+                                        "monthsCompleted": 4.0,
+                                        "minimalNumberOfPicks": 2,
+                                        "maximumNumberOfPicks": 2,
+                                        "inhalte": [
+                                            {
+                                                "personalInhaltId": 874,
+                                                "ausbildungsInhaltId": 875,
+                                                "name": "Neurologie",
+                                                "minDuration": 3.0,
+                                                "maxDuration": 3.0,
+                                                "monthsCompleted": 0,
+                                                "requiredTags": [],
+                                                "preferred": false,
+                                                "ausbildungsStellenAnforderungen": [
+                                                    {
+                                                        "anrechenbareFachgebiete": [
+                                                            670
+                                                        ],
+                                                        "anrechenbareDauerInMonths": 3.0
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "personalInhaltId": 876,
+                                                "ausbildungsInhaltId": 877,
+                                                "name": "Urologie",
+                                                "minDuration": 3.0,
+                                                "maxDuration": 3.0,
+                                                "monthsCompleted": 0.0,
+                                                "requiredTags": [],
+                                                "preferred": false,
+                                                "ausbildungsStellenAnforderungen": [
+                                                    {
+                                                        "anrechenbareFachgebiete": [
+                                                            626
+                                                        ],
+                                                        "anrechenbareDauerInMonths": 3.0
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "personalInhaltId": 878,
+                                                "ausbildungsInhaltId": 879,
+                                                "name": "Hals-, Nasen- und Ohrenheilkunde",
+                                                "minDuration": 3.0,
+                                                "maxDuration": 3.0,
+                                                "monthsCompleted": 3.0,
+                                                "requiredTags": [],
+                                                "preferred": false,
+                                                "ausbildungsStellenAnforderungen": [
+                                                    {
+                                                        "anrechenbareFachgebiete": [
+                                                            740
+                                                        ],
+                                                        "anrechenbareDauerInMonths": 3.0
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "personalInhaltId": 881,
+                                                "ausbildungsInhaltId": 882,
+                                                "name": "Anästhesiologie und Intensivmedizin",
+                                                "minDuration": 3.0,
+                                                "maxDuration": 3.0,
+                                                "monthsCompleted": 0.0,
+                                                "requiredTags": [],
+                                                "preferred": false,
+                                                "ausbildungsStellenAnforderungen": [
+                                                    {
+                                                        "anrechenbareFachgebiete": [
+                                                            285
+                                                        ],
+                                                        "anrechenbareDauerInMonths": 3.0
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "personalInhaltId": 883,
+                                                "ausbildungsInhaltId": 884,
+                                                "name": "Haut- und Geschlechtskrankheiten",
+                                                "minDuration": 3.0,
+                                                "maxDuration": 3.0,
+                                                "monthsCompleted": 1.0,
+                                                "requiredTags": [],
+                                                "preferred": false,
+                                                "ausbildungsStellenAnforderungen": [
+                                                    {
+                                                        "anrechenbareFachgebiete": [
+                                                            796
+                                                        ],
+                                                        "anrechenbareDauerInMonths": 3.0
+                                                    }
+                                                ]
+                                            }
+                                        ],
+                                        "ausbildungsErfordernisId": 872
+                                    },
+                                    {
+                                        "personalErfordernisId": 887,
+                                        "name": null,
+                                        "duration": 3.0,
+                                        "monthsCompleted": 3.0,
+                                        "minimalNumberOfPicks": 1,
+                                        "maximumNumberOfPicks": 1,
+                                        "inhalte": [
+                                            {
+                                                "personalInhaltId": 888,
+                                                "ausbildungsInhaltId": 889,
+                                                "name": "Orthopädie und Traumatologie",
+                                                "minDuration": 3.0,
+                                                "maxDuration": 3.0,
+                                                "monthsCompleted": 3.0,
+                                                "requiredTags": [],
+                                                "preferred": false,
+                                                "ausbildungsStellenAnforderungen": [
+                                                    {
+                                                        "anrechenbareFachgebiete": [
+                                                            587
+                                                        ],
+                                                        "anrechenbareDauerInMonths": 3.0
+                                                    }
+                                                ]
+                                            }
+                                        ],
+                                        "ausbildungsErfordernisId": 886
+                                    },
+                                    {
+                                        "personalErfordernisId": 891,
+                                        "name": null,
+                                        "duration": 3.0,
+                                        "monthsCompleted": 3.0,
+                                        "minimalNumberOfPicks": 1,
+                                        "maximumNumberOfPicks": 1,
+                                        "inhalte": [
+                                            {
+                                                "personalInhaltId": 892,
+                                                "ausbildungsInhaltId": 893,
+                                                "name": "Kinder- und Jugendheilkunde",
+                                                "minDuration": 3.0,
+                                                "maxDuration": 3.0,
+                                                "monthsCompleted": 3.0,
+                                                "requiredTags": [],
+                                                "preferred": false,
+                                                "ausbildungsStellenAnforderungen": [
+                                                    {
+                                                        "anrechenbareFachgebiete": [
+                                                            781
+                                                        ],
+                                                        "anrechenbareDauerInMonths": 3.0
+                                                    }
+                                                ]
+                                            }
+                                        ],
+                                        "ausbildungsErfordernisId": 890
+                                    },
+                                    {
+                                        "personalErfordernisId": 895,
+                                        "name": null,
+                                        "duration": 3.0,
+                                        "monthsCompleted": 3.0,
+                                        "minimalNumberOfPicks": 1,
+                                        "maximumNumberOfPicks": 1,
+                                        "inhalte": [
+                                            {
+                                                "personalInhaltId": 896,
+                                                "ausbildungsInhaltId": 897,
+                                                "name": "Psychiatrie und Psychotherapeutische Medizin",
+                                                "minDuration": 3.0,
+                                                "maxDuration": 3.0,
+                                                "monthsCompleted": 3.0,
+                                                "requiredTags": [],
+                                                "preferred": false,
+                                                "ausbildungsStellenAnforderungen": [
+                                                    {
+                                                        "anrechenbareFachgebiete": [
+                                                            773
+                                                        ],
+                                                        "anrechenbareDauerInMonths": 3.0
+                                                    }
+                                                ]
+                                            }
+                                        ],
+                                        "ausbildungsErfordernisId": 894
+                                    },
+                                    {
+                                        "personalErfordernisId": 899,
+                                        "name": null,
+                                        "duration": 9.0,
+                                        "monthsCompleted": 9.0,
+                                        "minimalNumberOfPicks": 1,
+                                        "maximumNumberOfPicks": 1,
+                                        "inhalte": [
+                                            {
+                                                "personalInhaltId": 900,
+                                                "ausbildungsInhaltId": 901,
+                                                "name": "Innere Medizin",
+                                                "minDuration": 9.0,
+                                                "maxDuration": 9.0,
+                                                "monthsCompleted": 9.0,
+                                                "requiredTags": [],
+                                                "preferred": false,
+                                                "ausbildungsStellenAnforderungen": [
+                                                    {
+                                                        "anrechenbareFachgebiete": [
+                                                            170
+                                                        ],
+                                                        "anrechenbareDauerInMonths": 9.0
+                                                    }
+                                                ]
+                                            }
+                                        ],
+                                        "ausbildungsErfordernisId": 898
+                                    },
+                                    {
+                                        "personalErfordernisId": 903,
+                                        "name": null,
+                                        "duration": 3.0,
+                                        "monthsCompleted":3.0,
+                                        "minimalNumberOfPicks": 1,
+                                        "maximumNumberOfPicks": 1,
+                                        "inhalte": [
+                                            {
+                                                "personalInhaltId": 904,
+                                                "ausbildungsInhaltId": 905,
+                                                "name": "Frauenheilkunde und Geburtshilfe",
+                                                "minDuration": 3.0,
+                                                "maxDuration": 3.0,
+                                                "monthsCompleted": 3.0,
+                                                "requiredTags": [],
+                                                "preferred": false,
+                                                "ausbildungsStellenAnforderungen": [
+                                                    {
+                                                        "anrechenbareFachgebiete": [
+                                                            339
+                                                        ],
+                                                        "anrechenbareDauerInMonths": 3.0
+                                                    }
+                                                ]
+                                            }
+                                        ],
+                                        "ausbildungsErfordernisId": 902
+                                    }
+                                ],
+                                "ausbildungsBlockId": 132,
+                                "ausbildungsTyp": "SPITALSTURNUS"
+                            }
+   
+                        ]
+                    }
+                ],
+                "organisationsGruppenPriorities": {
+                    "1": 1,
+                    "2": 2,
+                    "3": 3
+                    
+                },
+                "plannedAusbildungsstelleByFachgebieteMonths": {}
+            }
+            
+            
+            
+        ],
+        "zuweisungen": []     
+    },
+    "parameters": {
+        "startDate": "2024-01-01",
+        "endDate": "2027-12-28",
+        "objectiveWeights": {
+            "singleMonthAssignments": 0,
+            "monthsWithoutTraining": 1,
+            "consecutiveMonthsWithoutTraining": 0,
+            "hospitalChanges": 0,
+            "departmentChanges": 0,
+            "monthsAtCooperationPartner": 0,
+            "violatedPreferences": 0,
+            "varMonthsWithoutTraining": 1,
+            "varViolatedPreferences": 0,
+            "departmentsWithoutTraining": 0,
+            "departmentsPerModule": 0
+        },
+        "termination": {
+            "type": "generations",
+            "value": 100000
+        },
+        "maxStandstill": 20,
+        "populationSize": 40,
+        "chunkSize": 9,
+        "fteInHours": 42,
+        "weeklyHoursNeededForAccreditation": 35,
+        "consideredAusbildungstypen": [
+            "SPITALSTURNUS",
+            "BASISAUSBILDUNG"
+        ]
+    },
+    "metadata": {}
+    
+}
+

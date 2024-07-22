@@ -1,0 +1,180 @@
+{% extends 'frontend/base.html' %}
+
+{% block title %}
+Detailansicht der Auswertung
+{% endblock %}
+
+{% block content %}
+<h1>Detailansicht der Auswertung</h1>
+
+<!-- error message if algorithm fails -->
+{% if error_message %}
+    <div class="error-message">
+        <p>{{ error_message }}</p>
+    </div>
+{% endif %}
+
+<!-- search function for students -->
+<div class="filters">
+    <label for="student-search">Suche nach Studenten:</label>
+    <input type="text" id="student-search" onkeyup="filterTable()" placeholder="Name des Studenten eingeben...">
+</div>
+
+<!-- fixed, scrollable container for the table -->
+<!-- check for data -->
+<div class="table-wrapper {% if not data %}no-data{% endif %}">
+    <div class="table-scroll">
+        <table id="schedule-table">
+            <thead>
+                <tr>
+                    <th>Student</th>
+                    <!-- data for header from view -->
+                    {% for month in months %}
+                        <th class="month-header">{{ month }}</th>
+                    {% endfor %}
+                </tr>
+            </thead>
+            <tbody>
+                <!-- data for table -->
+                {% if data %}
+                    {% for entry in data %}
+                        <tr>
+                            <!-- Inserts name of person in first cell of row -->
+                            <td>{{ entry.person }}</td>
+                            {% for assignment in entry.assignments %}
+                             <!-- Creates cell for each assignment and inserts details of  assignment into cell -->
+                                <td class="assignment-cell">
+                                    {% if assignment %}
+                                        <div><strong>Krankenhaus:</strong> {{ assignment.organisationsgruppe }}</div>
+                                        <div><strong>Station:</strong> {{ assignment.ausbildungsstaette }}</div>
+                                        <div><strong>Stelle:</strong> {{ assignment.ausbildungsstelle }}</div>
+                                        <div><strong>Inhalt:</strong> {{ assignment.ausbildungsinhalt }}</div>
+                                        <div><strong>Posten:</strong> {{ assignment.dienstposten }}</div>
+                                    {% else %}
+                                         <!-- Interception of no assignment -->
+                                        Keine Zuteilung
+                                    {% endif %}
+                                </td>
+                            {% endfor %}
+                        </tr>
+                    {% endfor %}
+                <!-- Interception of no data (e.g. no schedule) -->    
+                {% else %}
+                    <tr>
+                        <td colspan="{{ month_count }}">Keine Daten verfügbar. Bitte zuerst eine Auswertung starten.</td>
+                    </tr>
+                {% endif %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- script of search function for students -->
+<script>
+//get input, transform input uppercase, get table, get cells
+function filterTable() {
+    var input, filter, table, tr, td, i, txtValue;
+    input = document.getElementById("student-search");
+    filter = input.value.toUpperCase();
+    table = document.getElementById("schedule-table");
+    tr = table.getElementsByTagName("tr");
+
+    //Loop through rows of table, start second row (after header)
+    for (i = 1; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[0];
+        //get text of cell, check text contains filter text, set cell visibilty
+        if (td) {
+            txtValue = td.textContent || td.innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                tr[i].style.display = "";
+            } else {
+                tr[i].style.display = "none";
+            }
+        }
+    }
+}
+</script>
+
+<!-- styling table, search, container -->
+<style>
+/* alternating line backround color */
+tbody tr:nth-child(odd) {
+    background-color: #d8d2d2;
+}
+tbody tr:nth-child(even) {
+    background-color: #ffffff;
+}
+
+/* cells */
+.assignment-cell {
+    padding: 10px;
+    border: 1px solid #ddd;
+    white-space: nowrap;
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+}
+
+.assignment-cell div {
+    margin-bottom: 5px;
+}
+
+/* searchbar */
+.filters {
+    margin-bottom: 15px;
+}
+
+#student-search {
+    padding: 5px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* scrollable table containerr */
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    position: relative;
+    height: 80vh; 
+    max-height: 600px; 
+}
+
+/* scrollable table */
+.table-scroll {
+    width: 100%;
+    overflow: auto;
+    height: 100%; 
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+/* fixed header */
+thead th {
+    position: sticky;
+    top: 0;
+    background: white;
+    z-index: 0;
+}
+
+/* container without data */
+.table-wrapper.no-data {
+    border: none;
+}
+
+/* error message */
+.error-message {
+    background-color: #e60000; 
+    border: 1px solid #000000; 
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    }
+</style>
+{% endblock %}

@@ -1,0 +1,322 @@
+{% extends 'frontend/base.html' %}
+{% block title %}Auswertungen für Admins{% endblock %}
+
+{% block content %}
+<h1>Auswertungen für Admins</h1>
+<p>Bitte füllen Sie die nachfolgenden Paramter aus bevor der Algorithmus gestartet wird.</p>
+
+<!-- Form for entering parameters for algorithm and info fields for inputs -->
+<form method="post" action="{% url 'set_objectiveweights' %}" class="student-form">
+    {% csrf_token %}
+    <fieldset class="grid-container">
+        <div class="grid-item">
+            <label for="singleMonthAssignments">Zuweisung für einzelnen Monat (singleMonthAssignments):
+                <span class="info-icon-label">ℹ
+                    <span class="tooltip-text-label">Einen Wert zwischen 0 und 5.</span>
+                </span>
+            </label>
+            <input type="number" id="singleMonthAssignments" name="singleMonthAssignments" min="0" max="5" value="{{ objectiveweights.objectiveweights_single_month_assignments }}" required/>
+        </div>
+
+        <div class="grid-item">
+            <label for="monthsWithoutTraining">Monate ohne Ausbildung (monthsWithoutTraining):
+                <span class="info-icon-label">ℹ
+                    <span class="tooltip-text-label">Einen Wert zwischen 1 und 5.</span>
+                </span>
+            </label>
+            <input type="number" id="monthsWithoutTraining" name="monthsWithoutTraining" min="1" max="5" value="{{ objectiveweights.objectiveweights_months_without_training }}" required/>
+        </div>
+
+        <div class="grid-item">
+            <label for="consecutiveMonthsWithoutTraining">aufeinanderfolgende Monate ohne Ausbildung (consecutiveMonthsWithoutTraining):
+                <span class="info-icon-label">ℹ
+                    <span class="tooltip-text-label">Einen Wert zwischen 0 und 5.</span>
+                </span>
+            </label>
+            <input type="number" id="consecutiveMonthsWithoutTraining" name="consecutiveMonthsWithoutTraining" min="0" max="5" value="{{ objectiveweights.objectiveweights_consecutive_months_without_training }}" required />
+        </div>
+
+        <div class="grid-item">
+            <label for="hospitalChanges">Krankenhauswechsel (hospitalChanges):
+                <span class="info-icon-label">ℹ
+                    <span class="tooltip-text-label">Einen Wert zwischen 0 und 5.</span>
+                </span>
+            </label>
+            <input type="number" id="hospitalChanges" name="hospitalChanges" min="0" max="5" value="{{ objectiveweights.objectiveweights_hospital_changes }}" required/>
+        </div>
+
+        <div class="grid-item">
+            <label for="departmentChanges">Abteilungswechsel (departmentChanges):
+                <span class="info-icon-label">ℹ
+                    <span class="tooltip-text-label">Einen Wert zwischen 0 und 5.</span>
+                </span>
+            </label>
+            <input type="number" id="departmentChanges" name="departmentChanges" min="0" max="5" value="{{ objectiveweights.objectiveweights_department_changes }}" required/>
+        </div>
+
+        <div class="grid-item">
+            <label for="monthsAtCooperationPartner">Monate beim Kooperationspartner (monthsAtCooperationPartner):
+                <span class="info-icon-label">ℹ
+                    <span class="tooltip-text-label">Einen Wert zwischen 0 und 5.</span>
+                </span>
+            </label>
+            <input type="number" id="monthsAtCooperationPartner" name="monthsAtCooperationPartner" min="0" max="5" value="{{ objectiveweights.objectiveweights_months_at_cooperation_partner }}" required />
+        </div>
+
+        <div class="grid-item">
+            <label for="violatedPreferences">verletzte Prioritäten (violatedPreferences):
+                <span class="info-icon-label">ℹ
+                    <span class="tooltip-text-label">Einen Wert zwischen 0 und 5.</span>
+                </span>
+            </label>
+            <input type="number" id="violatedPreferences" name="violatedPreferences" min="0" max="5" value="{{ objectiveweights.objectiveweights_violated_preferences }}" required/>
+        </div>
+
+        <div class="grid-item">
+            <label for="varMonthsWithoutTraining">Varianz Monate ohne Ausbildung (varMonthsWithoutTraining):
+                <span class="info-icon-label">ℹ
+                    <span class="tooltip-text-label">Einen Wert zwischen 0 und 5.</span>
+                </span>
+            </label>
+            <input type="number" id="varMonthsWithoutTraining" name="varMonthsWithoutTraining" min="0" max="5" value="{{ objectiveweights.objectiveweights_var_months_without_training }}" required/>
+        </div>
+
+        <div class="grid-item">
+            <label for="varViolatedPreferences">Varianz verletzte Prioritäten (varViolatedPreferences):
+                <span class="info-icon-label">ℹ
+                    <span class="tooltip-text-label">Einen Wert zwischen 0 und 5.</span>
+                </span>
+            </label>
+            <input type="number" id="varViolatedPreferences" name="varViolatedPreferences" min="0" max="5" value="{{ objectiveweights.objectiveweights_var_violated_preferences }}" required/>
+        </div>
+
+        <div class="grid-item">
+            <label for="departmentsWithoutTraining">Abteilungen ohne Ausbildung (departmentsWithoutTraining):
+                <span class="info-icon-label">ℹ
+                    <span class="tooltip-text-label">Einen Wert zwischen 0 und 5.</span>
+                </span>
+            </label>
+            <input type="number" id="departmentsWithoutTraining" name="departmentsWithoutTraining" min="0" max="5" value="{{ objectiveweights.objectiveweights_departments_without_training }}" required/>
+        </div>
+
+        <div class="grid-item">
+            <label for="objectiveweights_var_weighted_months_without_training">(objectiveweights_var_weighted_months_without_training):
+                <span class="info-icon-label">ℹ
+                    <span class="tooltip-text-label">Einen Wert zwischen 0 und 5.</span>
+                </span>
+            </label>
+            <input type="number" id="objectiveweights_var_weighted_months_without_training" name="objectiveweights_var_weighted_months_without_training" min="0" max="5" value="{{ objectiveweights.objectiveweights_var_weighted_months_without_training }}" required />
+        </div>
+
+        <div class="grid-item">
+            <label for="penalization_value">Strafwert (penalization_value):
+                <span class="info-icon-label">ℹ
+                    <span class="tooltip-text-label">Einen Wert größer oder gleich 100.</span>
+                </span>
+            </label>
+            <input type="number" id="penalization_value" name="penalization_value" min="100" max="999999" value="{{ objectiveweights.algorithm_penalization_value }}" required/>
+        </div>
+
+        <div class="grid-item">
+            <label for="max_seconds_runtime">Laufzeit in Sekunden(max_seconds_runtime):
+                <span class="info-icon-label">ℹ
+                    <span class="tooltip-text-label">300 sek = 5 min</span>
+                </span>
+            </label>
+            <input type="number" id="max_seconds_runtime" name="max_seconds_runtime" min="0" max="9999999999999" value="{{ objectiveweights.algorithm_max_seconds_runtime }}" required />
+        </div>
+
+        <div class="grid-item">
+            <label for="sufficient_quality">ausreichende Qualität (sufficient_quality):
+                <span class="info-icon-label">ℹ
+                    <span class="tooltip-text-label">Einen Wert zwischen 0 und 1. Zur Trennung "," verwenden.</span>
+                </span>
+            </label>
+            <input type="number" id="sufficient_quality" name="sufficient_quality" min="0" max="1" step="0.01" value="{{ algorithm_sufficient_quality }}" required />
+        </div>
+
+        <div class="grid-item">
+            <label for="auswertung_start">Startdatum der Zuweisung:
+                <span class="info-icon-label">ℹ
+                    <span class="tooltip-text-label">Anfang eines Monats eintragen.</span>
+                </span>
+            </label>
+            <input type="date" id="auswertung_start" name="auswertung_start" value="{{ objectiveweights.start_date|date:"c" }}" required>
+        </div>
+
+        <div class="grid-item">
+            <label for="auswertung_end">Enddatum der Zuweisung:
+                <span class="info-icon-label">ℹ
+                    <span class="tooltip-text-label">Ende eines Monats eintragen.</span>
+                </span>
+            </label>
+            <input type="date" id="auswertung_end" name="auswertung_end" value="{{ objectiveweights.end_date|date:"c" }}" required>
+        </div>
+
+        <div class="grid-item">
+            <label for="checkbox_field">Strenge Zuweisung aktivieren:
+                <span class="info-icon-label">ℹ
+                    <span class="tooltip-text-label">Wenn der Button aktiviert ist und erfolgreich eine Auswertung generiert wurde,
+                        hat jede Person eine sichere Zuordnung erhalten. Wenn eine Person nicht zugeteilt
+                        werden kann, wird keine Lösung generiert. Wenn der Button deaktiviert ist, kann
+                        es sein, dass Personen ihre Ausbildung nicht im angegebenen Zeitrahmen schaffen
+                        und nicht zugeteilt werden. </span>
+                </span>
+            <input type="checkbox" id="checkbox_field" name="checkbox_field" value="yes" {% if objectiveweights.algorithm_strict_var %}checked{% endif %}>
+            <span class="info-text">aktivieren</span>
+        </div>
+    </fieldset>
+
+    <button type="submit" value="auswertung_starten">Auswertung starten</button>
+</form>
+
+<!-- Script adds loading bar (timer) and info field at the end of form after clicking button (Post-Request) -->
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var form = document.querySelector('.student-form');
+        form.addEventListener('submit', function () {
+            var progressBar = document.createElement('div');
+            progressBar.classList.add('progress-bar');
+            progressBar.innerHTML = '<span class="progress-bar-text">Laufzeit Algorithmus<i class="info-icon">ℹ</i><span class="tooltip-text">Der Ladebalken stellt nicht den Fortschritt des Algorithmus dar, sondern er ist ein Richtwert für die ungefähr benötigte Dauer. Es handelt sich um einen Timer, der solange läuft wie in der maximalen Laufzeit angegeben. Der Algorithmus kann länger brauchen als der Ladebalken darstellt, da die Laufzeit vom Einladen von Variabeln und das Hinzufügen von Bedingungen nicht berücksichtig wird.</span></span>';
+    
+            var maxSeconds = parseInt(document.getElementById('max_seconds_runtime').value);
+        
+            form.appendChild(progressBar);
+
+            var progressBarFill = document.createElement('div');
+            progressBarFill.classList.add('progress-bar-fill');
+            progressBar.appendChild(progressBarFill);
+
+            progressBarFill.style.animationDuration = maxSeconds + 's';
+
+            setTimeout(function () {
+                progressBar.remove();
+            }, maxSeconds * 10000);
+        });
+    });
+</script>
+
+<!-- styling of progressbar, info icon, tooltip -->
+<style>
+    /* progressbar */ 
+    .progress-bar {
+        width: 100%;
+        background-color: #f0f0f0;
+        height: 30px;
+        margin-top: 10px;
+        position: relative;
+        overflow: visible;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+
+    /* progressbar animation */
+    .progress-bar-fill {
+        width: 0;
+        height: 100%;
+        background-color: #4caf50;
+        position: absolute;
+        top: 0;
+        left: 0;
+        animation-name: progress-animation;
+        animation-timing-function: linear;
+        animation-fill-mode: forwards;
+    }
+    
+    @keyframes progress-animation {
+        to {
+            width: 100%;
+        }
+    }
+    
+    /* text in progressbar */
+    .progress-bar-text {
+        position: relative;
+        color: black;
+        z-index: 1;
+        display: flex;
+        align-items: center;
+    }
+
+    /* info icon of progess bar */    
+    .info-icon {
+        font-style: normal;
+        margin-left: 5px;
+        font-size: 12px;
+        color: #000000;
+        z-index: 1;
+        cursor: pointer;
+    }
+
+    /* info icon of input */ 
+    .info-icon-label {
+        font-style: normal;
+        margin-left: 5px;
+        font-size: 12px;
+        color: #000000;
+        cursor: pointer;
+        position: relative;
+        display: inline-block;
+    }
+
+    /* tooltip of progress bar */ 
+    .tooltip-text {
+        visibility: hidden;
+        width: 800px;
+        background-color: rgb(255, 255, 255);
+        color: #000000;
+        text-align: center;
+        border-radius: 6px;
+        padding: 5px;
+        position: absolute;
+        z-index: 1000;
+        bottom: 125%;
+        left: 50%;
+        transform: translateX(-50%);
+        opacity: 0;
+        transition: opacity 0.3s;
+        border: 1px solid black;
+        font-size: 12px; 
+        font-weight: normal;
+    }
+
+
+    /* tooltip of input */
+    .tooltip-text-label {
+        visibility: hidden;
+        background-color: rgb(255, 255, 255);
+        color: #000000;
+        text-align: center;
+        border-radius: 6px;
+        padding: 5px;
+        position: absolute;
+        z-index: 1000;
+        bottom: 125%;
+        left: 50%;
+        transform: translateX(-50%);
+        opacity: 0;
+        transition: opacity 0.3s;
+        border: 1px solid black;
+        font-size: 12px; 
+        font-weight: normal; 
+        display: inline-block;
+        white-space: normal;
+        width: 400px;
+    }
+
+
+    /* tooltip text label after hover info field labels */
+    .info-icon-label:hover .tooltip-text-label {
+    visibility: visible;
+    opacity: 1;
+    }
+
+    /* tooltip text after hover info field progessbar */
+    .info-icon:hover + .tooltip-text {
+        visibility: visible;
+        opacity: 1;
+    }
+</style>
+{% endblock %}

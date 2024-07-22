@@ -1,0 +1,405 @@
+/* Basic settings for the entire page */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #215071;
+    color: #fff;
+}
+
+/* Navigationbar */
+nav {
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    position: relative;
+    margin-right: 20px;
+}
+
+nav ul li:last-child {
+    margin-right: 0;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1em;
+    padding: 10px 20px;
+    transition: background-color 0.3s, color 0.3s;
+    display: block;
+}
+
+nav a:hover {
+    background-color: #fff;
+    color: #215071;
+}
+
+nav:before {
+    content: '';
+    display: block;
+    height: 2px;
+    background-color: #fff;
+    position: absolute;
+    top: -10px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 90%;
+}
+
+/* Drop-down menu styles */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    left: 0;
+    right: 0;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+}
+
+/* Header */
+header {
+    background-color: #215071;
+    padding: 20px 40px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+header > h1 {
+    text-align: center;
+    margin: 0 0 35px 0;
+}
+
+/* Main of Website */
+main {
+    background-color: #49A0B0;
+    padding: 20px 40px;
+    min-height: 80vh;
+}
+
+/* Footer */
+footer {
+    background-color: #215071;
+    color: #fff;
+    text-align: center;
+    padding: 10px 20px;
+    width: 100%;
+    box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
+}
+
+/* Styles for headings */
+h1, h2 {
+    margin: 10px 0;
+}
+
+/* Paragraphs / Text*/
+p {
+    font-size: 1.1em;
+    line-height: 1;
+}
+
+.small-text {
+    font-size: 1em;
+    line-height: 1.5;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+/* Styles for sections and enumerations*/
+section {
+    margin-bottom: 40px;
+}
+
+#application ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+#application li {
+    margin-bottom: 10px;
+}
+
+/* Styles for erros */
+body .errorlist li {
+    color: red !important;
+}
+
+/* styles for forms */
+.student-form {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.student-form label {
+    display: block;
+    margin-top: 20px;
+    font-weight: bold;
+    color: #333;
+}
+
+.student-form input[type="text"],
+.student-form input[type="date"],
+.student-form input[type="number"],
+.student-form select {
+    width: 98%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.student-form button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.student-form button:hover {
+    background-color: #45a049;
+}
+
+.student-form h2 {
+    color: #333;
+}
+
+.student-form p {
+    margin-top: 10px;
+    color: #666;
+}
+
+.student-form ul {
+    color: black;
+}
+
+/* styles for headers in forms */
+.student-form h3 {
+    font-size: 18px;
+    color: black;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.student-form legend {
+    font-size: 18px;
+    color: black;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Colour for radio button label in the cooperation partner section */
+#kooperationspartner label,
+#kooperationspartner input[type="radio"] {
+    color: #333;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+/* Distance between form elements */
+.student-form label,
+.student-form input[type="text"],
+.student-form input[type="date"],
+.student-form input[type="number"],
+.student-form select {
+    margin-bottom: 15px;
+}
+
+/* Grid-Layout for form */
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.user-info {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.user-info-box {
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 20px;
+    right: 20px;
+}
+
+.user-info-text {
+    color: #000;
+    margin: 0;
+}
+
+
+/* Styles for tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 18px;
+    text-align: left;
+}
+
+/* Styles for table headers */
+th, td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    color: #000; /* Textfarbe schwarz */
+}
+
+/* Styles for table headers */
+th {
+    background-color: #f4f4f4;
+    color: #333; /* Textfarbe für Kopfzeilen */
+}
+
+/* Styles for table rows */
+tbody tr {
+    background-color: #ffffff;
+    color: #000; /* Textfarbe schwarz */
+}
+
+/* Style for table block-content */
+.block-content table {
+    margin-top: 20px;
+}
+
+/* Style for the table legend */
+table caption {
+    caption-side: top;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px;
+    color: #333;
+}
+
+/* Container for the table with horizontal scrolling */
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+}
+
+/* Styles for delete coloum */
+.delete-column {
+    width: 1%;
+    white-space: nowrap;
+}
+
+/* Styles for delete button */
+.delete-btn {
+    font-size: 50px !important; /* Größe des X-Knopfs */
+    color: red !important;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+/* Hover effect for the delete button  */
+.delete-btn:hover {
+    background-color: red !important;
+    color: white !important;
+}
+
+
+.chart-container {
+    margin: 20px 0;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+.chart-container h2 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+svg {
+    display: inline-block;
+    background-color: #fff;
+    border: 1px solid #ccc;
+}
+
+line {
+    stroke-width: 2;
+}
+
+.info-text {
+    color: #333; 
+}
+
+/* styles for import export buttons */
+.import-export-button-group {
+    display: flex;
+    gap: 10px; 
+    justify-content: flex-end;
+    margin-bottom: 20px; 
+}
+
+.import-export-button-group button {
+    font-size: 16px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #357ABD; 
+    color: white;
+    transition: background-color 0.3s;
+}
+
+.import-export-button-group button:hover {
+    background-color: #1F4E79; /* Darker blue on hover */
+}
+
+
+.template-section {
+        display: none;
+}    
+

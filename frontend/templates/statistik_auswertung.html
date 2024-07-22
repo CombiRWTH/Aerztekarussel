@@ -1,0 +1,506 @@
+{% extends 'frontend/base.html' %}
+
+{% block title %}
+Statistik der zuletzt erzeugten Auswertung
+{% endblock %}
+
+{% block content %}
+<!-- styling of table -->
+<style>
+.table-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 10px; 
+}
+
+table {
+    width: 100%; 
+    border-collapse: collapse; 
+}
+
+table th,
+table td {
+    padding: 8px; 
+    border: 1px solid #ddd; 
+    text-align: left; 
+}
+
+table th:first-child,
+table td:first-child {
+    min-width: 200px; 
+}
+
+table th:nth-child(2),
+table td:nth-child(2) {
+    width: 200px; 
+}
+
+.spacer-row {
+    height: 5px; 
+    background-color: transparent; 
+    border: none; 
+}
+</style>
+
+<h1>Statistik der zuletzt erzeugten Auswertung</h1>
+
+<div class="table-container">
+    <!-- Tables for the various statistical values -->
+    <!-- Variance -->
+    <table>
+        <thead>
+            <tr>
+                <th colspan="2">Varianzen</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Varianz verletzte Präferenzen</td>
+                <td>{% if eintrag.variance_violated_preferences is not null %}{{ eintrag.variance_violated_preferences|floatformat:2 }}{% else %}N/A{% endif %}</td>
+            </tr>
+            <tr>
+                <td>Varianz Monate ohne Ausbildung</td>
+                <td>{% if eintrag.variance_months_without_training is not null %}{{ eintrag.variance_months_without_training|floatformat:2 }}{% else %}N/A{% endif %}</td>
+            </tr>
+            <tr>
+                <td>Varianz gewichtete Monate ohne Ausbildung</td>
+                <td>{% if eintrag.variance_weighted_months_without_training is not null %}{{ eintrag.variance_weighted_months_without_training|floatformat:2 }}{% else %}N/A{% endif %}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- consecutive months without training -->
+    <table>
+        <thead>
+            <tr>
+                <th colspan="2">Statistik aufeinanderfolgende Monate ohne Ausbildung</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Anzahl</td>
+                <td>{% if eintrag.consecutive_months_without_training is not null %}{{ eintrag.consecutive_months_without_training|floatformat:2 }}{% else %}N/A{% endif %}</td>
+            </tr>
+            <tr>
+                <td>Median</td>
+                <td>{% if eintrag.consecutive_months_without_training_median is not null %}{{ eintrag.consecutive_months_without_training_median|floatformat:2 }}{% else %}N/A{% endif %}</td>
+            </tr>
+            <tr>
+                <td>Mittelwert</td>
+                <td>{% if eintrag.consecutive_months_without_training_mean is not null %}{{ eintrag.consecutive_months_without_training_mean|floatformat:2 }}{% else %}N/A{% endif %}</td>
+            </tr>
+            <tr>
+                <td>Maximum</td>
+                <td>{% if eintrag.consecutive_months_without_training_max is not null %}{{ eintrag.consecutive_months_without_training_max|floatformat:2 }}{% else %}N/A{% endif %}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- departments without training -->
+    <table>
+        <thead>
+            <tr>
+                <th colspan="2">Statistik Abteilungen ohne Ausbildung</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Anzahl</td>
+                <td>{% if eintrag.departments_without_training is not null %}{{ eintrag.departments_without_training|floatformat:2 }}{% else %}N/A{% endif %}</td>
+            </tr>
+            <tr>
+                <td>Median</td>
+                <td>{% if eintrag.departments_without_training_median is not null %}{{ eintrag.departments_without_training_median|floatformat:2 }}{% else %}N/A{% endif %}</td>
+            </tr>
+            <tr>
+                <td>Mittelwert</td>
+                <td>{% if eintrag.departments_without_training_mean is not null %}{{ eintrag.departments_without_training_mean|floatformat:2 }}{% else %}N/A{% endif %}</td>
+            </tr>
+            <tr>
+                <td>Maximum</td>
+                <td>{% if eintrag.departments_without_training_max is not null %}{{ eintrag.departments_without_training_max|floatformat:2 }}{% else %}N/A{% endif %}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- hospital changes -->
+    <table>
+        <thead>
+            <tr>
+                <th colspan="2">Statistik für Krankenhauswechsel</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Anzahl</td>
+                <td>{% if eintrag.hospital_changes is not null %}{{ eintrag.hospital_changes|floatformat:2 }}{% else %}N/A{% endif %}</td>
+            </tr>
+            <tr>
+                <td>Median</td>
+                <td>{% if eintrag.hospital_changes_median is not null %}{{ eintrag.hospital_changes_median|floatformat:2 }}{% else %}N/A{% endif %}</td>
+            </tr>
+            <tr>
+                <td>Mittelwert</td>
+                <td>{% if eintrag.hospital_changes_mean is not null %}{{ eintrag.hospital_changes_mean|floatformat:2 }}{% else %}N/A{% endif %}</td>
+            </tr>
+            <tr>
+                <td>Maximum</td>
+                <td>{% if eintrag.hospital_changes_max is not null %}{{ eintrag.hospital_changes_max|floatformat:2 }}{% else %}N/A{% endif %}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- department changes -->
+    <table>
+        <thead>
+            <tr>
+                <th colspan="2">Statistik für Abteilungswechsel</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Anzahl</td>
+                <td>{% if eintrag.department_changes is not null %}{{ eintrag.department_changes|floatformat:2 }}{% else %}N/A{% endif %}</td>
+            </tr>
+            <tr>
+                <td>Median</td>
+                <td>{% if eintrag.department_changes_median is not null %}{{ eintrag.department_changes_median|floatformat:2 }}{% else %}N/A{% endif %}</td>
+            </tr>
+            <tr>
+                <td>Mittelwert</td>
+                <td>{% if eintrag.department_changes_mean is not null %}{{ eintrag.department_changes_mean|floatformat:2 }}{% else %}N/A{% endif %}</td>
+            </tr>
+            <tr>
+                <td>Maximum</td>
+                <td>{% if eintrag.department_changes_max is not null %}{{ eintrag.department_changes_max|floatformat:2 }}{% else %}N/A{% endif %}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- single month assignment -->
+    <table>
+        <thead>
+            <tr>
+                <th colspan="2">Statistik für Einzelmonatszuweisungen</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Anzahl</td>
+                <td>{% if eintrag.single_month_assignments is not null %}{{ eintrag.single_month_assignments|floatformat:2 }}{% else %}N/A{% endif %}</td>
+            </tr>
+            <tr>
+                <td>Median</td>
+                <td>{% if eintrag.single_month_assignments_median is not null %}{{ eintrag.single_month_assignments_median|floatformat:2 }}{% else %}N/A{% endif %}</td>
+            </tr>
+            <tr>
+                <td>Mittelwert</td>
+                <td>{% if eintrag.single_month_assignments_mean is not null %}{{ eintrag.single_month_assignments_mean|floatformat:2 }}{% else %}N/A{% endif %}</td>
+            </tr>
+            <tr>
+                <td>Maximum</td>
+                <td>{% if eintrag.single_month_assignments_max is not null %}{{ eintrag.single_month_assignments_max|floatformat:2 }}{% else %}N/A{% endif %}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- months without training -->
+    <table>
+        <thead>
+            <tr>
+                <th colspan="2">Statistik für Monate ohne Ausbildung</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Anzahl</td>
+                <td>{% if eintrag.months_without_training is not null %}{{ eintrag.months_without_training|floatformat:2 }}{% else %}N/A{% endif %}</td>
+            </tr>
+            <tr>
+                <td>Median</td>
+                <td>{% if eintrag.months_without_training_median is not null %}{{ eintrag.months_without_training_median|floatformat:2 }}{% else %}N/A{% endif %}</td>
+            </tr>
+            <tr>
+                <td>Mittelwert</td>
+                <td>{% if eintrag.months_without_training_mean is not null %}{{ eintrag.months_without_training_mean|floatformat:2 }}{% else %}N/A{% endif %}</td>
+            </tr>
+            <tr>
+                <td>Maximum</td>
+                <td>{% if eintrag.months_without_training_max is not null %}{{ eintrag.months_without_training_max|floatformat:2 }}{% else %}N/A{% endif %}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- months at cooperation partner -->
+    <table>
+        <thead>
+            <tr>
+                <th colspan="2">Statistik für Monate beim Kooperationspartner</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Anzahl</td>
+                <td>{% if eintrag.months_at_cooperation_partner is not null %}{{ eintrag.months_at_cooperation_partner|floatformat:2 }}{% else %}N/A{% endif %}</td>
+            </tr>
+            <tr>
+                <td>Median</td>
+                <td>{% if eintrag.months_at_cooperation_partner_median is not null %}{{ eintrag.months_at_cooperation_partner_median|floatformat:2 }}{% else %}N/A{% endif %}</td>
+            </tr>
+            <tr>
+                <td>Mittelwert</td>
+                <td>{% if eintrag.months_at_cooperation_partner_mean is not null %}{{ eintrag.months_at_cooperation_partner_mean|floatformat:2 }}{% else %}N/A{% endif %}</td>
+            </tr>
+            <tr>
+                <td>Maximum</td>
+                <td>{% if eintrag.months_at_cooperation_partner_max is not null %}{{ eintrag.months_at_cooperation_partner_max|floatformat:2 }}{% else %}N/A{% endif %}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- violated preferences occurrences -->
+    <table>
+        <thead>
+            <tr>
+                <th colspan="2">Statistik für Vorkommen von verletzten Präferenzen </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Anzahl</td>
+                <td>{% if eintrag.violated_preferences_occurrences is not null %}{{ eintrag.violated_preferences_occurrences|floatformat:2 }}{% else %}N/A{% endif %}</td>
+            </tr>
+            <tr>
+                <td>Median</td>
+                <td>{% if eintrag.violated_preferences_occurrences_median is not null %}{{ eintrag.violated_preferences_occurrences_median|floatformat:2 }}{% else %}N/A{% endif %}</td>
+            </tr>
+            <tr>
+                <td>Mittelwert</td>
+                <td>{% if eintrag.violated_preferences_occurrences_mean is not null %}{{ eintrag.violated_preferences_occurrences_mean|floatformat:2 }}{% else %}N/A{% endif %}</td>
+            </tr>
+            <tr>
+                <td>Maximum</td>
+                <td>{% if eintrag.violated_preferences_occurrences_max is not null %}{{ eintrag.violated_preferences_occurrences_max |floatformat:2}}{% else %}N/A{% endif %}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- violated preferences weight-->
+    <table>
+        <thead>
+            <tr>
+                <th colspan="2">Statistik für Gewicht von verletzte Präferenzen</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Anzahl</td>
+                <td>{% if eintrag.violated_preferences_weight is not null %}{{ eintrag.violated_preferences_weight|floatformat:2}}{% else %}N/A{% endif %}</td>
+            </tr>
+            <tr>
+                <td>Median</td>
+                <td>{% if eintrag.violated_preferences_weight_median is not null %}{{ eintrag.violated_preferences_weight_median|floatformat:2 }}{% else %}N/A{% endif %}</td>
+            </tr>
+            <tr>
+                <td>Mittelwert</td>
+                <td>{% if eintrag.violated_preferences_weight_mean is not null %}{{ eintrag.violated_preferences_weight_mean|floatformat:2 }}{% else %}N/A{% endif %}</td>
+            </tr>
+            <tr>
+                <td>Maximum</td>
+                <td>{% if eintrag.violated_preferences_weight_max is not null %}{{ eintrag.violated_preferences_weight_max|floatformat:2 }}{% else %}N/A{% endif %}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- months without work -->
+    <table>
+        <thead>
+            <tr>
+                <th colspan="2">Statistik für Monate ohne Arbeit</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Anzahl</td>
+                <td>{% if eintrag.months_without_work is not null %}{{ eintrag.months_without_work|floatformat:2 }}{% else %}N/A{% endif %}</td>
+            </tr>
+            <tr>
+                <td>Median</td>
+                <td>{% if eintrag.months_without_work_median is not null %}{{ eintrag.months_without_work_median|floatformat:2 }}{% else %}N/A{% endif %}</td>
+            </tr>
+            <tr>
+                <td>Mittelwert</td>
+                <td>{% if eintrag.months_without_work_mean is not null %}{{ eintrag.months_without_work_mean|floatformat:2 }}{% else %}N/A{% endif %}</td>
+            </tr>
+            <tr>
+                <td>Maximum</td>
+                <td>{% if eintrag.months_without_work_max is not null %}{{ eintrag.months_without_work_max|floatformat:2}}{% else %}N/A{% endif %}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- missing progress in subject occurrences -->
+    <table>
+        <thead>
+            <tr>
+                <th colspan="2">Statistik für fehlende Fortschritte bei Fachvorkommen</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Anzahl</td>
+                <td>{% if eintrag.missing_progress_in_subject_occurrences is not null %}{{ missing_progress_in_subject_occurrences|floatformat:2 }}{% else %}N/A{% endif %}</td>
+            </tr>
+            <tr>
+                <td>Median</td>
+                <td>{% if eintrag.missing_progress_in_subject_occurrences_median is not null %}{{ eintrag.missing_progress_in_subject_occurrences_median|floatformat:2 }}{% else %}N/A{% endif %}</td>
+            </tr>
+            <tr>
+                <td>Mittelwert</td>
+                <td>{% if eintrag.missing_progress_in_subject_occurrences_mean is not null %}{{ eintrag.missing_progress_in_subject_occurrences_mean|floatformat:2 }}{% else %}N/A{% endif %}</td>
+            </tr>
+            <tr>
+                <td>Maximum</td>
+                <td>{% if eintrag.missing_progress_in_subject_occurrences_max is not null %}{{ eintrag.missing_progress_in_subject_occurrences_max|floatformat:2}}{% else %}N/A{% endif %}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- missing progress in subject amount -->
+    <table>
+        <thead>
+            <tr>
+                <th colspan="2">Statistik für fehlende Fortschritte in der Fachmenge</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Anzahl</td>
+                <td>{% if eintrag.missing_progress_in_subject_amount is not null %}{{ eintrag.missing_progress_in_subject_amount|floatformat:2 }}{% else %}N/A{% endif %}</td>
+            </tr>
+            <tr>
+                <td>Median</td>
+                <td>{% if eintrag.missing_progress_in_subject_amount_median is not null %}{{ eintrag.missing_progress_in_subject_amount_median|floatformat:2 }}{% else %}N/A{% endif %}</td>
+            </tr>
+            <tr>
+                <td>Mittelwert</td>
+                <td>{% if eintrag.missing_progress_in_subject_amount_mean is not null %}{{ eintrag.missing_progress_in_subject_amount_mean|floatformat:2 }}{% else %}N/A{% endif %}</td>
+            </tr>
+            <tr>
+                <td>Maximum</td>
+                <td>{% if eintrag.missing_progress_in_subject_amount_max is not null %}{{ eintrag.missing_progress_in_subject_amount_max|floatformat:2 }}{% else %}N/A{% endif %}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- missing progress in content occurrences -->
+    <table>
+        <thead>
+            <tr>
+                <th colspan="2">Statistik für fehlende Fortschritte bei den Inhalten</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Anzahl</td>
+                <td>{% if eintrag.missing_progress_in_content_occurrences is not null %}{{ eintrag.missing_progress_in_content_occurrences|floatformat:2 }}{% else %}N/A{% endif %}</td>
+            </tr>
+            <tr>
+                <td>Median</td>
+                <td>{% if eintrag.missing_progress_in_content_occurrences_median is not null %}{{ eintrag.missing_progress_in_content_occurrences_median|floatformat:2 }}{% else %}N/A{% endif %}</td>
+            </tr>
+            <tr>
+                <td>Mittelwert</td>
+                <td>{% if eintrag.missing_progress_in_content_occurrences_mean is not null %}{{ eintrag.missing_progress_in_content_occurrences_mean|floatformat:2 }}{% else %}N/A{% endif %}</td>
+            </tr>
+            <tr>
+                <td>Maximum</td>
+                <td>{% if eintrag.missing_progress_in_content_occurrences_max is not null %}{{ eintrag.missing_progress_in_content_occurrences_max|floatformat:2 }}{% else %}N/A{% endif %}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- missing progress in content amount -->
+    <table>
+        <thead>
+            <tr>
+                <th colspan="2">Statistik für fehlende Fortschritte bei der Menge des Inhalts</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Anzahl</td>
+                <td>{% if eintrag.missing_progress_in_content_amount is not null %}{{ eintrag.missing_progress_in_content_amount|floatformat:2 }}{% else %}N/A{% endif %}</td>
+            </tr>
+            <tr>
+                <td>Median</td>
+                <td>{% if eintrag.missing_progress_in_content_amount_median is not null %}{{ eintrag.missing_progress_in_content_amount_median|floatformat:2 }}{% else %}N/A{% endif %}</td>
+            </tr>
+            <tr>
+                <td>Mittelwert</td>
+                <td>{% if eintrag.missing_progress_in_content_amount_mean is not null %}{{ eintrag.missing_progress_in_content_amount_mean|floatformat:2 }}{% else %}N/A{% endif %}</td>
+            </tr>
+            <tr>
+                <td>Maximum</td>
+                <td>{% if eintrag.missing_progress_in_content_amount_max is not null %}{{ eintrag.missing_progress_in_content_amount_max|floatformat:2 }}{% else %}N/A{% endif %}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- excess progress in content occurrences -->
+    <table>
+        <thead>
+            <tr>
+                <th colspan="2">Überschüssiger Fortschritt bei den Vorkommen von Inhalten</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Anzahl</td>
+                <td>{% if eintrag.excess_progress_in_content_occurrences is not null %}{{ eintrag.excess_progress_in_content_occurrences|floatformat:2 }}{% else %}N/A{% endif %}</td>
+            </tr>
+            <tr>
+                <td>Median</td>
+                <td>{% if eintrag.excess_progress_in_content_occurrences_median is not null %}{{ eintrag.excess_progress_in_content_occurrences_median|floatformat:2 }}{% else %}N/A{% endif %}</td>
+            </tr>
+            <tr>
+                <td>Mittelwert</td>
+                <td>{% if eintrag.excess_progress_in_content_occurrences_mean is not null %}{{ eintrag.excess_progress_in_content_occurrences_mean|floatformat:2 }}{% else %}N/A{% endif %}</td>
+            </tr>
+            <tr>
+                <td>Maximum</td>
+                <td>{% if eintrag.excess_progress_in_content_occurrences_max is not null %}{{ eintrag.excess_progress_in_content_occurrences_max|floatformat:2 }}{% else %}N/A{% endif %}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- excess progress in content amount -->
+    <table>
+        <thead>
+            <tr>
+                <th colspan="2">Überschüssiger Fortschritt bei der Menge des Inhalts</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Anzahl</td>
+                <td>{% if eintrag.excess_progress_in_content_amount is not null %}{{ eintrag.excess_progress_in_content_amount|floatformat:2 }}{% else %}N/A{% endif %}</td>
+            </tr>
+            <tr>
+                <td>Median</td>
+                <td>{% if eintrag.excess_progress_in_content_amount_median is not null %}{{ eintrag.excess_progress_in_content_amount_median|floatformat:2 }}{% else %}N/A{% endif %}</td>
+            </tr>
+            <tr>
+                <td>Mittelwert</td>
+                <td>{% if eintrag.excess_progress_in_content_amount_mean is not null %}{{ eintrag.excess_progress_in_content_amount_mean|floatformat:2 }}{% else %}N/A{% endif %}</td>
+            </tr>
+            <tr>
+                <td>Maximum</td>
+                <td>{% if eintrag.excess_progress_in_content_amount_max is not null %}{{ eintrag.excess_progress_in_content_amount_max|floatformat:2 }}{% else %}N/A{% endif %}</td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>
+
+{% endblock %}

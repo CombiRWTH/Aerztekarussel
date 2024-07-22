@@ -1,0 +1,41 @@
+{% extends 'frontend/base.html' %}
+
+{% block title %}Student{% endblock %}
+
+{% block content %}
+<h2>Student</h2>
+<p>Bitte füllen Sie das nachfolgende Formular zur Zuweisung Ihrer Ausbildungsstätten aus.</p>
+
+{% if message %}
+    <p class="success">{{ message }}</p>
+{% endif %}
+<!-- Form for students -->
+<form method="post" class="student-form">
+    {% csrf_token %}
+    <!-- Name filled automatically by usernamer -->
+    <p>1. Bitte geben Sie Ihren Namen ein:</p>
+    <label for="student_name">Ihr Name:</label>
+    <input type="text" id="student_name" name="student_name" placeholder="Vor- und Nachname" value="{{ request.user.username }}" readonly required>
+    
+    <!-- Priorities choose for Organisationsgruppen with forms.py -->
+    <p>2. Bewerten Sie bitte die Krankenhäuser als mögliche Ausbildungsstätten nach Ihren Präferenzen von 'sehr gut' über 'neutral' bis 'sehr schlecht':</p>
+
+    {{ form.as_p }}
+
+    <!--  Startdate and enddate -->
+    <p>3. Wählen Sie bitte den Start- und Endzeitpunkt Ihrer Ausbildung aus:</p>
+    <label for="ausbildung_start">Startdatum der Ausbildung:</label>
+    <input type="date" id="ausbildung_start" name="ausbildung_start">
+    <label for="ausbildung_end">Enddatum der Ausbildung:</label>
+    <input type="date" id="ausbildung_end" name="ausbildung_end">
+
+    <!-- Training section -->
+    <p>4. Wählen Sie bitte in welchen Ausbildungsabschnitt Sie sich gerade befinden:</p>
+    <select id="ausbildung_choice" name="ausbildung_choice">
+        <option value="basisausbildung">Basisausbildung</option>
+        <option value="spitalsturnus">Spitalsturnus</option>
+    </select>
+
+    <button type="submit">Absenden</button>
+</form>
+{% endblock %}

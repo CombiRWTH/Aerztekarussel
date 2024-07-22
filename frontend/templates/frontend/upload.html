@@ -1,0 +1,24 @@
+{% extends 'frontend/base.html' %}
+
+{% block title %}Import Datei{% endblock %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Import</title>
+</head>
+<body>
+    <h1>Import einer JSON-Datei</h1>
+
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Datei importieren</button>
+    </form>
+</body>
+</html>
+
+{% endblock %}

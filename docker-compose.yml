@@ -1,0 +1,37 @@
+services:
+  database:
+    image: "postgres:latest"
+    container_name: postgres
+    ports:
+      - 5432:5432
+    volumes:
+      - db:/var/lib/postgresql/data
+      - ./create_second_db.sh:/docker-entrypoint-initdb.d/create_second_db.sh
+
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: inaPsw4mySrv
+      POSTGRES_DB: mrs
+ 
+  web:
+    container_name: webserver
+    build: .
+    env_file: "gurobi.env"
+    command: >
+      sh -c "python manage.py migrate && 
+      python manage.py migrate --database=only_datamodel &&
+      python manage.py runserver 0.0.0.0:8080"      
+    volumes:
+      - .:/code
+    ports:
+      - 8080:8080
+    environment:
+      - POSTGRES_NAME=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=inaPsw4mySrv
+    depends_on:
+      - database
+
+volumes:
+  db:
+    driver: local

@@ -1,0 +1,17 @@
+{% extends 'frontend/base.html' %}
+
+{% block title %}Registration{% endblock %}
+
+{% block content %}
+<!-- Registration -->
+    <div class="login-prompt">
+        <p style="font-size: 18px;">Sie haben bereits einen Account? <a href="{% url 'login' %}">Login</a></p>
+    </div>
+    <h2>Registrieren</h2>
+    <p>Hier ist die Seite für die Studenten zum Registrieren.</p>
+    <form method="post" class="student-form">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Registrieren</button>
+    </form>
+{% endblock %}

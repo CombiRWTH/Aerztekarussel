@@ -1,0 +1,74 @@
+<!-- Basic structure for further HTML -->
+{% load static %}
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Medical Resident Scheduling System{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'frontend/style.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Willkommen beim Medical Resident Scheduling System!</h1>
+          <!-- Navigation bar  -->
+        <nav>
+            <ul>
+                {% if user.is_authenticated %}
+                    <!-- URLs for logged in users  -->
+                    <li><a href="{% url 'allgemein' %}">Allgemein</a></li>
+                    <li><a href="{% url 'registration' %}">Registrierung</a></li>
+                    <li><a href="{% url 'login' %}">Login</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">Studenten</a>
+                        <div class="dropdown-content">
+                            <a href="{% url 'student' %}">Eingabe</a>
+                            <a href="{% url 'serg' %}">Auswertung</a>
+                            <a href="{% url 'create_student_ausfall' %}">Ausfälle</a> 
+                        </div>
+                    </li>
+                    {% if user.is_staff %}
+                        <!-- URLs for Admins -->
+                        <li class="dropdown">
+                            <a href="#" class="dropbtn">Admin</a>
+                            <div class="dropdown-content">
+                                <a href="{% url 'admin' %}">Eingabe</a>
+                                <a href="{% url 'adminaktuell' %}">Ansicht</a>
+                                <a href="{% url 'aerg' %}">Auswertung starten</a>
+                                <a href="{% url 'bloecke_auswertung' %}">Blöcke Auswertung</a>
+                                <a href="{% url 'detailansicht_auswertung' %}">Detailansicht Auswertung</a>
+                                <a href="{% url 'statistik_auswertung' %}">Statistik Auswertung</a>
+                                <a href="{% url 'import_export' %}">Import/Export</a>                               
+                            </div>
+                        </li>
+                    {% endif %}
+                {% else %}
+                    <!-- URLs for everbody (not logged in Users) -->
+                    <li><a href="{% url 'allgemein' %}">Allgemein</a></li>
+                    <li><a href="{% url 'registration' %}">Registrierung</a></li>
+                    <li><a href="{% url 'login' %}">Login</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <!-- Info login field with logout button -->
+        {% if user.is_authenticated %}
+            <div class="user-info-box">
+                <p class="user-info-text">Eingeloggt als: {{ user.username }}</p>
+                <form action="{% url 'logout' %}" method="post">
+                    {% csrf_token %}
+                    <button type="submit">Logout</button>
+                </form>
+            </div>
+        {% endif %}
+
+        {% block content %}
+        {% endblock %}
+    </main>
+    <footer>
+        <p>RWTH Softwareentwicklung Ärztekarussell - Fraunhofer Austria</p>
+    </footer>
+
+    <script src="{% static 'frontend/form-duplicator.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+{% extends 'frontend/base.html' %}
+
+{% block title %}Student{% endblock %}
+
+{% block content %}
+<h2>Student</h2>
+<p>Bitte füllen Sie das nachfolgende Formular aus um Ausfälle/Urlaub einzutragen.</p>
+
+{% if message %}
+    <p class="success">{{ message }}</p>
+{% endif %}
+
+<form method="post" action="{% url 'create_student_ausfall' %}" class="student-form">
+    {% csrf_token %}
+    <div id="sections-container">
+        {% if not entries %}
+            <fieldset class="unavailable-time-window-section">
+                <legend>Eingabe von Zeitfenster wo Sie nicht verfügbar sind:</legend>
+                <div class="grid-container">
+                    <div>
+                        <label for="start_date">Startdatum:</label>
+                        <input type="date" name="start_date" required>
+                    </div>
+                    <div>
+                        <label for="end_date">Enddatum:</label>
+                        <input type="date" name="end_date" required>
+                    </div>
+                </div>
+            </fieldset>
+        {% else %}
+            {% for entry in entries %}
+            <fieldset class="unavailable-time-window-section">
+                <legend>Eingabe von Zeitfenster wo Sie nicht verfügbar sind:</legend>
+                <div class="grid-container">
+                    <div>
+                        <label for="start_date">Startdatum:</label>
+                        <input type="date" name="start_date" value="{{ entry.start_date|date:'Y-m-d' }}" required>
+                    </div>
+                    <div>
+                        <label for="end_date">Enddatum:</label>
+                        <input type="date" name="end_date" value="{{ entry.end_date|date:'Y-m-d' }}" required>
+                    </div>
+                </div>
+            </fieldset>
+            {% endfor %}
+        {% endif %}
+
+        <div id="cloned-sections-container">
+            <!-- This is where cloned sections will be appended -->
+        </div>
+    </div>
+
+    <button id="unavailable_section_duplicate" type="button" data-action="duplicate" data-section="unavailable-time-window-section">Neues Zeitfenster eingeben</button>
+    <button id="unavailable_section_unduplicate" type="button" data-action="remove" data-section="unavailable-time-window-section">Zeitfenster Eingabe entfernen</button>
+
+
+    <button type="submit">Absenden</button>
+</form>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var originalSection = document.querySelector('.unavailable-time-window-section');
+        var clonedSectionsContainer = document.getElementById('cloned-sections-container');
+
+        // Event listener for duplicating form sections
+        document.getElementById('unavailable_section_duplicate').addEventListener('click', function() {
+            var clonedSection = originalSection.cloneNode(true);
+            clonedSectionsContainer.appendChild(clonedSection);
+            console.log('Cloned section added');
+        });
+
+        // Event listener for removing last cloned form section
+        document.getElementById('unavailable_section_unduplicate').addEventListener('click', function() {
+            var clonedSections = clonedSectionsContainer.querySelectorAll('.unavailable-time-window-section');
+            console.log('Number of cloned sections:', clonedSections.length);
+            
+            clonedSections[clonedSections.length - 1].remove();
+            console.log('Last cloned section removed');
+                
+        });
+    });
+</script>
+
+{% endblock %}

@@ -1,0 +1,619 @@
+<!-- admin.html -->
+{% extends 'frontend/base.html' %}
+
+{% block title %}Admin{% endblock %}
+
+{% block content %}
+<h2>Krankenhaus Eingabe</h2>
+<p>Bitte füllen Sie das nachfolgende Formular zur Eingabe der Krankenhäuser aus.</p>
+<form method="post" action="{% url 'create_or_edit_hospital' %}" class="student-form">
+    {% csrf_token %}
+    <fieldset>
+        <legend>Allgemeine Informationen</legend>
+        <label for="krankenhausname">Name des Krankenhauses:</label>
+        <input type="text" id="krankenhausname" name="krankenhausname" value="{{ organisationsgruppe.name }}"  placeholder="Krankenhaus Name" required>
+
+        <div id="kooperationspartner">
+            <label>Kooperationspartner:</label>
+            <input type="radio" id="koorperationspartner_ja" name="koorperationspartner" value="ja" {% if organisationsgruppe.is_kooperationspartner %}checked{% endif %}>
+            <label for="koorperationspartner_ja">Ja</label>
+            <input type="radio" id="koorperationspartner_nein" name="koorperationspartner" value="nein" {% if not organisationsgruppe.is_kooperationspartner %}checked{% endif %}>
+            <label for="koorperationspartner_nein">Nein</label>
+        </div>
+    </fieldset>
+
+    <fieldset class="ausbildungsstaetten-section">
+        <div class="ausbildungsstaetten-section">           
+            <div class="ausbildungsstaette-entry">
+            {% if ausbildungsstaetten %}
+                <!-- Hidden field to check if editing or creating -->
+                <input type="hidden" id="editing" name="editing" value="{{ organisationsgruppe.id }}">
+                {% for ausbildungsstaette in ausbildungsstaetten %}
+                <div class="ausbildungsstaette-entry">
+                    <label for="ausbildungsstaette_name">Name der Ausbildungsstätte:</label>
+                    <input type="text" id="ausbildungsstaette_name" name="ausbildungsstaette_name" value="{{ ausbildungsstaette.name }}" placeholder="Ausbildungsstaette Name" required>
+                
+
+
+                <fieldset class="dienstposten-section">
+                    <legend>Dienstposten</legend>
+                    {% if ausbildungsstaette_dienstposten %}
+                        {% for dp in ausbildungsstaette_dienstposten %}
+                            <div class="grid-container">
+                                <div>
+                                    <label for="ausbildungsstaette_dienstposten_start">Startdatum:</label>
+                                    <input type="date" id="ausbildungsstaette_dienstposten_start" name="ausbildungsstaette_dienstposten_start" value="{{ dp.start_date|date:'Y-m-d' }}" required>
+                                </div>
+                                <div>
+                                    <label for="ausbildungsstaette_dienstposten_end">Enddatum:</label>
+                                    <input type="date" id="ausbildungsstaette_dienstposten_end" name="ausbildungsstaette_dienstposten_end" value="{{ dp.end_date|date:'Y-m-d' }}" required>
+                                </div>
+                                <div>
+                                    <label for="ausbildungsstaette_dienstposten_hours">Stunden:</label>
+                                    <input type="number" id="ausbildungsstaette_dienstposten_hours" name="ausbildungsstaette_dienstposten_hours" value="{{ dp.hours }}" required>
+                                </div>
+                                <div>
+                                    <label for="ausbildungsstaette_dienstposten_occupationalgroups">Berufsgruppen:</label>
+                                    <input type="number" id="ausbildungsstaette_dienstposten_occupationalgroups" name="ausbildungsstaette_dienstposten_occupationalgroups" value="{{ dp.occupationalgroupsdienstposten }}" required>
+                                </div>
+                                <div>
+                                    <label for="ausbildungsstaette_dienstposten_associatedausbildungsbloecke">Zugehörige Ausbildungsblöcke:</label>
+                                    <input type="number" id="ausbildungsstaette_dienstposten_associatedausbildungsbloecke" name="ausbildungsstaette_dienstposten_associatedausbildungsbloecke" value="{{ dp.associatedausbildungsbloecke }}" required>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    {% else %}
+                        <div class="grid-container">
+                            <div>
+                                <label for="ausbildungsstaette_dienstposten_start">Startdatum:</label>
+                                <input type="date" id="ausbildungsstaette_dienstposten_start" name="ausbildungsstaette_dienstposten_start" required>
+                            </div>
+                            <div>
+                                <label for="ausbildungsstaette_dienstposten_end">Enddatum:</label>
+                                <input type="date" id="ausbildungsstaette_dienstposten_end" name="ausbildungsstaette_dienstposten_end" required>
+                            </div>
+                            <div>
+                                <label for="ausbildungsstaette_dienstposten_hours">Stunden:</label>
+                                <input type="number" id="ausbildungsstaette_dienstposten_hours" name="ausbildungsstaette_dienstposten_hours" required>
+                            </div>
+                            <div>
+                                <label for="ausbildungsstaette_dienstposten_occupationalgroups">Berufsgruppen:</label>
+                                <input type="number" id="ausbildungsstaette_dienstposten_occupationalgroups" name="ausbildungsstaette_dienstposten_occupationalgroups" required>
+                            </div>
+                            <div>
+                                <label for="ausbildungsstaette_dienstposten_associatedausbildungsbloecke">Zugehörige Ausbildungsblöcke:</label>
+                                <input type="number" id="ausbildungsstaette_dienstposten_associatedausbildungsbloecke" name="ausbildungsstaette_dienstposten_associatedausbildungsbloecke" required>
+                            </div>
+                        </div>
+                    {% endif %}
+
+
+
+                <div class="button-group">
+                    <button id="dienstposten_section_duplicate" type="button" data-action="duplicate" data-section="dienstposten-section">Neue Dienstposten eingeben</button>
+                    <button id="dienstposten_section_unduplicate" disabled type="button" data-action="remove" data-section="dienstposten-section">Dienstposten Eingabe entfernen</button>
+                </div>
+
+                <script>
+                    let duplicateCount = 0;
+
+                    document.getElementById('dienstposten_section_duplicate').addEventListener('click', function() {
+                        duplicateCount++;
+                        document.getElementById('dienstposten_section_unduplicate').disabled = false;
+                    });
+
+                    document.getElementById('dienstposten_section_unduplicate').addEventListener('click', function() {
+                        if (duplicateCount > 0) {
+                            duplicateCount--;
+                            if (duplicateCount === 0) {
+                                document.getElementById('dienstposten_section_unduplicate').disabled = true;
+                            }
+                        }
+                    });
+                </script>
+
+
+                <fieldset class="tags-section">
+                    <legend>Tags</legend>
+                    {% if ausbildungsstaette_tags %}
+                        {% for tag in ausbildungsstaette_tags %}
+                            <div>
+                                <label for="tag">Tag:</label>
+                                <input type="number" id="tag" name="tag" value="{{ tag.tag }}" required>
+                            </div>
+                        {% endfor %}
+                    {% else %}
+                            <legend>Tags</legend>
+                            <label for="ausbildungsstaette_tags">Tags:</label>
+                            <input type="number" id="ausbildungsstaette_tags" name="ausbildungsstaette_tags" required>
+                    {% endif %}        
+                </fieldset>
+                <div class="button-group">
+                    <button id="tags_section_duplicate" type="button" data-action="duplicate" data-section="tags-section">Neue Tags eingeben</button>
+                    <button id="tags_section_unduplicate" disabled type="button" data-action="remove" data-section="tags-section">Tags Eingabe entfernen</button>
+                </div>
+                <script>
+                    let count_tags = 0;
+
+                    document.getElementById('tags_section_duplicate').addEventListener('click', function() {
+                        count_tags++;
+                        document.getElementById('tags_section_unduplicate').disabled = false;
+                    });
+
+                    document.getElementById('tags_section_unduplicate').addEventListener('click', function() {
+                        if (count_tags > 0) {
+                            count_tags--;
+                            if (count_tags === 0) {
+                                document.getElementById('tags_section_unduplicate').disabled = true;
+                            }
+                        }
+                    });
+                </script>
+
+        
+                <fieldset class="planbareAusbildungsbloecke-section">
+                    <legend>Planbare Ausbildungsblöcke</legend>
+                    {%if planbarer_ausbildungsblock %}
+                        {% for pab in planbarer_ausbildungsblock %}
+                            <div>
+                                <label for="pab_start">Startdatum:</label>
+                                <input type="date" id="planbarer_ausbildungsblock_start" name="planbarer_ausbildungsblock_start" value="{{ pab.start_date|date:'Y-m-d' }}" required>
+
+                                <label for="pab_id">Ausbildungsblock ID:</label>
+                                <input type="number" id="planbarer_ausbildungsblock_id" name="planbarer_ausbildungsblock_id" value="{{ pab.id }}" required> 
+                            </div>
+                        {% endfor %}
+                    {% else %}
+                        <div>
+                            <label for="planbarer_ausbildungsblock_start">Startdatum:</label>
+                            <input type="date" id="planbarer_ausbildungsblock_start" name="planbarer_ausbildungsblock_start" value="{{ planbarer_ausbildungsblock.start_date|date:'Y-m-d' }}" required>
+
+                            <label for="planbarer_ausbildungsblock_id">Ausbildungsblock ID:</label>
+                            <input type="number" id="planbarer_ausbildungsblock_id" name="planbarer_ausbildungsblock_id" value="{{ planbarer_ausbildungsblock.id }}" required> 
+                        </div>
+                    {% endif %}
+                    <fieldset class="ausbildungsstellen-section">
+                        <legend>Ausbildungsstellen</legend>
+                        {% for as in ausbildungsstelle %}
+                            <div class="grid-container">
+                                <div>
+                                    <label for="as_start">Startdatum:</label>
+                                    <input type="date" id="as_start" name="ausbildungsstelle_start" value="{{ as.start_date|date:'Y-m-d' }}" required>
+                                </div>
+                                <div>
+                                    <label for="as_duration">Dauer:</label>
+                                    <input type="number" id="as_duration" name="ausbildungsstelle_duration" value="{{ as.duration_in_month }}" required>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </fieldset>
+                    <div class="button-group">
+                        <button id="ausbildungsstellen_section_duplicate" type="button" data-action="duplicate" data-section="ausbildungsstellen-section">Neue Ausbildungsstelle eingeben</button>
+                        <button id="ausbildungsstellen_section_unduplicate" disabled type="button" data-action="remove" data-section="ausbildungsstellen-section">Ausbildungsstelle Eingabe entfernen</button>
+                    </div>
+
+                    <script>
+                        let count_ausbildungsstellen = 0;
+
+                        document.getElementById('ausbildungsstellen_section_duplicate').addEventListener('click', function() {
+                            count_ausbildungsstellen++;
+                            document.getElementById('ausbildungsstellen_section_unduplicate').disabled = false;
+                        });
+
+                        document.getElementById('ausbildungsstellen_section_unduplicate').addEventListener('click', function() {
+                            if (count_ausbildungsstellen > 0) {
+                                count_ausbildungsstellen--;
+                                if (count_ausbildungsstellen === 0) {
+                                    document.getElementById('ausbildungsstellen_section_unduplicate').disabled = true;
+                                }
+                            }
+                        });
+                    </script>
+                    
+
+                    <fieldset class="genehmigteFachgebiete-section">
+                        <legend>Genehmigte Fachgebiete</legend>
+                        {% if genehmigte_fachgebiete %}
+                            {% for gf in genehmigte_fachgebiete %}
+                                <div class="grid-container">
+                                    <div>
+                                        <label for="gf_fachgebietID">Fachgebiet ID:</label>
+                                        <input type="number" id="gf_fachgebietID" name="genehmigte_fachgebiete_fachgebietID" value="{{ gf.fachgebiet_id }}" required>
+                                    </div>
+                                    <div>
+                                        <label for="gf_duration">Dauer:</label>
+                                        <input type="number" id="gf_duration" name="genehmigte_fachgebiete_duration" value="{{ gf.duration_in_month }}" required>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        {% else %}
+                            <div class="grid-container">
+                                <div>
+                                    <label for="fachgebietID">Fachgebiet ID:</label>
+                                    <input type="number" id="fachgebietID" name="fachgebietID" required>
+                                </div>
+                                <div>
+                                    <label for="duration_genehmigteFachgebiete">Dauer:</label>
+                                    <input type="number" id="duration_genehmigteFachgebiete" name="duration_genehmigteFachgebiete" required>
+                                </div>
+                            </div>
+                        {% endif %}
+                    </fieldset>
+                    <div class="button-group">
+                        <button id="genehmigteFachgebiete_section_duplicate" type="button" data-action="duplicate" data-section="genehmigteFachgebiete-section">Neues genehmigtes Fachgebiet eingeben</button>
+                        <button id="genehmigteFachgebiete_section_unduplicate" disabled type="button" data-action="remove" data-section="genehmigteFachgebiete-section">genehmigtes Fachgebiet Eingabe entfernen</button>
+                    </div>
+
+                    <script>
+                        let count_genehmigteFachgebiete = 0;
+
+                        document.getElementById('genehmigteFachgebiete_section_duplicate').addEventListener('click', function() {
+                            count_genehmigteFachgebiete++;
+                            document.getElementById('genehmigteFachgebiete_section_unduplicate').disabled = false;
+                        });
+
+                        document.getElementById('genehmigteFachgebiete_section_unduplicate').addEventListener('click', function() {
+                            if (count_genehmigteFachgebiete > 0) {
+                                count_genehmigteFachgebiete--;
+                                if (count_genehmigteFachgebiete === 0) {
+                                    document.getElementById('genehmigteFachgebiete_section_unduplicate').disabled = true;
+                                }
+                            }
+                        });
+                    </script>
+                </fieldset>
+                <div class="button-group">
+                    <button id="planbareAusbildungsblöcke_section_duplicate" type="button" data-action="duplicate" data-section="planbareAusbildungsblöcke-section">Neue planbare Ausbildungsblöcke eingeben</button>
+                    <button id="planbareAusbildungsblöcke_section_unduplicate" disabled type="button" data-action="remove" data-section="planbareAusbildungsblöcke-section">Planbare Ausbildungsblöcke Eingabe entfernen</button>
+                </div>
+
+                <script>
+                    let count_planbareAusbildungsblöcke = 0;
+
+                    document.getElementById('planbareAusbildungsblöcke_section_duplicate').addEventListener('click', function() {
+                        count_planbareAusbildungsblöcke++;
+                        document.getElementById('planbareAusbildungsblöcke_section_unduplicate').disabled = false;
+                    });
+
+                    document.getElementById('planbareAusbildungsblöcke_section_unduplicate').addEventListener('click', function() {
+                        if (count_planbareAusbildungsblöcke > 0) {
+                            count_planbareAusbildungsblöcke--;
+                            if (count_planbareAusbildungsblöcke === 0) {
+                                document.getElementById('planbareAusbildungsblöcke_section_unduplicate').disabled = true;
+                            }
+                        }
+                    });
+                </script>
+            {% endfor %}
+            {% else %}
+            <!-- ab hier else wenn keine werte übergeben -->
+                <legend>Ausbildungsstätten</legend>
+                <label for="ausbildungsstaette_name">Name der Ausbildungsstätte:</label>
+                <input type="text" id="ausbildungsstaette_name" name="ausbildungsstaette_name" placeholder="Ausbildungsstätte Name" required>
+
+                <fieldset class="dienstposten-section">
+                    <legend>Dienstposten</legend>
+                    <div class="grid-container">
+                        <div>
+                            <label for="ausbildungsstaette_dienstposten_start">Start Datum:</label>
+                            <input type="date" id="ausbildungsstaette_dienstposten_start" name="ausbildungsstaette_dienstposten_start" required>
+                        </div>
+                        <div>
+                            <label for="ausbildungsstaette_dienstposten_end">End Datum:</label>
+                            <input type="date" id="ausbildungsstaette_dienstposten_end" name="ausbildungsstaette_dienstposten_end" required>
+                        </div>
+                        <div>
+                            <label for="ausbildungsstaette_dienstposten_hours">Stunden:</label>
+                            <input type="number" id="ausbildungsstaette_dienstposten_hours" name="ausbildungsstaette_dienstposten_hours" required>
+                        </div>
+                        <div>
+                            <label for="ausbildungsstaette_dienstposten_occupationalgroups">Occupational Groups:</label>
+                            <input type="number" id="ausbildungsstaette_dienstposten_occupationalgroups" name="ausbildungsstaette_dienstposten_occupationalgroups" required>
+                        </div>
+                        <div>
+                            <label for="ausbildungsstaette_dienstposten_associatedausbildungsbloecke">Associated Ausbildungsblöcke:</label>
+                            <input type="number" id="ausbildungsstaette_dienstposten_associatedausbildungsbloecke" name="ausbildungsstaette_dienstposten_associatedausbildungsbloecke" required>
+                        </div>
+                    </div>
+                </fieldset>
+                <div class="button-group">
+                    <button type="button" data-action="duplicate" data-section="dienstposten-section">Neue Dienstposten eingeben</button>
+                    <button type="button" data-action="remove" data-section="dienstposten-section">Dienstposten Eingabe entfernen</button>
+                </div>
+
+                <script>
+                    let eduplicateCount = 0;
+
+                    document.getElementById('dienstposten_section_duplicate').addEventListener('click', function() {
+                        eduplicateCount++;
+                        document.getElementById('dienstposten_section_unduplicate').disabled = false;
+                    });
+
+                    document.getElementById('dienstposten_section_unduplicate').addEventListener('click', function() {
+                        if (eduplicateCount > 0) {
+                            eduplicateCount--;
+                            if (eduplicateCount === 0) {
+                                document.getElementById('dienstposten_section_unduplicate').disabled = true;
+                            }
+                        }
+                    });
+                </script>
+
+                <fieldset class="tags-section">
+                    <legend>Tags</legend>
+                    <label for="ausbildungsstaette_tags">Tags:</label>
+                    <input type="number" id="ausbildungsstaette_tags" name="ausbildungsstaette_tags" required>
+                </fieldset>
+                <div class="button-group">
+                    <button type="button" data-action="duplicate" data-section="tags-section">Neue Tags eingeben</button>
+                    <button type="button" data-action="remove" data-section="tags-section">Tags Eingabe entfernen</button>
+                </div>
+                <script>
+                    let ecount_tags = 0;
+
+                    document.getElementById('tags_section_duplicate').addEventListener('click', function() {
+                        ecount_tags++;
+                        document.getElementById('tags_section_unduplicate').disabled = false;
+                    });
+
+                    document.getElementById('tags_section_unduplicate').addEventListener('click', function() {
+                        if (ecount_tags > 0) {
+                            ecount_tags--;
+                            if (ecount_tags === 0) {
+                                document.getElementById('tags_section_unduplicate').disabled = true;
+                            }
+                        }
+                    });
+                </script>
+
+                <fieldset class="planbareAusbildungsblöcke-section">
+                    <legend>Planbare Ausbildungsblöcke</legend>
+                    <div>
+                        <label for="planbarer_ausbildungsblock_start">Startdatum:</label>
+                        <input type="date" id="planbarer_ausbildungsblock_start" name="planbarer_ausbildungsblock_start" required>
+
+                    
+                        <label for="planbarer_ausbildungsblock_id">Ausbildungsblock ID:</label>
+                        <input type="number" id="planbarer_ausbildungsblock_id" name="planbarer_ausbildungsblock_id" value="{{ planbarer_ausbildungsblock.id }}" required> 
+                    </div>
+
+                    <fieldset class="ausbildungsstellen-section">
+                        <legend>Ausbildungsstellen</legend>
+                        <div class="grid-container">
+                            <div>
+                                <label for="startAusbildungsStellen">Startdatum:</label>
+                                <input type="date" id="startAusbildungsStellen" name="start_date_ausbildungsStellen" required>
+                            </div>
+                            <div>
+                                <label for="duration_ausbildungsStellen">Dauer:</label>
+                                <input type="number" id="duration_ausbildungsStellen" name="duration_ausbildungsStellen" required>
+                            </div>
+                        </div>
+                    </fieldset>
+                    <div class="button-group">
+                        <button type="button" data-action="duplicate" data-section="ausbildungsstellen-section">Neue Ausbildungsstelle eingeben</button>
+                        <button type="button" data-action="remove" data-section="ausbildungsstellen-section">Ausbildungsstelle Eingabe entfernen</button>
+                    </div>
+
+                    <script>
+                        let ecount_ausbildungsstellen = 0;
+
+                        document.getElementById('ausbildungsstellen_section_duplicate').addEventListener('click', function() {
+                            ecount_ausbildungsstellen++;
+                            document.getElementById('ausbildungsstellen_section_unduplicate').disabled = false;
+                        });
+
+                        document.getElementById('ausbildungsstellen_section_unduplicate').addEventListener('click', function() {
+                            if (ecount_ausbildungsstellen > 0) {
+                                ecount_ausbildungsstellen--;
+                                if (ecount_ausbildungsstellen === 0) {
+                                    document.getElementById('ausbildungsstellen_section_unduplicate').disabled = true;
+                                }
+                            }
+                        });
+                    </script>
+
+                    <fieldset class="genehmigteFachgebiete-section">
+                        <legend>Genehmigte Fachgebiete</legend>
+                        <div class="grid-container">
+                            <div>
+                                <label for="fachgebietID">Fachgebiet ID:</label>
+                                <input type="number" id="fachgebietID" name="fachgebietID" required>
+                            </div>
+                            <div>
+                                <label for="duration_genehmigteFachgebiete">Dauer:</label>
+                                <input type="number" id="duration_genehmigteFachgebiete" name="duration_genehmigteFachgebiete" required>
+                            </div>
+                        </div>
+                    </fieldset>
+                    <div class="button-group">
+                        <button type="button" data-action="duplicate" data-section="genehmigteFachgebiete-section">Neues genehmigtes Fachgebiet eingeben</button>
+                        <button type="button" data-action="remove" data-section="genehmigteFachgebiete-section">genehmigtes Fachgebiet Eingabe entfernen</button>
+                    </div>
+
+                    <script>
+                        let ecount_genehmigteFachgebiete = 0;
+
+                        document.getElementById('genehmigteFachgebiete_section_duplicate').addEventListener('click', function() {
+                            ecount_genehmigteFachgebiete++;
+                            document.getElementById('genehmigteFachgebiete_section_unduplicate').disabled = false;
+                        });
+
+                        document.getElementById('genehmigteFachgebiete_section_unduplicate').addEventListener('click', function() {
+                            if (ecount_genehmigteFachgebiete > 0) {
+                                ecount_genehmigteFachgebiete--;
+                                if (ecount_genehmigteFachgebiete === 0) {
+                                    document.getElementById('genehmigteFachgebiete_section_unduplicate').disabled = true;
+                                }
+                            }
+                        });
+                    </script>
+
+                </fieldset>
+            </div>
+            <div class="button-group">
+                <button type="button" data-action="duplicate" data-section="planbareAusbildungsblöcke-section">Neue planbare Ausbildungsblöcke eingeben</button>
+                <button type="button" data-action="remove" data-section="planbareAusbildungsblöcke-section">Planbare Ausbildungsblöcke Eingabe entfernen</button>
+            </div>
+
+            <script>
+                let ecount_planbareAusbildungsblöcke = 0;
+
+                document.getElementById('planbareAusbildungsblöcke_section_duplicate').addEventListener('click', function() {
+                    ecount_planbareAusbildungsblöcke++;
+                    document.getElementById('planbareAusbildungsblöcke_section_unduplicate').disabled = false;
+                });
+
+                document.getElementById('planbareAusbildungsblöcke_section_unduplicate').addEventListener('click', function() {
+                    if (ecount_planbareAusbildungsblöcke > 0) {
+                        ecount_planbareAusbildungsblöcke--;
+                        if (ecount_planbareAusbildungsblöcke === 0) {
+                            document.getElementById('planbareAusbildungsblöcke_section_unduplicate').disabled = true;
+                        }
+                    }
+                });
+            </script>
+        {% endif %}
+            </div>
+            <div class="button-group">
+                <button data-action="duplicate" data-section="ausbildungsstaetten-section">Neue Ausbildungsstätte eingeben</button>
+                <button data-action="remove" data-section="ausbildungsstaetten-section">Ausbildungsstätte entfernen</button>
+            </div>
+        </div>
+    </fieldset>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+    // Function to handle duplication or removal of sections
+    function handleSectionAction(event) {
+        const action = event.target.dataset.action;
+        const section = event.target.dataset.section;
+        const sectionElement = event.target.closest(`.${section}`);
+        const entryContainer = sectionElement.querySelector('.ausbildungsstaette-entry');
+
+        if (action === 'duplicate') {
+            const originalEntry = entryContainer.cloneNode(true);
+            sectionElement.insertBefore(originalEntry, sectionElement.querySelector('.button-group'));
+        } else if (action === 'remove') {
+            const entries = sectionElement.querySelectorAll('.ausbildungsstaette-entry');
+            if (entries.length > 1) {
+                const lastEntry = entries[entries.length - 1];
+                lastEntry.parentNode.removeChild(lastEntry);
+            } else {
+                console.log('Cannot remove the last entry');
+            }
+        }
+    }
+
+    // Attach event listeners to existing buttons
+    const buttons = document.querySelectorAll('.button-group button');
+    buttons.forEach(button => {
+        button.addEventListener('click', handleSectionAction);
+    });
+});
+
+    </script>
+    
+        
+
+    <fieldset class="dienstpost_zwei">
+        <legend>Dienstposten</legend>
+        <div id="dienstposten-container">
+            {% if dienstposten %}
+                {% for dp in dienstposten %}
+                    <div class="grid-container dienstposten-entry">
+                        <div>
+                            <label for="dienstposten_start">Startdatum:</label>
+                            <input type="date" id="dienstposten_start" name="dienstposten_start" value="{{ dp.start_date|date:'Y-m-d' }}" required>
+                        </div>
+                        <div>
+                            <label for="dienstposten_end">Enddatum:</label>
+                            <input type="date" id="dienstposten_end" name="dienstposten_end" value="{{ dp.end_date|date:'Y-m-d' }}" required>
+                        </div>
+                        <div>
+                            <label for="dienstposten_hours">Stunden:</label>
+                            <input type="number" id="dienstposten_hours" name="dienstposten_hours" value="{{ dp.hours }}" required>
+                        </div>
+                        <div>
+                            <label for="dienstposten_occupationalgroupsdienstposten">Berufsgruppen:</label>
+                            <input type="number" id="dienstposten_occupationalgroupsdienstposten" name="dienstposten_occupationalgroupsdienstposten" value="{{ dp.occupationalgroupsdienstposten }}" required>
+                        </div>
+                        <div>
+                            <label for="dienstposten_associatedausbildungsbloecke">Zugehörige Ausbildungsblöcke:</label>
+                            <input type="number" id="dienstposten_associatedausbildungsbloecke" name="dienstposten_associatedausbildungsbloecke" value="{{ dp.associatedausbildungsbloecke }}" required>
+                        </div>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <div class="grid-container dienstposten-entry">
+                    <div>
+                        <label for="dienstposten_start">Startdatum:</label>
+                        <input type="date" id="dienstposten_start" name="dienstposten_start" required>
+                    </div>
+                    <div>
+                        <label for="dienstposten_end">Enddatum:</label>
+                        <input type="date" id="dienstposten_end" name="dienstposten_end" required>
+                    </div>
+                    <div>
+                        <label for="dienstposten_hours">Stunden:</label>
+                        <input type="number" id="dienstposten_hours" name="dienstposten_hours" required>
+                    </div>
+                    <div>
+                        <label for="dienstposten_occupationalgroups">Berufsgruppen:</label>
+                        <input type="number" id="dienstposten_occupationalgroups" name="dienstposten_occupationalgroups" required>
+                    </div>
+                    <div>
+                        <label for="dienstposten_associatedausbildungsbloecke">Zugehörige Ausbildungsblöcke:</label>
+                        <input type="number" id="dienstposten_associatedausbildungsbloecke" name="dienstposten_associatedausbildungsbloecke" required>
+                    </div>
+                </div>
+            
+            {% endif %}
+        </div>
+    </fieldset>
+    <div class="button-group">
+        <button id="dienstposten_section_zwei_duplicate" type="button" data-action="duplicate" data-section="dienstpost_zwei">Neue Dienstposten eingeben</button>
+        <button id="dienstposten_section_zwei_unduplicate" disabled type="button" data-action="remove" data-section="dienstpost_zwei">Dienstposten Eingabe entfernen</button>
+    </div>
+
+    <script>
+        let count_dienstposten_zwei = 0;
+
+        document.getElementById('dienstposten_section_zwei_duplicate').addEventListener('click', function() {
+            // Clone the last dienstposten-entry
+            const container = document.getElementById('dienstposten-container');
+            const lastEntry = container.querySelector('.dienstposten-entry:last-child');
+            const newEntry = lastEntry.cloneNode(true);
+
+            // Reset the input values
+            const inputs = newEntry.querySelectorAll('input');
+            inputs.forEach(input => input.value = '');
+
+            // Append the cloned entry to the container
+            container.appendChild(newEntry);
+
+            count_dienstposten_zwei++;
+            document.getElementById('dienstposten_section_zwei_unduplicate').disabled = false;
+        });
+
+        document.getElementById('dienstposten_section_zwei_unduplicate').addEventListener('click', function() {
+            if (count_dienstposten_zwei > 0) {
+                const container = document.getElementById('dienstposten-container');
+                const lastEntry = container.querySelector('.dienstposten-entry:last-child');
+                if (lastEntry) {
+                    container.removeChild(lastEntry);
+                    count_dienstposten_zwei--;
+                    if (count_dienstposten_zwei === 0) {
+                        document.getElementById('dienstposten_section_zwei_unduplicate').disabled = true;
+                    }
+                }
+            }
+        });
+    </script>
+
+
+        <button type="submit" value="Submit">Submit Krankenhauseingaben</button>
+    </form>
+
+{% endblock %}
+

@@ -1,0 +1,104 @@
+{% extends 'frontend/base.html' %}
+
+{% block title %}Eingetragene Daten{% endblock %}
+
+{% block content %}
+<h1>Bereits eingetragene Krankenhäuser</h1>
+
+<div class="table-container">
+    <table>
+        <thead>
+            <!-- Table header with labels and buttons of existing Organisationsgruppen -->
+            <tr>
+                <th class="delete-column"></th>
+                <th class="edit-column"></th>
+                <th>ID</th>
+                <th>Name des Krankenhauses</th>
+                <th>Kooperationspartner</th>
+                <th>Ausbildungsstätten</th>
+                <th>Dienstposten</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Cell contents filled with data  -->
+            {% for org in organisationsgruppen %}
+            <tr data-id="{{ org.id }}">
+                <td class="delete-column"><button class="delete-btn" data-id="{{ org.id }}" style="font-size: 50px; font-weight: bold; color: red; background: none; border: none; cursor: pointer; padding: 20px; border-radius: 5px;">&times;</button></td>
+                <td class="edit-column"><button class="edit-btn" data-id="{{ org.id }}" style="font-size: 50px; color: yellow; background: none; border: none; cursor: pointer; padding: 20px; border-radius: 5px;">&#9998;</button></td>
+                <td>{{ org.id }}</td>
+                <td>{{ org.name }}</td>
+                <td>{{ org.is_kooperationspartner }}</td>
+                <td>
+                    <ul>
+                        {% for ausbildung in org.ausbildungsstaette_set.all %}
+                        <li>{{ ausbildung.name }}</li>
+                        {% endfor %}
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        {% for dienstposten in org.dienstposten_set.all %}
+                        <li>{{ dienstposten.start_date }} - {{ dienstposten.end_date }}</li>
+                        {% endfor %}
+                    </ul>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+<script>
+    // Delete button event listeners
+    document.addEventListener('DOMContentLoaded', function() {
+        const buttons = document.querySelectorAll('.delete-btn');
+        buttons.forEach(button => {
+            button.addEventListener('click', function() {
+                const organisationId = this.getAttribute('data-id');
+                if (confirm('Sind Sie sicher, dass Sie dieses Krankenhaus endgültig löschen möchten?')) {
+                    fetch(`/delete_organisation/${organisationId}/`, {
+                        method: 'DELETE',
+                        headers: {
+                            'X-CSRFToken': '{{ csrf_token }}',
+                        },
+                    })
+                    .then(response => {
+                        if (response.ok) {
+                            location.reload();
+                        } else {
+                            alert('Fehler beim Löschen des Krankenhauses.');
+                        }
+                    });
+                }
+            });
+        });
+        // Edit button event listeners
+        const editButtons = document.querySelectorAll('.edit-btn');
+        console.log(`Found ${editButtons.length} edit buttons`);
+        editButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const organisationId = this.getAttribute('data-id');
+                console.log(`Clicked edit button for organisation ID: ${organisationId}`);
+                if (confirm('Sind Sie sicher, dass Sie dieses Krankenhaus bearbeiten möchten?')) {
+                    fetch(`/create_or_edit_hospital/${organisationId}/`, {
+                        method: 'GET',
+                        headers: {
+                            'X-CSRFToken': '{{ csrf_token }}',
+                        },
+                    })
+                    .then(response => {
+                        if (response.ok) {
+                            console.log(`Redirecting to /create_or_edit_hospital/${organisationId}/`);
+                            window.location.replace(`/create_or_edit_hospital/${organisationId}/`);
+                        } else {
+                            alert('Fehler beim weiterleiten zur Bearbeitungsseite des Krankenhauses.');
+                        }
+                    });
+                }
+            });
+        });        
+    });
+</script>
+
+
+{% endblock %}

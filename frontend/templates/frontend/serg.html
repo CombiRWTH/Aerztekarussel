@@ -1,0 +1,200 @@
+{% extends 'frontend/base.html' %}
+
+{% block title %}Meine Blöcke{% endblock %}
+
+{% block content %}
+<h1>Zuweisung visualisiert in farbigen Blöcken</h1>
+<p class="large-text">Für weitere Informationen klicken Sie bitte auf den Block.</p>
+
+<!-- <!-- Legend of the used colours --> -->
+<div class="legend">
+    <h3 class="large-text">Legende:</h3>
+    <ul>
+        {% for org_group, color in org_group_colors.items %}
+            <li style="display: inline-block; margin-right: 20px;" class="large-legend-text">
+                <span style="background-color: {{ color }}; display: inline-block; width: 20px; height: 20px; margin-right: 10px;"></span>{{ org_group }}
+            </li>
+        {% endfor %}
+        <li style="display: inline-block; margin-right: 20px;" class="large-legend-text">
+            <span style="background-color: white; display: inline-block; width: 20px; height: 20px; margin-right: 10px; border: 1px solid black;"></span>Keine Zuordnung
+        </li>
+    </ul>
+</div>
+
+<!-- styling of legend and table-->
+<style>
+    .large-text {
+        font-size: 24px;
+        font-weight: bold;
+    }
+
+    .large-legend-text {
+        font-size: 20px;
+    }
+    
+    .table-wrapper {
+        overflow-x: auto; 
+        overflow-y: hidden;
+        width: 100%;
+        position: relative;
+    }
+
+    .table-scroll {
+        overflow-y: auto;
+        max-height: 80vh; 
+    }
+
+    .custom-table {
+        width: max-content; 
+        border-collapse: collapse;
+        font-size: 18px;
+        text-align: left;
+    }
+
+    .custom-table th, .custom-table td {
+        padding: 12px 15px;
+        border: 1px solid white;
+        color: #000;
+        text-align: center;
+        position: relative;
+        white-space: nowrap; 
+    }
+
+    .custom-table th {
+        background-color: white;
+        color: #333;
+        position: sticky;
+        top: 0;
+        z-index: 2;
+    }
+
+    .custom-table td:first-child, .custom-table th:first-child {
+        position: sticky;
+        left: 0;
+        z-index: 1;
+        background-color: #f1f1f1;
+    }
+
+    .custom-table tbody tr td {
+        min-width: 100px;
+    }
+
+    .custom-table tbody tr td div {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        cursor: pointer;
+    }
+
+    .legend {
+        margin: 20px 0;
+    }
+
+    .legend ul {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    .legend li {
+        margin-bottom: 5px;
+    }
+
+    #month-selector-form select {
+        font-size: 20px;
+        padding: 10px;
+        margin: 10px 0;
+    }
+
+    .sticky-header {
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0;
+        background: white;
+        z-index: 1;
+    }
+
+    .sticky-column {
+        position: -webkit-sticky;
+        position: sticky;
+        left: 0;
+        background: white;
+        z-index: 2;
+    }
+</style>
+
+<!-- Dropdown selection of the timeperiod of months -->
+<form method="get" id="month-selector-form">
+    <label for="month-range" class="large-text">Ansicht für Monate:</label>
+    <select id="month-range" name="month_range" onchange="document.getElementById('month-selector-form').submit();">
+        <option value="12" {% if selected_range == 12 %}selected{% endif %}>12 Monate</option>
+        <option value="24" {% if selected_range == 24 %}selected{% endif %}>24 Monate</option>
+        <option value="36" {% if selected_range == 36 %}selected{% endif %}>36 Monate</option>
+        <option value="alles" {% if selected_range == 'alles' %}selected{% endif %}>Alles</option>
+    </select>
+</form>
+<!-- Table for timetable view -->
+<div class="table-wrapper">
+    <div class="table-scroll">
+        <table class="custom-table" border="1">
+            <thead>
+                <!-- Header with months-->
+                <tr>
+                    <th class="sticky-header sticky-column">Person</th>
+                    {% for month in months %}
+                        <th class="sticky-header" data-month="{{ month }}">{{ month }}</th>
+                    {% endfor %}
+                </tr>
+            </thead>
+            <tbody>
+                <!-- First column with persons -->
+                {% for person in persons %}
+                <tr>
+                    <td class="sticky-column">{{ person }}</td>
+                    {% for month in months %}
+                        <td>
+                            <!-- Cells with backround color for Organisationsgruppen and click for more informations -->
+                            {% for schedule in schedules %}
+                                {% if schedule.person == person and schedule.month_label == month %}
+                                    <div
+                                        style="background-color: {{ schedule.color }};"
+                                        onclick="showScheduleInfo(this)"
+                                        data-id="{{ schedule.id }}"
+                                        data-person="{{ schedule.person }}"
+                                        data-month="{{ schedule.month_label }}"
+                                        data-organisationsgruppe="{{ schedule.organisationsgruppe }}"
+                                        data-ausbildungsstaette="{{ schedule.ausbildungsstaette }}"
+                                        data-ausbildungsinhalt="{{ schedule.ausbildungsinhalt }}"
+                                    ></div>
+                                {% endif %}
+                            {% endfor %}
+                        </td>
+                    {% endfor %}
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- Script for clicking Cells for more informations -->
+<script>
+function showScheduleInfo(element) {
+    const id = element.getAttribute('data-id');
+    const person = element.getAttribute('data-person');
+    const month = element.getAttribute('data-month');
+    const organisationsgruppe = element.getAttribute('data-organisationsgruppe');
+    const ausbildungsstaette = element.getAttribute('data-ausbildungsstaette');
+    const ausbildungsinhalt = element.getAttribute('data-ausbildungsinhalt');
+
+    alert(`ID: ${id}
+Person: ${person}
+Month: ${month}
+Organisationsgruppe: ${organisationsgruppe}
+Ausbildungsstaette: ${ausbildungsstaette}
+Ausbildungsinhalt: ${ausbildungsinhalt}`);
+}
+</script>
+
+{% endblock %}

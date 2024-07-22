@@ -1,0 +1,48 @@
+{% extends 'frontend/base.html' %}
+
+{% block title %}Allgemein{% endblock %}
+
+{% block content %}
+<!-- Homepage with general information about the projects -->
+    <section id="introduction">
+        <h2>Über die Anwendung</h2>
+        <p class="small-text">Diese Webanwendung zielt darauf ab, das Planungsproblem für die Zuweisung von Ausbildungsplätzen an angehende Ärzte während ihrer Facharztausbildung zu lösen. Die Anwendung soll es ermöglichen, Ärzte ihren Pflicht- und Wahlstationen in verschiedenen Ausbildungseinrichtungen zuzuordnen. Dabei werden mehrere Faktoren wie die individuellen Präferenzen der Ärzte, die Verfügbarkeit von Ausbildungspositionen und die Fairness der Zuweisungen berücksichtigt. </p>
+
+    </section>
+    <section id="application">
+        <h2>Die Webanwendung</h2>
+        <p>Funktionsweise:<br> 
+        1. Datenaufnahme und Eingabe:<br>
+        Jeder angehende Arzt erstellt ein Profil, das seine Präferenzen für bestimmte Fachbereiche und Abteilungen, seinen      Ausbildungsfortschritt sowie geplante Abwesenheiten (Urlaub, Krankheit etc.) enthält.
+        Die Administratoren erfassen die Ausbildungseinrichtungen (Krankenhäuser und deren Abteilungen) samt ihrer verfügbaren Ausbildungspositionen und Kapazitäten für die verschiedenen Fachbereiche.<br>
+
+        2. Automatisierte Planung:<br>
+        Ein optimierter Algorithmus verarbeitet die eingegebenen Daten und erstellt basierend auf den Präferenzen der Ärzte und den verfügbaren Kapazitäten der Krankenhäuser monatliche Ausbildungspläne.
+        Der Algorithmus berücksichtigt dabei auch Einschränkungen wie Mindestbesetzungsanforderungen für jede Abteilung und jeden Monat sowie die geplanten Abwesenheiten der Residents.<br>
+
+        3. Zuweisung und Anpassung:<br>
+        Der Algorithmus erstellt einen detaillierten Ausbildungsplan, der die monatlichen Zuweisungen der Ärzte zu den verschiedenen Fachbereichen und Abteilungen enthält. Bei Bedarf können menschliche Planer (Admins) manuelle Anpassungen vornehmen, um unvorhergesehene Änderungen oder besondere Anforderungen zu berücksichtigen.<br>
+
+        4. Überwachung und Reporting:<br>
+        Das System ermöglicht eine Echtzeit-Überwachung der aktuellen Ausbildungspläne und Besetzungen.
+        </p>
+        <p>Folgendes soll die Webanwendung beinhalten:</p>
+        <p>Typische Problemstellungen umfassen mehrere Krankenhäuser (ca. 5-10) mit mehreren Abteilungen, die Ausbildungskapazitäten für verschiedene Fächer bereitstellen, sowie etwa 50-150 angehende Ärzte mit unterschiedlichen Präferenzen, Ausbildungsfortschritten und Fachgebieten. Zu den wesentlichen Einschränkungen gehören die monatliche Zuweisung für jeden Auszubildenden, geplante Abwesenheiten, die Berücksichtigung der Einsatzfähigkeit der Personen in ihren zugewiesenen Positionen und Abteilungen sowie die Mindestbesetzungsanforderungen für jede Abteilung und jeden Monat.<br>
+
+        Die Planungsziele der Software umfassen Fairness, die Vermeidung von verletzten Präferenzen, die Sicherstellung einer gleichmäßigen Personalverteilung, die Minimierung von Abteilungs- und Krankenhauswechseln sowie die Vermeidung von Monaten ohne Ausbildung. Diese Software soll somit die Planungsprozesse optimieren, die Fairness und Qualität der Zuweisungen erhöhen und den Aufwand für die manuelle Planung erheblich reduzieren.</p>
+    </section>
+    <section id="about">
+        <h2>Problematik</h2>
+        <p>Die manuelle Planung von Ausbildungsplätzen für angehende Ärzte ist zeit- und arbeitsintensiv, da sie oft mit einfachen Tabellenkalkulationen erfolgt. Es gibt keine geeignete Software, die eine automatisierte und effiziente Planung ermöglicht, was zu einer starken Abhängigkeit von der Erfahrung einzelner Planer führt. Zudem ist die Messung und der Vergleich der Planungsqualität ohne Standards praktisch unmöglich. Häufige unvorhergesehene Änderungen erfordern zudem eine ständige und aufwändige Neuplanung.</p>
+        <p>Durch die Automatisierung des Planungsprozesses wird der Zeit- sowie Arbeitsaufwand erheblich reduziert und somit der Gesamtprozess der Zuweisungen deutlich effizienter. Die Zuweisung der Ausbildungsplätze erfolgt auf Basis eines fairen und transparenten Algorithmus, der die Präferenzen der Ärzte und die Kapazitäten der Krankenhäuser berücksichtigt. Das System kann auf Änderungen reagieren (sowohl studentenseitig vor der Deadline als auch bei unvorhergesehenen Ereignissen durch Admins) und Anpassungen vornehmen.
+    </section>
+    <section id="contact">
+        <h2>Kontakt</h2>
+        <p>RWTH Softwareentwicklung Ärztekarussell - Fraunhofer Austria</p>
+        <p class="small-text">Fraunhofer Austria Research GmbH
+        <p class="small-text">Theresianumgasse 7</p>
+        <p class="small-text">1040 Wien</p>
+        <p class="small-text">Tel: +43 1 504 69 06</p>
+
+    </section>
+{% endblock %}
